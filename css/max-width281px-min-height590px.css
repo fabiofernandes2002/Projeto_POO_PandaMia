@@ -1,0 +1,11 @@
+.texto > span{
+    font-size: 10.2vw;
+
+    }
+.panda{
+        background-image:url("Pandamia_mobile.svg");
+        background-position: left;
+        background-position-x: 90px;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+}

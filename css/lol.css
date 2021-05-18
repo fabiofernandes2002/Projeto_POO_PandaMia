@@ -1,0 +1,127 @@
+.container{
+    display:none;
+}
+.containercomputer{
+    height: 100vh;
+    display: grid;
+    background-color: #5CA4A9;
+    grid-template-columns: 1fr;
+    grid-template-rows: 29% 40% 31% ;
+    gap: 0px;
+    grid-template-areas:    "headerpc"
+                            "mainpc"
+                            "footerpc";
+    
+}
+
+.headerpc{
+    z-index: 2;
+    grid-area:headerpc;
+    background-image: url("ondapc.svg");
+    background-repeat: no-repeat;
+    background-position-y: top;
+    display: grid;
+    grid-template-columns: 10% 9% 1% 9% 1% 9% 1% 20% 1% 9% 1% 9% 1% 9% 10%;
+    grid-template-rows: 25% auto;
+    gap: 0px;
+    grid-template-areas:   "blank blank blank blank blank blank blank pandamia1 blank1 blank1 blank1 blank1 blank1 blank1 blank1"
+                            "headergap menu gap1 sobre gap2 info gap3 pandamia gap4 link gap5 jogos gap6 search headergap1";
+}   
+.sobre{
+    grid-area: sobre;
+}
+.sobre > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+.info{
+    grid-area: info;
+}
+.info > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+.link{
+    grid-area: link;
+}
+.link > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+.jogos{
+    grid-area: jogos;
+}
+.jogos > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+.pandamia{
+    grid-area: pandamia1-start/ pandamia1-start/ pandamia-end / pandamia-end;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% auto;
+    gap: 0px;
+    grid-template-areas:    "blank"
+                            "pandamia1" ;
+}
+.pandamia1{
+    grid-area: pandamia1;
+}
+.pandamia1 > span{
+    font-family: "Cooper Black";
+    color: #F4F1BB;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 4vw;
+}
+.panda{
+    grid-area:headerpc-start/headerpc-start/footerpc-end/footerpc-end;
+    background-image:url("pandapc.svg");
+    background-position-x:860px;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+
+.footerpc{
+    grid-area:footerpc;
+    display: grid;
+    grid-template-columns: 27.45% auto 32%;
+    grid-template-rows: 21% 79%;
+    gap: 0px;
+    grid-template-areas:    "footer1 footer2 footer3"
+                            "footer4 footer5 footer6";
+}
+
+.Polygons{
+    grid-area:footer1-start/footer1-start/footer4-end/footer4-end;
+    background-image:url("poligono.svg");
+    background-position-x:left; 
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+
+.yellowTriangle{
+    z-index:2;
+    grid-area:footer6;
+    background-image:url("triangulopc.svg");
+    background-position-x:right; 
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
