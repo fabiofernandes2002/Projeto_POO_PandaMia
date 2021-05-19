@@ -5,13 +5,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <script src="myScript.js"></script>
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/test.css">
-
+    <script src="/js/myScript.js"></script>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/myStyles.css">
+    <link rel="stylesheet" type="text/css" media="(min-width:1366px)" href="/css/min-width1366px.css">
     <style>
-        @import url("css/max-width281px-min-height590px.css") (max-width:281px) and (min-height:590px);
-        @import url("css/lol.css") (min-width:1366px) and (min-height:768px);
+        @media (max-height:265px){
+            .container > div:nth-child(1) {
+                background-repeat: repeat;
+            }
+        }
+        @media screen and (max-width:281px) and (min-height:590px) {
+            .texto > span{
+            font-size: 10.2vw;
+
+            }
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position: left;
+                background-position-x: 90px;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+            }
+        }
+        @media screen and (min-width:281px) and (min-height:80px) {
+            .texto > span{
+            font-size: 1vw;
+
+            }
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position: left;
+                background-position-x: 220px;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+            }
+        } 
+        @media screen and (min-width:281px) and (min-height:414px) {
+            .texto > span{
+            font-size: 6.5vw;
+
+            }
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position: left;
+                background-position-x:170px;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+            }
+        } 
+        @media screen and (min-width:281px) and (min-height:500px) {
+            .texto > span{
+            font-size: 7.8vw;
+
+            }
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position: left;
+                background-position-x:175px;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+            }
+        } 
+        @media screen and (min-width:500px) and (min-height:80px) {
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position: left;
+                background-position-x:315px;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+            }
+        } 
+        @media screen and (min-width:500px) and (min-height:768px) {
+            .texto > span{
+            font-size: 7vw;
+
+            }
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position: left;
+                background-position-x:275px;
+                background-position-y: bottom;
+                background-repeat: no-repeat;
+            }
+        } 
+        @media screen and (max-width:281px) and (min-height:630px){
+            .texto > span{
+            font-size: 10.3vw;
+
+            }
+        }
+        @media (max-width:375px) and (max-height:812px){
+            .Polygons{
+            height: 100%;
+            width: 100%;
+            background-image: url("/media/images/orange.svg"), url("/media/images/yellow.svg");
+            background-repeat: no-repeat;
+            background-position-y: bottom;
+            }
+        }
     </style>
 </head>
 <body>
@@ -85,7 +177,7 @@
             <div class="Polygons"></div>
             <div class="yellowTriangle"></div>
         </div>
-        <div class="panda"></div>
+        <div class="pandapc"></div>
     </div>
     
 </body>
