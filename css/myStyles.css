@@ -1,0 +1,287 @@
+/* Index */
+body{
+    margin:0;
+    padding:0;
+    animation: overflowY 6s ease 1;
+}
+@keyframes overflowY{
+    from {
+        overflow-y: hidden;
+    }
+    to {
+        overflow-y: visible;
+    }
+}
+.containercomputer{
+    display: none;
+}
+.container{
+    /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+
+    display: grid;
+    background-color: #5CA4A9;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 4.95% 0.05% 10% 15% 3% 37% 20%;
+    gap: 0px;
+    grid-template-areas:    "header"
+                            "preMain"
+                            "esconderCorFundoHeader"
+                            "main"
+                            "pandaStart"
+                            "explorar"
+                            "pandaEnd"
+                            "footer";
+}
+.explorar{
+    z-index: 2;
+    grid-area: main-start/main-start/explorar-end/explorar-end;
+    display: grid;
+    grid-template-columns: 9.6% 18.13% auto 18.13% 9.6%;
+    grid-template-rows: 4% 66% 30%;
+    gap: 0px;
+    grid-template-areas:    "gap0 gapmain gapmain gapmain gap1"
+                            "gap2 text1 text1 text1 gap3"
+                            "gap4 button button1 button2 gap5";
+}
+.texto{
+    grid-area:text1;
+}
+.texto > span:nth-child(1){
+    font-family: "Medium";
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+}
+.texto > span:nth-child(2){
+    font-family: "Medium";
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.texto > span:nth-child(3){
+    font-family: "Medium";
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto > span{
+    font-size: 9vw;
+}
+.btnExplorar{
+    grid-area: button1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% auto 12%;
+    gap: 0px;
+    grid-template-areas:    "gap0"
+                            "button"
+                            "gap1";
+}
+.Botao{
+    grid-area: button;
+    border-radius: 25px;
+    background-color: white;
+}
+.Botao > span{
+    font-family: "Medium";
+    color: #ED6A5A;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    /* https://stackoverflow.com/questions/15649244/responsive-font-size-in-css */
+    font-size: calc(5vw + 1vmin);
+}
+.container > div:nth-child(1) {
+    grid-area:header-start / header-start/ esconderCorFundoHeader-end / esconderCorFundoHeader-end;
+    background-image: url("/media/images/ondaoriginal.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-color: #7cbbb8;
+    display:grid;
+    grid-template-rows: 15% 1fr;
+    grid-template-columns: 9.6% 18.13% auto 18.13% auto 18.13% auto 18.13% 9.6%;
+    gap:0px;
+    grid-template-areas:    "blankRow blankRow blankRow blankRow blankRow blankRow blankRow blankRow blankRow"
+                            "blank0 spacee gap0 space1 gap1 space2 gap2 space3 blank1"
+}
+
+.slogan{
+    grid-area: spacee-start/spacee-start/space3-end/space3-end;
+    display: grid;
+    grid-template-rows: 29% 30% auto;
+    row-gap: 0;
+    grid-template-columns: 15% auto 15%;
+    column-gap: 0;
+    grid-template-areas:    "edge barra1 edge1"
+                            "gap1 barra2 gap2"
+                            "edge2 barra3 edge3";
+}
+.slogan1{
+    font-family: "Medium";
+    grid-area: barra2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-size: calc(4vw + 1vmin);
+}
+.PandaMia{
+    grid-area: blank0-start/gap0-start/blank0-end/gap2-end;
+    display: grid;
+    grid-template-rows: 32% 68%;
+    row-gap: 0;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    grid-template-areas:    "logo"
+                            "blanklogo";
+}
+.PandaMia1 {
+    grid-area: logo;
+}
+.PandaMia1 > span{
+    font-family: "Cooper Black";
+    color: #F4F1BB;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 8.5vw;
+    justify-content: center;
+} 
+.spacee{
+    grid-area:spacee;
+    display: grid;
+    grid-template-rows: 4% 4% 4%;
+    row-gap: 8.50%;
+    grid-template-columns: 6.61% 51.49% 6.61%;
+    column-gap: 0;
+    grid-template-areas:    "edge barra1 edge1"
+                            "barra2 barra2 barra2"
+                            "edge2 barra3 edge3";
+}
+
+.barra1{
+    grid-area: barra1;
+    border-radius: 25px;
+    background-color: white;
+}
+.barra2{
+    grid-area: barra2;
+    border-radius: 25px;
+    background-color: white;
+}
+.barra3{
+    grid-area: barra3;
+    border-radius: 25px;
+    background-color: white;
+}
+@media (max-height:265px){
+    .container > div:nth-child(1) {
+        background-repeat: repeat;
+    }
+}
+.container > div:nth-child(2) {
+    z-index: 2;
+    grid-area:esconderCorFundoHeader-start/esconderCorFundoHeader-start/main-end/main-end;
+    background-color:   #5CA4A9;
+}
+.panda{
+    transform: translate3d(0vw,100vh, 0);
+    grid-area: pandaStart-start / pandaStart-start / footer-end / footer-end;
+    background-image:url("/media/images/Pandamia_mobile.svg");
+    background-position: left;
+    background-position-x: 140px;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    animation: pandaMia_Mobile 0.7s cubic-bezier(.55,.94,.56,1.06) 1s 1 forwards;
+}
+@keyframes pandaMia_Mobile {
+    0%{
+        transform:translate3d(0vw,100vh, 0);
+    }
+    30%{
+        opacity: 0;
+    }
+    100%{
+        transform:translate3d(0,0, 0);
+    }
+}  
+.footer{
+    grid-area: pandaEnd-start/ pandaEnd-start/ footer-end/ footer-end;
+    display: grid;
+    grid-template-columns: 39.21% 5.06% 55.73%;
+    grid-template-rows: 52.3% 30.2% 17.5%;
+    gap: 0px;
+    grid-template-areas:    "footer1 footer2 footer3"
+                            "footer4 footer2 footer3"
+                            "footer4 footer2 footer5";
+}
+.footer1{
+    grid-area: footer1;
+}
+.footer2{
+    grid-area: footer2;
+}
+.footer3{
+    grid-area: footer3;
+}
+.footer4{
+    z-index: 2;
+    grid-area: footer4;
+}
+.footer5{
+    z-index: 2;
+    grid-area: footer5;
+}
+.yellowTriangle{
+    height: 100%;
+    width: 100%;
+    background-image: url("/media/images/triangulo.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+    animation: triangulo 1s cubic-bezier(.52,.32,.16,1.01) 1;
+}
+@keyframes triangulo {
+    0% {
+        background-position-y: 1000px;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        background-position-y: bottom;
+        opacity: 1;
+    }
+}
+.Polygons{
+    height: 100%;
+    width: 100%;
+    background-image: url("/media/images/orange.svg"), url("/media/images/yellow.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: left;
+    animation: triangulo1 1s cubic-bezier(.52,.32,.16,1.01) 1;
+}
+@keyframes triangulo1 {
+    0% {
+        background-position-y: 1000px;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        background-position-y: bottom;
+        opacity: 1;
+    }
+}
