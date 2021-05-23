@@ -1,4 +1,4 @@
-.container {
+.container-fluid {
     font-family: 'Saira Condensed', sans-serif;
     color: #ED6A5A;
 }
@@ -134,11 +134,13 @@ h1 {
     border: none;
 }
 
-.covidImg {
+.img {
     position: relative;
     display: flex;
-    left: 340px;
-    top: -240px;
+    left: 380px;
+    top: -280px;
+    width: 250px;
+    height: 250px;
 }
 
 .rodapeImg {
@@ -150,15 +152,17 @@ h1 {
 .box1 {
     display: flex;
     position: relative;
-    top: -80px;
+    top: -180px;
+    left: 50px;
+
 
 }
 
 .box2 {
     display: flex;
     position: relative;
-    left: 200px;
-    top: -180px;
+    left: 280px;
+    top: -280px;
     width: 150px;
     height: 150px;
 
@@ -167,10 +171,29 @@ h1 {
 .box3 {
     display: flex;
     position: relative;
-    left: 380px;
-    top: -330px;
+    left: 470px;
+    top: -430px;
     width: 150px;
     height: 150px;
 
+
+}
+
+.card-deck {
+    display: flex;
+    border: none;
+}
+
+.card {
+    background-color: #ffca2a;
+    border: none;
+}
+
+.card-title {
+    transition: 0.3s;
+}
+
+.card-title:hover {
+    color: #ED6A5A;
 
 }

@@ -12,6 +12,7 @@
   <style>
       body{
           background-color: #f4f1bb;
+          color: #76777b;
       }
       .container{
           color: #76777b;
@@ -22,49 +23,57 @@
         color: #ed6a5a;
         font-family: "Cooper Black";
     }
-      
+    .card{
+      background-color: #f4f1bb;
+      border: none;
+    }
+    
+     
   </style>
 </head>
-
 <body>
-<div class="container">
-    <h1 class="display-10">O que é uma PandaMia?</h1>
-    <div class="txtPandaMia">
-        <p class="text-left">
-            PandaMia é um site criado remetendo a pandemia, face a situação que estamos a viver neste momento para um público alvo as crianças, com o objetivo de
-            te informar sobre esta doença que se está a espalhar pelo mundo, provocada pelo novo coronavírus .
-            Apenas as crianças dos 8 as 12 anos em concreto podem usufruir desta aplicação que tem como objetivos disponibilizar informações úteis sobre a COVID,
-            fomentar a curiosidade sobre o tema, através de conteúdo interativo e jogos dinâmicos e especificar os subtemas: principais fontes de contagio, cuidados
-            de higienização, de proteção e de distanciamento e conhecimento geral do tema .
-        </p>
-    </div>
-    <div class="box">
-        <img src="/panda/Projeto_POO_PandaMia/media/images/missao.png" width="100px" height="100px" class="img-fluid" alt="Imagem responsiva">
-    </div>
-    <div class="txt">
-        <h3>Nossa Missão <span class="corDiferente">PandaMia</span></h3>
-        <p id="paragrafo1">
-            Incentivando, Motivando, Inspirando aos mais pequenos <br> 
-            como a combater com o vírus, <br>
-            Ensinar as maneiras corretas de prevenção do vírus e ajudar <br>
-            as crianças a não ficarem aborrecidas com a situação que estamos <br>
-            a viver! <br>
-        </p>
-    </div>
-    <div class="visao">
-        <img src="/panda/Projeto_POO_PandaMia/media/images/visao.svg" width="100px" height="100px" class="img-fluid" alt="Imagem responsiva">
-    </div>
-    <div class="txt2">
-        <h3 id="tituloF">Nossa Visão <span class="corDiferente">PandaMia</span></h3>
-        <p id="paragrafo2">
-            Ter uma aplicação onde as crianças tiram maior melhor proveito <br>
-            dela jogando, divertindo, obtendo informações e aprendendo coisas <br>
-            novas acerca do vírus e por último dar esperança que tudo volta ao normal <br>
-            em breve. <br>                          
-        </p>
+  <div class="container-fluid">
+    <h1 class="display-10">O que é PandaMia?</h1>
+    <div class="text-sm-left lh-base font-normal text-none text-decoration-none text-reset">
+      PandaMia é um site criado remetendo a pandemia, face a situação que estamos a viver neste momento para um público alvo as crianças, com o objetivo de
+      te informar sobre esta doença que se está a espalhar pelo mundo, provocada pelo novo coronavírus .
+      Apenas as crianças dos 8 as 12 anos em concreto podem usufruir desta aplicação que tem como objetivos disponibilizar informações úteis sobre a COVID,
+      fomentar a curiosidade sobre o tema, através de conteúdo interativo e jogos dinâmicos e especificar os subtemas: principais fontes de contagio, cuidados
+      de higienização, de proteção e de distanciamento e conhecimento geral do tema.
+    </div><br>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="/panda/Projeto_POO_PandaMia/media/images/missao.png"  width="50px" height="180px" class="card-img-top" alt="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Nossa Missão <span class="corDiferente">PandaMia</span></h5>
+            <p class="card-text">
+              Incentivando, Motivando, Inspirando aos mais pequenos <br> 
+              como a combater com o vírus, <br>
+              Ensinar as maneiras corretas de prevenção do vírus e ajudar <br>
+              as crianças a não ficarem aborrecidas com a situação que estamos <br>
+              a viver! <br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="/panda/Projeto_POO_PandaMia/media/images/visao.svg"  width="50px" height="180px" class="card-img-top" alt="..."" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Nossa Visão <span class="corDiferente">PandaMia</span></h5>
+            <p class="card-text">
+              Ter uma aplicação onde as crianças tiram maior e melhor proveito <br>
+              dela jogando, divertindo, obtendo informações e aprendendo coisas <br>
+              novas acerca do vírus e por último dar esperança que tudo volta ao normal <br>
+              em breve. <br>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <p>Deixe a tua opinião, é importante!</p>
-    <form class="row g-6 needs-validation" novalidate>
+    <form class="row g-1">
       <div class="col-md-4">
         <!-- <label for="validationCustom01" class="form-label">Nome</label> -->
         <input type="text" class="form-control" id="validationCustom01" placeholder="Name" required>
@@ -77,25 +86,42 @@
         <div class="form-group">
             <!-- <label for="exampleFormControlTextarea1">Escreva a sua mensagem!</label> -->
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Escreva a sua mensagem!"></textarea>
-          </div>
-      <div class="col-12 text-center">
-        <button class="btn btn-primary" type="submit" id="btnSubmeter">Submeter</button>
-      </div>
+          </div><br>
+          <div class="row">
+            <div class="col text-center">
+              <button class="btn btn-primary" type="submit" id="btnSubmeter">Submeter</button>
+            </div>
     </form>
-    <div class="covidImg">
-        <img src="/panda/Projeto_POO_PandaMia/media/images/covid2.png" class="img-fluid" width="800px" height="800px" alt="Imagem responsiva">
-    </div>
     
-    <div class="box1">
-      <img src="/panda/Projeto_POO_PandaMia/media/images/republica-portuguesa-saude.png" class="img-fluid"/>
+    <div class="row">
+      <div class="img">
+        <img src="/panda/Projeto_POO_PandaMia/media/images/covid2.png" class="img-responsive pull-left" alt="">
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="/panda/Projeto_POO_PandaMia/media/images/republica-portuguesa-saude.png"  width="50px" height="180px" class="card-img-top" alt="..." class="card-img-top" alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="/panda/Projeto_POO_PandaMia/media/images/covid-19_00-1.jpg"  width="50px" height="180px" class="card-img-top" alt="..." class="card-img-top" alt="...">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="/panda/Projeto_POO_PandaMia/media/images/dgs (1).svg"   class="card-img-top" alt="..." class="card-img-top" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="box2">
-      <img src="/panda/Projeto_POO_PandaMia/media/images/sns (1).svg" class="img-fluid"/>
-  </div>
-  <div class="box3">
-    <img src="/panda/Projeto_POO_PandaMia/media/images/dgs (1).svg" class="img-fluid"/>
-</div>
-
-</div>
 </body>
 </html>
+
+
+
+
