@@ -1,113 +1,1002 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <script src="/js/myScript.js"></script>
-    <link rel="stylesheet" href="../Projeto_POO_PandaMia/css/fonts.css">
-    <link rel="stylesheet" href="../Projeto_POO_PandaMia/css/myStyles.css">
-    <link rel="stylesheet" type="text/css" media="(min-width:1266px)" href="/css/min-width1366px.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/myStyles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <style>
-        @media (max-height:265px){
-            .container > div:nth-child(1) {
+        @media (max-width:265px) and (max-height:265px) {
+            .containercomputer{
+                display: none;
+            }
+            .texto > span{
+            font-size: 3.3vw;
+
+            }
+            .containermobile > div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginalsmartwatch.svg") ;
                 background-repeat: repeat;
             }
         }
-        @media screen and (max-width:281px) and (min-height:590px) {
+        @media (min-width:260px) and (min-height:300px){
+            .containercomputer{
+                display: none;
+            }
             .texto > span{
-            font-size: 10.2vw;
+            font-size: 5.3vw;
 
             }
             .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position: left;
-                background-position-x: 90px;
-                background-position-y: bottom;
-                background-repeat: no-repeat;
+                background-position: right -10px bottom;
             }
+
         }
-        @media screen and (min-width:281px) and (min-height:80px) {
+        @media (min-width:200px) and (min-height:300px) {
+            .containercomputer{
+                display: none;
+            }
             .texto > span{
-            font-size: 1vw;
+            font-size: 5.3vw;
 
             }
             .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position: left;
-                background-position-x: 220px;
-                background-position-y: bottom;
-                background-repeat: no-repeat;
+                background-position: right -30px bottom;
             }
-        } 
-        @media screen and (min-width:281px) and (min-height:414px) {
+
+        }
+        @media (min-width:280px) and (min-height:500px) {
+            .containercomputer{
+                display: none;
+            }
             .texto > span{
-            font-size: 6.5vw;
+            font-size: 6.3vw;
 
             }
             .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position: left;
-                background-position-x:170px;
-                background-position-y: bottom;
-                background-repeat: no-repeat;
+                background-position: right -50px bottom;
             }
-        } 
-        @media screen and (min-width:281px) and (min-height:500px) {
+
+        }
+        @media (min-width:280px) and (min-height:630px) {
+            .containercomputer{
+                display: none;
+            }
             .texto > span{
-            font-size: 7.8vw;
+            font-size: 6vw;
 
             }
             .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position: left;
-                background-position-x:175px;
-                background-position-y: bottom;
-                background-repeat: no-repeat;
+                background-position: right -70px bottom;
             }
-        } 
-        @media screen and (min-width:500px) and (min-height:80px) {
-            .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position: left;
-                background-position-x:315px;
-                background-position-y: bottom;
-                background-repeat: no-repeat;
-            }
-        } 
-        @media screen and (min-width:500px) and (min-height:768px) {
-            .texto > span{
-            font-size: 7vw;
 
+        }
+        @media screen and (min-width:281px) and (min-height:630px){
+            .containercomputer{
+                display: none;
             }
-            .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position: left;
-                background-position-x:275px;
-                background-position-y: bottom;
-                background-repeat: no-repeat;
-            }
-        } 
-        @media screen and (max-width:281px) and (min-height:630px){
             .texto > span{
-            font-size: 10.3vw;
+            font-size: 9vw;
 
             }
         }
-        @media (max-width:375px) and (max-height:812px){
+
+        @media (min-width:376px) and (min-height:376px){
+            .containercomputer{
+                display: none;
+            }
+            .texto > span{
+            font-size: 6vw;
+
+            }
+        }
+        @media (min-width:376px) and (min-height:620px){
+            .containercomputer{
+                display: none;
+            }
+            .texto > span{
+            font-size: 8vw;
+
+            }
+        }
+        @media (min-width:540px){
+            .containercomputer{
+                display: none;
+            }
+            .PandaMia1 > span{
+                font-size: 7vw;
+            }
+            .texto > span{
+            font-size: 6vw;
+
+            }
+            .slogan1{
+                font-size: calc(3vw + 1vmin);
+            }
+        }
+
+        @media (min-width:576px) and (max-width:768px) and (max-height:1080px){
+            .containercomputer{
+                display: none;
+            }
+            .slogan1{
+                font-size: calc(3vw + 1vmin);
+            }
+            .barra1{
+                height: 13%;
+                width: 64%;
+            }
+            .barra2{
+                height: 13%;
+                width: 90%;
+            }
+            .barra3{
+                height: 13%;
+                width: 64%;
+            }
+            .PandaMia1 > span{
+                font-size: 7vw;
+            }
             .Polygons{
-            height: 100%;
-            width: 100%;
-            background-image: url("/media/images/orange.svg"), url("/media/images/yellow.svg");
-            background-repeat: no-repeat;
-            background-position-y: bottom;
+                background-image: url("/media/images/orange768.svg"), url("/media/images/yellow768.svg");
+            }
+            .yellowTriangle{
+                background-image: url("/media/images/triangulo768.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal768.svg");
+            }
+            .texto > span{
+            font-size: 5.9vw;
+            }
+            .panda{
+                background-image:url("/media/images/Pandamia_mobile.svg");
+                background-position:right -55px bottom;
+                background-repeat: no-repeat;
             }
         }
+        @media (min-width:800px) and (max-width:900px) and (max-height:350px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-2.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 40% 20% 40%;
+                grid-template-rows: 100% 60%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(0.7vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 2vw;
+            position:relative;
+            bottom: -10px;
+            }
+            .barra1{
+                height: 16%;
+                width: 34%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 34%;
+            }
+            .PandaMia1 > span{
+                font-size: 2.6vw;
+            }
+            .slogan1{
+                font-size: calc(1vw + 1vmin);
+            }
+        }
+        @media (min-width:900px) and (max-width:1200px) and (max-height:350px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-2.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 40% 20% 40%;
+                grid-template-rows: 100% 60%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(0.7vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 2vw;
+            position:relative;
+            bottom: -10px;
+            }
+            .barra1{
+                height: 16%;
+                width: 34%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 34%;
+            }
+            .PandaMia1 > span{
+                font-size: 2.1vw;
+            }
+            .slogan1{
+                font-size: calc(1vw + 1vmin);
+            }
+        }
+        @media (min-width:800px) and (max-width:1200px) and (min-height:350px) and (max-height:450px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-2.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 40% 20% 40%;
+                grid-template-rows: 100% 60%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(0.7vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 2vw;
+            position:relative;
+            bottom: -25px;
+            }
+            .barra1{
+                height: 16%;
+                width: 34%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 34%;
+            }
+            .PandaMia1 > span{
+                font-size: 2.6vw;
+            }
+            .slogan1{
+                font-size: calc(1vw + 1vmin);
+            } 
+        }
+        @media (min-width:800px) and (max-width:1200px) and (min-height:450px) and (max-height:600px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-2.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 35% 30% 35%;
+                grid-template-rows: 100% 70%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(1vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 2.5vw;
+            position:relative;
+            bottom: -40px;
+            }
+            .barra1{
+                height: 16%;
+                width: 34%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 34%;
+            }
+            .PandaMia1 > span{
+                font-size: 2.6vw;
+            }
+            .slogan1{
+                font-size: calc(1vw + 1vmin);
+            }
+        }
+        @media (min-width:800px) and (max-width:1200px) and (min-height:600px) and (max-height:740px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-2.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 30% 40% 30%;
+                grid-template-rows: 100% 70%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(1vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 3vw;
+            position:relative;
+            bottom: -50px;
+            }
+            .barra1{
+                height: 16%;
+                width: 34%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 34%;
+            }
+            .PandaMia1 > span{
+                font-size: 2.6vw;
+            }
+            .slogan1{
+                font-size: calc(1vw + 1vmin);
+            }
+        }
+        @media (min-width:800px) and (max-width:1200px) and (min-height:740px) and (max-height:850px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-1.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 26% 48% 26%;
+                grid-template-rows: 70% 70%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(1.5vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 3.5vw;
+            position:relative;
+            bottom: -40px;
+            }
+            .barra1{
+                height: 16%;
+                width: 35%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 35%;
+            }
+            .PandaMia1 > span{
+                font-size: 3.5vw;
+            }
+            .slogan1{
+                font-size: calc(1.2vw + 1vmin);
+            }
+        }
+        @media (min-width:800px) and (max-width:1200px) and (min-height:850px) and (max-height:1100px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-1.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 26% 48% 26%;
+                grid-template-rows: 70% 60%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(1.5vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 4vw;
+            position:relative;
+            bottom: -40px;
+            }
+            .barra1{
+                height: 16%;
+                width: 35%;
+            }
+            .barra2{
+                height: 16%;
+                width: 50%;
+            }
+            .barra3{
+                height: 16%;
+                width: 35%;
+            }
+            .PandaMia1 > span{
+                font-size: 5vw;
+            }
+            .slogan1{
+                font-size: calc(1.8vw + 1vmin);
+            }
+        }
+        @media (min-width:800px) and (max-width:1200px) and (min-height:1100px){
+            .containercomputer{
+                display: none;
+            }
+            .Polygons{
+                background-image:url("/media/images/poligono.svg");
+            }
+            .yellowTriangle{
+                background-image:url("/media/images/triangulopc.svg");
+            }
+            .containermobile> div:nth-child(1) {
+                background-image: url("/media/images/ondaoriginal1200-1.svg");
+            }
+            .btnExplorar{
+                grid-area: button1;
+                display: grid;
+                grid-template-columns: 20% 60% 20%;
+                grid-template-rows: 30% 60%;
+                gap: 0px;
+                grid-template-areas:    "gap0 gap0 gap0"
+                                        "gap1 button gap2";
+            }
+            .Botao > span{
+                font-size: calc(2vw + 1vmin);
+            }
+            .texto > span{
+            font-size: 4.5vw;
+            position:relative;
+            bottom: -40px;
+            }
+            .barra1{
+                height: 16%;
+                width: 45%;
+            }
+            .barra2{
+                height: 16%;
+                width: 70%;
+            }
+            .barra3{
+                height: 16%;
+                width: 45%;
+            }
+            .PandaMia1 > span{
+                font-size: 6vw;
+            }
+            .slogan1{
+                font-size: calc(2.3vw + 1vmin);
+            }
+        }
+
+
+
+
+        @media (min-width:1200px) and (max-width:1367px) and (max-height:650px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768-4-1-1.svg");
+            }
+            .pandapc{
+                background-position: right 50px bottom;
+            }
+        }
+        @media (min-width:1200px) and (max-width:1367px) and (min-height:650px) and (max-height:768px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768-4-1.svg");
+            }
+            .pandapc{
+                background-position: right 10px bottom;
+            }
+        }
+        @media (min-width:1367px) and (max-width:2181px) and (max-height:768px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc500-3.svg");
+            }
+            .pandapc{
+                background-position: right 40px bottom;
+            }
+        }
+        @media (min-width:2181px) and (max-width:3161px)  and (max-height:768px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc500-2.svg");
+            }
+            .pandapc{
+                background-position: right 100px bottom;
+            }
+        }
+        @media (min-width:3161px) and (max-width:4141px) and (max-height:768px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc500-1.svg");
+            }
+        }
+        @media (min-width:4141px)  and (max-height:768px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc500.svg");
+            }
+        }
+        @media (min-width:1200px) and (max-width:1367px) and (min-height:768px) and (max-height:1050px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768-4.svg");
+            }
+            .mainpc{
+                grid-template-rows: 15% 25% 40%;
+            }
+            .botaopc > div{
+                border-radius: 90px;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+            .pandapc{
+                background-position: right -20px bottom;
+                background-size: 30%;
+            }
+        }
+        @media (min-width:1367px) and (max-width:1921px) and (min-height:768px) and (max-height:925px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1050-4.svg");
+            }
+            .pandapc{
+                background-position: right -10px bottom;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+        }
+        @media (min-width:1367px) and (max-width:1921px) and (min-height:925px) and (max-height:1050px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1050-3.svg");
+            }
+            .pandapc{
+                background-position: right 150px bottom;
+                background-size: 26%;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+        }
+        @media (min-width:1921px) and (max-width:2181px) and (min-height:768px) and (max-height:1050px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768-3.svg");
+            }
+        }
+        @media (min-width:2181px) and (max-width:3161px) and (min-height:768px) and (max-height:1050px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768-2.svg");
+            }
+        }
+        @media (min-width:3161px) and (max-width:4141px) and (min-height:768px) and (max-height:1050px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768-1.svg");
+            }
+        }
+        @media (min-width:4141px) and (min-height:768px) and (max-height:1050px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc768.svg");
+            }
+        }
+        @media (min-width:1200px) and (max-width:2181px) and (min-height:1050px) and (max-height:1440px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1050-3.svg");
+            }
+            .pandapc{
+                background-position: right 0px bottom;
+                background-size: 31%;
+            }
+            .mainpc{
+                grid-template-rows: 8% 25% 40%;
+            }
+            .botaopc > div{
+                height: calc(100% - 60%) ;
+                width: calc(100% - 55%) ;
+                border-radius: 90px;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+        }
+        @media (min-width:2181px) and (max-width:3161px) and (min-height:1050px) and (max-height:1440px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1050-2.svg");
+            }
+        }
+        @media (min-width:3161px) and (max-width:4141px) and (min-height:1050px) and (max-height:1440px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1050-1.svg");
+            }
+        }
+        @media (min-width:4141px) and (min-height:1050px) and (max-height:1440px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1050.svg");
+            }
+        }
+        @media (min-width:1200px) and (max-width:2181px) and (min-height:1440px) and (max-height:2160px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1440-3.svg");
+            }
+            
+            .pandapc{
+                background-position: right 0px bottom;
+                background-size: 40%;
+            }
+            .mainpc{
+                grid-template-rows: 8% 25% 40%;
+            }
+            .botaopc > div{
+                height: calc(100% - 60%) ;
+                width: calc(100% - 55%) ;
+                border-radius: 90px;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+        }
+        @media (min-width:2181px) and (max-width:3161px) and (min-height:1440px) and (max-height:2160px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1440-2.svg");
+            }
+            .pandapc{
+                background-position: right -300px bottom;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+        }
+        @media (min-width:3161px) and (max-width:4141px) and (min-height:1440px) and (max-height:2160px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1440-1.svg");
+            }
+            .pandapc{
+                background-position: right 20px bottom;
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+        }
+        @media (min-width:4141px) and (min-height:1441px) and (max-height:2160px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc1440.svg");
+            }
+        }
+        @media (min-width:4141px) and (min-height:2160px) and (max-height:3000px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc2160.svg");
+            }
+            .pandapc{
+                background-position: right 200px bottom;
+
+            }
+        }
+        @media (min-width:1200px) and (max-width:2181px) and (min-height:2160px){ 
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc2160-3.svg");
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+            .botaopc{
+                z-index: 2;
+            }
+            .pandapc{
+                background-position: right 100px bottom;
+                background-size: 39%;
+            }
+        }
+        @media (min-width:2181px) and (max-width:3161px) and (min-height:2160px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc2160-2.svg");
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+            .botaopc{
+                z-index: 2;
+            }
+            .pandapc{
+                background-position: right 100px bottom;
+                background-size: 38%;
+            }
+        }
+        @media (min-width:3161px) and (max-width:4141px) and (min-height:2160px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc2160-1.svg");
+            }
+            .texto1pc{
+                z-index: 2;
+            }
+            .texto2pc{
+                z-index: 2;
+            }
+            .botaopc{
+                z-index: 2;
+            }
+            .pandapc{
+                background-position: right 300px bottom;
+                background-size: 30%;
+            }
+        }
+        @media (min-width:4141px) and (min-height:3000px){
+            .containermobile{
+                display: none;
+            }
+            .containercomputer{
+                display: grid;
+            }
+            .headerpc{
+                background-image: url("/media/images/ondapc2160.svg");
+            }
+            .pandapc{
+                background-position: right 300px bottom;
+                background-size: 30%;
+            }
+        }
+        
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="containermobile">
         <div class="header">
             <div class="PandaMia">
                 <div class="PandaMia1">
@@ -133,9 +1022,7 @@
                 <span>enquanto jogas!</span>
             </div>
             <div class="btnExplorar">
-                <div class="Botao">
-                    <span>EXPLORAR</span>
-                </div>
+                <!-- <a href="../index.html" style="color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">Página Inicial</a> -->
             </div>
         </div>
         <div class="panda"></div>
@@ -154,6 +1041,9 @@
     </div>
     <div class="containercomputer">
         <div class="headerpc">
+            <div class="menupc">
+                <img src="/media/images/menupc.svg" height="100%" alt="">
+            </div>
             <div class="sobre">
                 <span>Sobre</span>
             </div>
@@ -161,26 +1051,29 @@
                 <span>Info. útil</span>
             </div>
             <div class="pandamia">
-                <div class="pandamia1">
-                    <span>PandaMia</span>
-                </div>
+                <div class="pandamia1">PandaMia</div>
             </div>
-            <div class="link">
+            <div class="link" onclick="window.location.href='html/link.html';">
                 <span>Links úteis</span>
             </div>
             <div class="jogos">
                 <span>Jogos</span>
             </div>
+            <div class="search"></div>
         </div>
-        <div class="mainpc"></div>
+        <div class="mainpc">
+            <div class="texto1pc">A pandemia não tem de ser aborrecida.</div>
+            <div class="texto2pc">Aprende enquanto jogas!</div>
+            <div class="botaopc">
+                <a href="html/explorar.html" style="color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">EXPLORAR</a>
+            </div>
+        </div>
         <div class="footerpc">
-            <div class="Polygons"></div>
-            <div class="yellowTriangle"></div>
+            <div class="Polygons1"></div>
+            <div class="yellowTriangle1"></div>
         </div>
         <div class="pandapc"></div>
     </div>
     
 </body>
 </html>
-
-
