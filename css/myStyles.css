@@ -367,6 +367,7 @@ body{
     font-size: calc(100% + 2.5vw);
 }
 .menupc{
+    cursor: pointer;
     grid-area: menupc;
     margin-top: 3%;
     display: flex;
@@ -433,6 +434,14 @@ body{
     color: white;
     font-size: 2vw;
 }
+.demo:hover + #demoparent{
+    display:flex;
+    align-items:flex-start;
+}
+.demo{
+    cursor: pointer;
+    user-select: none;
+}
 .jogos{
     grid-area: jogos;
 }
@@ -443,6 +452,9 @@ body{
     justify-content: center;
     text-align: center;
     font-size: 2vw;
+}
+.demo:hover{
+    font-size: 1.5vw;
 }
 .pandapc{
     grid-area:headerpc-start/headerpc-start/footerpc-end/footerpc-end;
@@ -805,3 +817,73 @@ h1 {
 
 
 }
+
+
+/* ----------------------------Menu---------------------------- */
+.opcoesMenu{
+    z-index: 3;
+    width:20vw;
+    height: 100vh;
+    background-color: #FFCA2A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(-20vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
+.opcoesMenu.show {
+    transform: translate3d(0vw, 0, 0);
+}
+.menuSair{
+    z-index: 3;
+    width:100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(20vw, 0, 0);
+    transition: transform1 .3s cubic-bezier(0, .52, 0, 1);
+    display:none;
+}
+.menuSair.beep{
+    display: inherit;
+}
+
+.sidebar-nav{
+    padding:0;
+    list-style:none; 
+      transition:all .5s;
+      width:100%;
+      text-align:center;
+  }
+  #closeMenu{
+      cursor: pointer;
+      position: absolute;
+      right: 40px;
+      height: 100px;
+      width: 60px;
+      
+  }
+  .sidebar-nav:nth-child(2){ 
+    margin-top: 10px;
+    line-height:250px;  
+    width:100%;
+      transition:all .3s;
+      padding:0;
+  }
+
+  .sidebar-nav li:not(:first-child) {
+    line-height:60px;  
+    width:100%;
+    transition:all .3s;
+    padding:0;
+  }
+  .sidebar-nav li a {
+    font-family: "Medium";
+    font-size: 30px;
+    display:block;
+    text-decoration:none;
+    color:white;
+  }
+  
