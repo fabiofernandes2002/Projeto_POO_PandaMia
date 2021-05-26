@@ -413,6 +413,7 @@ body {
 }
 
 .menupc {
+    cursor: pointer;
     grid-area: menupc;
     margin-top: 3%;
     display: flex;
@@ -487,6 +488,16 @@ body {
     font-size: 2vw;
 }
 
+.demo:hover+#demoparent {
+    display: flex;
+    align-items: flex-start;
+}
+
+.demo {
+    cursor: pointer;
+    user-select: none;
+}
+
 .jogos {
     grid-area: jogos;
 }
@@ -498,6 +509,10 @@ body {
     justify-content: center;
     text-align: center;
     font-size: 2vw;
+}
+
+.demo:hover {
+    font-size: 1.5vw;
 }
 
 .pandapc {
