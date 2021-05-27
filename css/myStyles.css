@@ -1,0 +1,888 @@
+/* --------------------------index.html-------------------------------- */
+/* Para mobile */
+body{
+    margin:0;
+    padding:0;
+}
+
+.containermobile{
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+
+    display: grid;
+    background-color: #5CA4A9;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 4.95% 0.05% 10% 15% 3% 37% 20%;
+    gap: 0px;
+    grid-template-areas:    "header"
+                            "preMain"
+                            "esconderCorFundoHeader"
+                            "main"
+                            "pandaStart"
+                            "explorar"
+                            "pandaEnd"
+                            "footer";
+}
+.explorar{
+    z-index: 2;
+    grid-area: main-start/main-start/explorar-end/explorar-end;
+    display: grid;
+    grid-template-columns: 9.6% 18.13% auto 18.13% 9.6%;
+    grid-template-rows: 4% 66% 30%;
+    gap: 0px;
+    grid-template-areas:    "gap0 gapmain gapmain gapmain gap1"
+                            "gap2 text1 text1 text1 gap3"
+                            "gap4 button button1 button2 gap5";
+}
+.texto{
+    grid-area:text1;
+}
+.texto > span:nth-child(1){
+    font-family: "Medium";
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: center;
+}
+.texto > span:nth-child(2){
+    font-family: "Medium";
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.texto > span:nth-child(3){
+    font-family: "Medium";
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto > span{
+    font-size: 9vw;
+}
+.btnExplorar{
+    grid-area: button1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% auto 12%;
+    gap: 0px;
+    grid-template-areas:    "gap0"
+                            "button"
+                            "gap1";
+}
+.Botao{
+    grid-area: button;
+    border-radius: 25px;
+    background-color: white;
+}
+.Botao > span{
+    font-family: "Medium";
+    color: #ED6A5A;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    font-size: calc(5vw + 1vmin);
+}
+.containermobile> div:nth-child(1) {
+    grid-area:header-start / header-start/ esconderCorFundoHeader-end / esconderCorFundoHeader-end;
+    background-image: url("/media/images/ondaoriginal.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-color: #7cbbb8;
+    display:grid;
+    grid-template-rows: 15% 1fr;
+    grid-template-columns: 9.6% 18.13% auto 18.13% auto 18.13% auto 18.13% 9.6%;
+    gap:0px;
+    grid-template-areas:    "blankRow blankRow blankRow blankRow blankRow blankRow blankRow blankRow blankRow"
+                            "blank0 spacee gap0 space1 gap1 space2 gap2 space3 blank1"
+}
+
+.slogan{
+    grid-area: spacee-start/spacee-start/space3-end/space3-end;
+    display: grid;
+    grid-template-rows: 29% 30% auto;
+    row-gap: 0;
+    grid-template-columns: 15% auto 15%;
+    column-gap: 0;
+    grid-template-areas:    "edge barra1 edge1"
+                            "gap1 barra2 gap2"
+                            "edge2 barra3 edge3";
+}
+.slogan1{
+    font-family: "Medium";
+    grid-area: barra2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-size: calc(4vw + 1vmin);
+}
+.PandaMia{
+    grid-area: blank0-start/gap0-start/blank0-end/gap2-end;
+    display: grid;
+    grid-template-rows: 32% 68%;
+    row-gap: 0;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    grid-template-areas:    "logo"
+                            "blanklogo";
+}
+.PandaMia1 {
+    grid-area: logo;
+}
+.PandaMia1 > span{
+    font-family: "Cooper Black";
+    color: #F4F1BB;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    font-size: 8.5vw;
+    justify-content: center;
+} 
+.spacee{
+    grid-area:spacee;
+    display: flex;
+    height: 29%;
+    flex-direction: column;
+    width: 51.5%;
+    justify-content: space-between;
+}
+.barra1{
+    align-self:center;
+    border-radius: 25px;
+    background-color: white;
+    height: 12%;
+    width: 74%;
+}
+.barra2{
+    align-self:center;
+    border-radius: 25px;
+    background-color: white;
+    height: 12%;
+    width: 100%;
+}
+.barra3{
+    align-self:center;
+    border-radius: 25px;
+    background-color: white;
+    height: 12%;
+    width: 74%;
+}
+@media (max-height:265px){
+    .containermobile> div:nth-child(1) {
+        background-repeat: repeat;
+    }
+}
+.containermobile> div:nth-child(2) {
+    z-index: 2;
+    grid-area:esconderCorFundoHeader-start/esconderCorFundoHeader-start/main-end/main-end;
+    background-color:   #5CA4A9;
+}
+.panda{
+    grid-area: pandaStart-start / pandaStart-start / footer-end / footer-end;
+    background-image:url("/media/images/Pandamia_mobile.svg");
+    background-position: right -10px 500px;
+    background-repeat: no-repeat;
+    animation: pandaMia_Mobile 0.7s cubic-bezier(.55,.94,.56,1.06) 1s 1 forwards;
+}
+@keyframes pandaMia_Mobile {
+    0%{
+        background-position-y: 500px;
+    }
+    30%{
+        opacity: 0;
+    }
+    100%{
+        background-position-y: bottom;
+    }
+}  
+.footer{
+    grid-area: pandaEnd-start/ pandaEnd-start/ footer-end/ footer-end;
+    display: grid;
+    grid-template-columns: 39.21% 5.06% 55.73%;
+    grid-template-rows: 52.3% 30.2% 17.5%;
+    gap: 0px;
+    grid-template-areas:    "footer1 footer2 footer3"
+                            "footer4 footer2 footer3"
+                            "footer4 footer2 footer5";
+}
+.footer1{
+    grid-area: footer1;
+}
+.footer2{
+    grid-area: footer2;
+}
+.footer3{
+    grid-area: footer3;
+}
+.footer4{
+    z-index: 2;
+    grid-area: footer4;
+}
+.footer5{
+    z-index: 2;
+    grid-area: footer5;
+}
+.yellowTriangle{
+    height: 100%;
+    width: 100%;
+    background-image: url("/media/images/triangulo.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+    animation: triangulo 1s cubic-bezier(.52,.32,.16,1.01) 1;
+}
+@keyframes triangulo {
+    0% {
+        background-position-y: 1000px;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        background-position-y: bottom;
+        opacity: 1;
+    }
+}
+.Polygons{
+    height: 100%;
+    width: 100%;
+    background-image: url("/media/images/orange.svg"), url("/media/images/yellow.svg");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: left;
+    animation: triangulo1 1s cubic-bezier(.52,.32,.16,1.01) 1;
+}
+@keyframes triangulo1 {
+    0% {
+        background-position-y: 1000px;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        background-position-y: bottom;
+        opacity: 1;
+    }
+}
+/* Para computador */
+.containercomputer{
+    height: 100vh;
+    display: grid;
+    background-color: #5CA4A9;
+    grid-template-columns: 1fr;
+    grid-template-rows: 29% 40% 31% ;
+    gap: 0px;
+    grid-template-areas:    "headerpc"
+                            "mainpc"
+                            "footerpc";
+}
+.mainpc{
+    grid-area: mainpc;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 30% 20% 40%;
+    row-gap: 5%;
+    grid-template-areas:    "gap0 texto0 gap1"
+                            "gap0 texto1 gap1"
+                            "gap0 botaopc gap1" ;
+}
+.botaopc{
+    grid-area: botaopc;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.botaopc > div{
+    height: calc(100% - 60%) ;
+    width: calc(100% - 65%) ;
+    background-color:white;
+    border-radius: 30px;
+    font-family: "Medium";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ED6A5A;
+    font-size: calc(100% + 1.5vh);
+    
+}
+.texto1pc{
+    grid-area: texto0;
+    font-family: "Medium";
+    color: white;
+    font-size: calc(100% + 1.5vw);
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    text-align: center;
+}
+.texto2pc{
+    grid-area: texto1;
+    font-family: "Medium";
+    color: white;
+    font-size: calc(100% + 1.5vw);
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    text-align: center;
+}
+.headerpc{
+    z-index: 2;
+    grid-area:headerpc;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    display: grid;
+    grid-template-columns: 10% 8.5% 1% 8.5% 1% 8.5% 2.5% 20% 2.5% 8.5% 1% 8.5% 1% 8.5% 10%;
+    grid-template-rows: 24% 6% 15% 5% 50% ;
+    gap: 0px;
+    grid-template-areas:    "blank blank blank blank blank blank blank blank blank blank blank blank blank blank blank"
+                            "blank1 blank1 blank1 blank1 blank1 blank1 blank1 blank2 blank3 blank3 blank3 blank3 blank3 blank3 blank3"
+                            "headergap menupc gap1 sobre gap2 info gap3 pandamia gap4 link gap5 jogos gap6 search headergap1"
+                            "blank6 blank6 blank6 blank6 blank6 blank6 blank6 blank7 blank8 blank8 blank8 blank8 blank8 blank9 blank10"
+                            "blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank5 blank11";
+}   
+.pandamia{
+    grid-area: blank2-start/blank2-start/blank7-end/blank7-end; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.pandamia1{
+    font-family: "Cooper Black";
+    /* https://stackoverflow.com/questions/12231354/how-can-i-make-text-stand-on-top-of-a-div */
+    color: #F4F1BB;
+    text-align: center;
+    font-size: calc(100% + 2.5vw);
+}
+.menupc{
+    cursor: pointer;
+    grid-area: menupc;
+    margin-top: 3%;
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.search{
+    grid-area:search-start/search-start/blank5-end/blank5-end ;
+    background-image:url("/media/images/search.svg");
+    background-repeat: no-repeat;
+    background-size: calc(66% - 45%);
+    background-position: center  top;
+}
+.sobre{
+    grid-area: sobre;
+}
+.sobre > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+.info{
+    grid-area: info;
+}
+.info > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    font-size: 2vw;
+}
+.link{
+    grid-area: link;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start ; 
+    
+}
+.link > span{
+    
+    font-family: "Medium";
+    color: white;
+    font-size: 2vw;
+}
+.demo:hover + #demoparent{
+    display:flex;
+    align-items:flex-start;
+}
+.demo{
+    cursor: pointer;
+    user-select: none;
+}
+.jogos{
+    grid-area: jogos;
+}
+.jogos > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+.demo:hover{
+    font-size: 1.5vw;
+}
+.pandapc{
+    grid-area:headerpc-start/headerpc-start/footerpc-end/footerpc-end;
+    background-image:url("/media/images/pandapc.svg");
+    background-position: right 200px bottom;
+    background-repeat: no-repeat;
+}
+
+.footerpc{
+    grid-area:footerpc;
+    display: grid;
+    grid-template-columns: 27.45% auto 32%;
+    grid-template-rows: 21% 79%;
+    gap: 0px;
+    grid-template-areas:    "footer1 footer2 footer3"
+                            "footer4 footer5 footer6";
+}
+
+.Polygons1{
+    grid-area:footer1-start/footer1-start/footer4-end/footer4-end;
+    background-image:url("/media/images/poligono.svg");
+    background-position-x:left; 
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+
+.yellowTriangle1{
+    z-index:2;
+    grid-area:footer6;
+    background-image:url("/media/images/triangulopc.svg");
+    background-position-x:right; 
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+/* ---------------------------explorar.html---------------------------- */
+.containerAcesso{
+    height: 100vh;
+    display: grid;
+    background-color: #5CA4A9;
+    grid-template-columns: 1fr;
+    grid-template-rows: 29% 71%;
+    gap: 0px;
+    grid-template-areas:    "headerpc"
+                            "acesso";
+}
+.containerExplorar{
+    height: 100vh;
+    display: grid;
+    background-color: #F4F1BB;
+    grid-template-columns: 1fr;
+    grid-template-rows: 29% 71%;
+    gap: 0px;
+    grid-template-areas:    "headerpc"
+                            "acesso";
+}
+#containerExplorar{
+    grid-area: acesso;
+    background-color: #F4F1BB;
+}
+#acesso{
+    grid-area: acesso;
+    background-color: #5CA4A9;
+}
+.headerpcAcesso{
+    z-index: 2;
+    grid-area:headerpc;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    display: grid;
+    grid-template-columns: 10% 8.5% 1% 8.5% 1% 8.5% 2.5% 20% 2.5% 8.5% 1% 8.5% 1% 8.5% 10%;
+    grid-template-rows: 24% 6% 15% 5% 50% ;
+    gap: 0px;
+    grid-template-areas:    "blank blank blank blank blank blank blank blank blank blank blank blank blank blank blank"
+                            "blank1 blank1 blank1 blank1 blank1 blank1 blank1 blank2 blank3 blank3 blank3 blank3 blank3 blank3 blank3"
+                            "headergap menupc gap1 sobre gap2 info gap3 pandamia gap4 link gap5 jogos gap6 search headergap1"
+                            "blank6 blank6 blank6 blank6 blank6 blank6 blank6 blank7 blank8 blank8 blank8 blank8 blank8 blank9 blank10"
+                            "blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank4 blank5 blank11";
+}   
+#mensagemExplorar{
+    grid-area: blank4-start/blank4-start/blank11-end/blank11-end;
+}
+.pandamiaAcesso{
+    grid-area: blank2-start/blank2-start/blank7-end/blank7-end; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.pandamia1Acesso{
+    font-family: "Cooper Black";
+    /* https://stackoverflow.com/questions/12231354/how-can-i-make-text-stand-on-top-of-a-div */
+    color: #F4F1BB;
+    text-align: center;
+    font-size: calc(100% + 2.5vw);
+}
+.pandamiaExplorar{
+    grid-area: blank2-start/blank2-start/blank7-end/blank7-end; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.pandamia1Explorar{
+    font-family: "Cooper Black";
+    /* https://stackoverflow.com/questions/12231354/how-can-i-make-text-stand-on-top-of-a-div */
+    color: #FFCA2A;
+    text-align: center;
+    font-size: calc(100% + 2.5vw);
+}
+.menupcAcesso{
+    grid-area: menupc;
+    margin-top: 3%;
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.searchAcesso{
+    grid-area:search-start/search-start/blank5-end/blank5-end ;
+    background-image:url("/media/images/search.svg");
+    background-repeat: no-repeat;
+    background-size: calc(66% - 45%);
+    background-position: center  top;
+}
+.sobreAcesso{
+    grid-area: sobre;
+    /* position: relative; */
+}
+.sobreAcesso > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* position: absolute;
+    top: calc(5% - 25%);
+    left: 26%; */
+    font-size: 2vw;
+}
+.infoAcesso{
+    grid-area: info;
+}
+.infoAcesso > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    font-size: 2vw;
+}
+.linkAcesso{
+    grid-area: link;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start ; 
+    
+}
+.linkAcesso > span{
+    
+    font-family: "Medium";
+    color: white;
+    font-size: 2vw;
+}
+.jogosAcesso{
+    grid-area: jogos;
+}
+.jogosAcesso > span{
+    font-family: "Medium";
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vw;
+}
+/* -------------------------outros htrmls------------------------------- */
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+#border{
+         border-radius: 100px;
+         height: 100px; 
+         background-color: #7cbbb8;
+} 
+#btnRegister {
+    background-color: white;
+    color: #7cbbb8;
+    transition: 0.3s;
+    border: none;
+}
+
+#btnRegister:hover {
+    background-color: #7cbbb8;
+    color: white;
+}
+
+#btnEntrar {
+    background-color: white;
+    color: #7cbbb8;
+
+}
+
+.categoriasMinhaConta {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #7cbbb8;
+}
+
+#btnGuardar {
+    background-color: white;
+    color: #7cbbb8;
+
+}
+
+#btnAlterarFoto {
+    background-color: white;
+    color: #7cbbb8;
+
+}
+
+.paragrafo_password {
+    color: #ffffff;
+    text-align: center;
+}
+
+#btnEnviar {
+    background-color: white;
+    color: #7cbbb8;
+}
+
+.imgFacebook {
+    position: relative;
+    display: flex;
+}
+
+.imgGoogle {
+    position: relative;
+    display: flex;
+    float: left;
+    left: 10px;
+}
+
+.txtPandaMia {
+    text-indent: 35px;
+    color: #ffffff;
+}
+
+
+.conteudoMissao {
+    position: relative;
+    display: flex;
+    top: 0px;
+
+}
+
+.conteudoVisao {
+    position: relative;
+    display: flex;
+    left: 400px;
+    top: -125px;
+}
+
+.txtMissao {
+    position: relative;
+    display: flex;
+    top: 20px;
+}
+
+.visao {
+    position: relative;
+    display: flex;
+    left: 340px;
+    top: -240px;
+}
+
+#paragrafo1 {
+    font-size: 12px;
+    color: #76777b;
+}
+
+#paragrafo2 {
+    font-size: 12px;
+    color: #76777b;
+    position: relative;
+    display: flex;
+    left: 340px;
+    top: -240px;
+}
+
+#tituloF {
+    position: relative;
+    display: flex;
+    left: 340px;
+    top: -240px;
+}
+
+#btnSubmeter {
+    background-color: white;
+    color: #7cbbb8;
+    border: none;
+}
+
+.covidImg {
+    position: relative;
+    display: flex;
+    left: 340px;
+    top: -240px;
+}
+
+.rodapeImg {
+    display: inline-block;
+    width: 100px;
+
+}
+
+.box1 {
+    display: flex;
+    position: relative;
+    top: -80px;
+
+}
+
+.box2 {
+    display: flex;
+    position: relative;
+    left: 200px;
+    top: -180px;
+    width: 150px;
+    height: 150px;
+
+}
+
+.box3 {
+    display: flex;
+    position: relative;
+    left: 380px;
+    top: -330px;
+    width: 150px;
+    height: 150px;
+
+
+}
+
+
+/* ----------------------------Menu---------------------------- */
+.opcoesMenu{
+    z-index: 3;
+    width:20vw;
+    height: 100vh;
+    background-color: #FFCA2A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(-20vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
+.opcoesMenu.show {
+    transform: translate3d(0vw, 0, 0);
+}
+.menuSair{
+    z-index: 3;
+    width:100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(20vw, 0, 0);
+    transition: transform1 .3s cubic-bezier(0, .52, 0, 1);
+    display:none;
+}
+.menuSair.beep{
+    display: inherit;
+}
+
+.sidebar-nav{
+    padding:0;
+    list-style:none; 
+      transition:all .5s;
+      width:100%;
+      text-align:center;
+  }
+  #closeMenu{
+      cursor: pointer;
+      position: absolute;
+      right: 40px;
+      height: 100px;
+      width: 60px;
+      
+  }
+  .sidebar-nav:nth-child(2){ 
+    margin-top: 10px;
+    line-height:250px;  
+    width:100%;
+      transition:all .3s;
+      padding:0;
+  }
+
+  .sidebar-nav li:not(:first-child) {
+    line-height:60px;  
+    width:100%;
+    transition:all .3s;
+    padding:0;
+  }
+  .sidebar-nav li a {
+    font-family: "Medium";
+    font-size: 30px;
+    display:block;
+    text-decoration:none;
+    color:white;
+  }
