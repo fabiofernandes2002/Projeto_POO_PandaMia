@@ -1,7 +1,7 @@
 import navBarView from './views/navBarView.js'
-import adminView from './views/adminView.js'
-import userView from './views/userView.js'
-import gameView from './views/gameView.js'
+// import adminView from './views/adminView.js'
+// import userView from './views/userView.js'
+// import gameView from './views/gameView.js'
 
 class App {
     constructor() {
@@ -65,7 +65,7 @@ class App {
                 username: "Fábio",
                 nameSurname: "Fábio Fernandes",
                 email: "fabio@gmail.com",
-                password: "pass3",
+                password: "fernandes",
                 type: "admin",
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
@@ -77,9 +77,9 @@ class App {
         ];
 
         // Load the fixtures in case there is no data in the local storage 
-        if (!localStorage.games) {
-            localStorage.setItem('games', JSON.stringify(games));
-        }
+        // if (!localStorage.games) {
+            // localStorage.setItem('games', JSON.stringify(games));
+        // }
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }
