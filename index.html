@@ -12,1094 +12,110 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <style>
-        @media (max-width:265px) and (max-height:265px) {
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 3.3vw;
-
-            }
-            .containermobile > div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginalsmartwatch.svg") ;
-                background-repeat: repeat;
-            }
+        body{
+            background-color: #5ca4a9;
         }
-        @media (min-width:260px) and (min-height:300px){
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 5.3vw;
-
-            }
-            .panda{
-                background-position: right -10px bottom;
-            }
-
-        }
-        @media (min-width:200px) and (min-height:300px) {
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 5.3vw;
-
-            }
-            .panda{
-                background-position: right -30px bottom;
-            }
-
-        }
-        @media (min-width:280px) and (min-height:500px) {
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 6.3vw;
-
-            }
-            .panda{
-                background-position: right -50px bottom;
-            }
-
-        }
-        @media (min-width:280px) and (min-height:630px) {
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 6vw;
-
-            }
-            .panda{
-                background-position: right -70px bottom;
-            }
-
-        }
-        @media screen and (min-width:281px) and (min-height:630px){
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 9vw;
-
-            }
-        }
-
-        @media (min-width:376px) and (min-height:376px){
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 6vw;
-
-            }
-        }
-        @media (min-width:376px) and (min-height:620px){
-            .containercomputer{
-                display: none;
-            }
-            .texto > span{
-            font-size: 8vw;
-
-            }
-        }
-        @media (min-width:540px){
-            .containercomputer{
-                display: none;
-            }
-            .PandaMia1 > span{
-                font-size: 7vw;
-            }
-            .texto > span{
-            font-size: 6vw;
-
-            }
-            .slogan1{
-                font-size: calc(3vw + 1vmin);
-            }
-        }
-
-        @media (min-width:576px) and (max-width:768px) and (max-height:1080px){
-            .containercomputer{
-                display: none;
-            }
-            .slogan1{
-                font-size: calc(3vw + 1vmin);
-            }
-            .barra1{
-                height: 13%;
-                width: 64%;
-            }
-            .barra2{
-                height: 13%;
-                width: 90%;
-            }
-            .barra3{
-                height: 13%;
-                width: 64%;
-            }
-            .PandaMia1 > span{
-                font-size: 7vw;
-            }
-            .Polygons{
-                background-image: url("/media/images/orange768.svg"), url("/media/images/yellow768.svg");
-            }
-            .yellowTriangle{
-                background-image: url("/media/images/triangulo768.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal768.svg");
-            }
-            .texto > span{
-            font-size: 5.9vw;
-            }
-            .panda{
-                background-image:url("/media/images/Pandamia_mobile.svg");
-                background-position:right -55px bottom;
-                background-repeat: no-repeat;
-            }
-        }
-        @media (min-width:800px) and (max-width:900px) and (max-height:350px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-2.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 40% 20% 40%;
-                grid-template-rows: 100% 60%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(0.7vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 2vw;
-            position:relative;
-            bottom: -10px;
-            }
-            .barra1{
-                height: 16%;
-                width: 34%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 34%;
-            }
-            .PandaMia1 > span{
-                font-size: 2.6vw;
-            }
-            .slogan1{
-                font-size: calc(1vw + 1vmin);
-            }
-        }
-        @media (min-width:900px) and (max-width:1200px) and (max-height:350px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-2.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 40% 20% 40%;
-                grid-template-rows: 100% 60%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(0.7vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 2vw;
-            position:relative;
-            bottom: -10px;
-            }
-            .barra1{
-                height: 16%;
-                width: 34%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 34%;
-            }
-            .PandaMia1 > span{
-                font-size: 2.1vw;
-            }
-            .slogan1{
-                font-size: calc(1vw + 1vmin);
-            }
-        }
-        @media (min-width:800px) and (max-width:1200px) and (min-height:350px) and (max-height:450px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-2.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 40% 20% 40%;
-                grid-template-rows: 100% 60%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(0.7vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 2vw;
-            position:relative;
-            bottom: -25px;
-            }
-            .barra1{
-                height: 16%;
-                width: 34%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 34%;
-            }
-            .PandaMia1 > span{
-                font-size: 2.6vw;
-            }
-            .slogan1{
-                font-size: calc(1vw + 1vmin);
-            } 
-        }
-        @media (min-width:800px) and (max-width:1200px) and (min-height:450px) and (max-height:600px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-2.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 35% 30% 35%;
-                grid-template-rows: 100% 70%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(1vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 2.5vw;
-            position:relative;
-            bottom: -40px;
-            }
-            .barra1{
-                height: 16%;
-                width: 34%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 34%;
-            }
-            .PandaMia1 > span{
-                font-size: 2.6vw;
-            }
-            .slogan1{
-                font-size: calc(1vw + 1vmin);
-            }
-        }
-        @media (min-width:800px) and (max-width:1200px) and (min-height:600px) and (max-height:740px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-2.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 30% 40% 30%;
-                grid-template-rows: 100% 70%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(1vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 3vw;
-            position:relative;
-            bottom: -50px;
-            }
-            .barra1{
-                height: 16%;
-                width: 34%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 34%;
-            }
-            .PandaMia1 > span{
-                font-size: 2.6vw;
-            }
-            .slogan1{
-                font-size: calc(1vw + 1vmin);
-            }
-        }
-        @media (min-width:800px) and (max-width:1200px) and (min-height:740px) and (max-height:850px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-1.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 26% 48% 26%;
-                grid-template-rows: 70% 70%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(1.5vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 3.5vw;
-            position:relative;
-            bottom: -40px;
-            }
-            .barra1{
-                height: 16%;
-                width: 35%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 35%;
-            }
-            .PandaMia1 > span{
-                font-size: 3.5vw;
-            }
-            .slogan1{
-                font-size: calc(1.2vw + 1vmin);
-            }
-        }
-        @media (min-width:800px) and (max-width:1200px) and (min-height:850px) and (max-height:1100px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-1.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 26% 48% 26%;
-                grid-template-rows: 70% 60%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(1.5vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 4vw;
-            position:relative;
-            bottom: -40px;
-            }
-            .barra1{
-                height: 16%;
-                width: 35%;
-            }
-            .barra2{
-                height: 16%;
-                width: 50%;
-            }
-            .barra3{
-                height: 16%;
-                width: 35%;
-            }
-            .PandaMia1 > span{
-                font-size: 5vw;
-            }
-            .slogan1{
-                font-size: calc(1.8vw + 1vmin);
-            }
-        }
-        @media (min-width:800px) and (max-width:1200px) and (min-height:1100px){
-            .containercomputer{
-                display: none;
-            }
-            .Polygons{
-                background-image:url("/media/images/poligono.svg");
-            }
-            .yellowTriangle{
-                background-image:url("/media/images/triangulopc.svg");
-            }
-            .containermobile> div:nth-child(1) {
-                background-image: url("/media/images/ondaoriginal1200-1.svg");
-            }
-            .btnExplorar{
-                grid-area: button1;
-                display: grid;
-                grid-template-columns: 20% 60% 20%;
-                grid-template-rows: 30% 60%;
-                gap: 0px;
-                grid-template-areas:    "gap0 gap0 gap0"
-                                        "gap1 button gap2";
-            }
-            .Botao > span{
-                font-size: calc(2vw + 1vmin);
-            }
-            .texto > span{
-            font-size: 4.5vw;
-            position:relative;
-            bottom: -40px;
-            }
-            .barra1{
-                height: 16%;
-                width: 45%;
-            }
-            .barra2{
-                height: 16%;
-                width: 70%;
-            }
-            .barra3{
-                height: 16%;
-                width: 45%;
-            }
-            .PandaMia1 > span{
-                font-size: 6vw;
-            }
-            .slogan1{
-                font-size: calc(2.3vw + 1vmin);
-            }
-        }
-
-
-
-
-        @media (min-width:1200px) and (max-width:1367px) and (max-height:650px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768-4-1-1.svg");
-            }
-            .pandapc{
-                background-position: right 50px bottom;
-            }
-        }
-        @media (min-width:1200px) and (max-width:1367px) and (min-height:650px) and (max-height:768px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768-4-1.svg");
-            }
-            .pandapc{
-                background-position: right 10px bottom;
-            }
-        }
-        @media (min-width:1367px) and (max-width:2181px) and (max-height:768px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc500-3.svg");
-            }
-            .pandapc{
-                background-position: right 40px bottom;
-            }
-        }
-        @media (min-width:2181px) and (max-width:3161px)  and (max-height:768px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc500-2.svg");
-            }
-            .pandapc{
-                background-position: right 100px bottom;
-            }
-        }
-        @media (min-width:3161px) and (max-width:4141px) and (max-height:768px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc500-1.svg");
-            }
-        }
-        @media (min-width:4141px)  and (max-height:768px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc500.svg");
-            }
-        }
-        @media (min-width:1200px) and (max-width:1367px) and (min-height:768px) and (max-height:1050px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768-4.svg");
-            }
-            .mainpc{
-                grid-template-rows: 15% 25% 40%;
-            }
-            .botaopc > div{
-                border-radius: 90px;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-            .pandapc{
-                background-position: right -20px bottom;
-                background-size: 30%;
-            }
-        }
-        @media (min-width:1367px) and (max-width:1921px) and (min-height:768px) and (max-height:925px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1050-4.svg");
-            }
-            .pandapc{
-                background-position: right -10px bottom;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-        }
-        @media (min-width:1367px) and (max-width:1921px) and (min-height:925px) and (max-height:1050px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1050-3.svg");
-            }
-            .pandapc{
-                background-position: right 150px bottom;
-                background-size: 26%;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-        }
-        @media (min-width:1921px) and (max-width:2181px) and (min-height:768px) and (max-height:1050px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768-3.svg");
-            }
-        }
-        @media (min-width:2181px) and (max-width:3161px) and (min-height:768px) and (max-height:1050px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768-2.svg");
-            }
-        }
-        @media (min-width:3161px) and (max-width:4141px) and (min-height:768px) and (max-height:1050px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768-1.svg");
-            }
-        }
-        @media (min-width:4141px) and (min-height:768px) and (max-height:1050px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc768.svg");
-            }
-        }
-        @media (min-width:1200px) and (max-width:2181px) and (min-height:1050px) and (max-height:1440px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1050-3.svg");
-            }
-            .pandapc{
-                background-position: right 0px bottom;
-                background-size: 31%;
-            }
-            .mainpc{
-                grid-template-rows: 8% 25% 40%;
-            }
-            .botaopc > div{
-                height: calc(100% - 60%) ;
-                width: calc(100% - 55%) ;
-                border-radius: 90px;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-        }
-        @media (min-width:2181px) and (max-width:3161px) and (min-height:1050px) and (max-height:1440px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1050-2.svg");
-            }
-        }
-        @media (min-width:3161px) and (max-width:4141px) and (min-height:1050px) and (max-height:1440px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1050-1.svg");
-            }
-        }
-        @media (min-width:4141px) and (min-height:1050px) and (max-height:1440px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1050.svg");
-            }
-        }
-        @media (min-width:1200px) and (max-width:2181px) and (min-height:1440px) and (max-height:2160px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1440-3.svg");
-            }
-            
-            .pandapc{
-                background-position: right 0px bottom;
-                background-size: 40%;
-            }
-            .mainpc{
-                grid-template-rows: 8% 25% 40%;
-            }
-            .botaopc > div{
-                height: calc(100% - 60%) ;
-                width: calc(100% - 55%) ;
-                border-radius: 90px;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-        }
-        @media (min-width:2181px) and (max-width:3161px) and (min-height:1440px) and (max-height:2160px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1440-2.svg");
-            }
-            .pandapc{
-                background-position: right -300px bottom;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-        }
-        @media (min-width:3161px) and (max-width:4141px) and (min-height:1440px) and (max-height:2160px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1440-1.svg");
-            }
-            .pandapc{
-                background-position: right 20px bottom;
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-        }
-        @media (min-width:4141px) and (min-height:1441px) and (max-height:2160px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc1440.svg");
-            }
-        }
-        @media (min-width:4141px) and (min-height:2160px) and (max-height:3000px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc2160.svg");
-            }
-            .pandapc{
-                background-position: right 200px bottom;
-
-            }
-        }
-        @media (min-width:1200px) and (max-width:2181px) and (min-height:2160px){ 
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc2160-3.svg");
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-            .botaopc{
-                z-index: 2;
-            }
-            .pandapc{
-                background-position: right 100px bottom;
-                background-size: 39%;
-            }
-        }
-        @media (min-width:2181px) and (max-width:3161px) and (min-height:2160px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc2160-2.svg");
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-            .botaopc{
-                z-index: 2;
-            }
-            .pandapc{
-                background-position: right 100px bottom;
-                background-size: 38%;
-            }
-        }
-        @media (min-width:3161px) and (max-width:4141px) and (min-height:2160px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc2160-1.svg");
-            }
-            .texto1pc{
-                z-index: 2;
-            }
-            .texto2pc{
-                z-index: 2;
-            }
-            .botaopc{
-                z-index: 2;
-            }
-            .pandapc{
-                background-position: right 300px bottom;
-                background-size: 30%;
-            }
-        }
-        @media (min-width:4141px) and (min-height:3000px){
-            .containermobile{
-                display: none;
-            }
-            .containercomputer{
-                display: grid;
-            }
-            .headerpc{
-                background-image: url("/media/images/ondapc2160.svg");
-            }
-            .pandapc{
-                background-position: right 300px bottom;
-                background-size: 30%;
-            }
+        #navbar{
+            background-color: transparent;
+            height: 200px;
         }
         
-
+        #mensagem{
+            margin-top: 100px;
+        }
+        #botao{
+            margin-top: 50px;
+        }
+        .img-fluid{
+            z-index: -1;
+            position: absolute;
+        }
+        @media (max-width:1366px){
+            #navbar{
+            height: 150px;
+        }
+        }
     </style>
 </head>
 <body>
-    <div class="containermobile">
-        <div class="header">
-            <div class="PandaMia">
-                <div class="PandaMia1">
-                    <span>PandaMia</span>
-                </div>
+    <img src="media/images/ondapc.svg" class="img-fluid" alt="Responsive image">
+    <div class="container">
+        <div id="navbar" class="row row align-items-center mx-auto ">
+            <div class="col-1">
+                <nav class="navbar navbar-custom navbar-dark">
+                    <button class="navbar-toggler" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>  
             </div>
-            <div class="spacee">
-                <div class="barra1"></div>
-                <div class="barra2"></div>
-                <div class="barra3"></div>
+            <div class="col-1 text-center">
+                <a href="/html/sobre.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Sobre</span> </a>
             </div>
-            <div class="slogan">
-                <div class="slogan1">
-                    <span>A PandaMia explica a pandemia</span>
-                </div>
+            <div class="col-2 text-center">
+                <a href="/html/infoUtil.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Info. Útil</span> </a>
             </div>
-        </div>
-        <div class="main"></div>
-        <div class="explorar">
-            <div class="texto">
-                <span>A pandemia não tem de ser aborrecida.</span>
-                <span>Aprende</span>
-                <span>enquanto jogas!</span>
+            <div class="col-4 text-center ">
+                <h1 style="font-family: 'Cooper Black';font-size: calc(100% + 2vw); color: #f4f1bb;">PandaMia</h1>
             </div>
-            <div class="btnExplorar">
-                <!-- <a href="../index.html" style="color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">Página Inicial</a> -->
+            <div class="col-2 text-center">
+                <a href="/html/link.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Links Úteis</span> </a>
             </div>
-        </div>
-        <div class="panda"></div>
-        <div class="footer">
-            <div class="footer1"></div>
-            <div class="footer2"></div>
-            <div class="footer3"></div>
-            <div class="footer4">
-                <div class="Polygons"></div>
+            <div class="col-1 text-center">
+                <a href="#"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Jogos</span></a> 
             </div>
-            <div class="footer5">
-                <div class="yellowTriangle"></div>
+            <div class="col-1">
+                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
             </div>
         </div>
-        
-    </div>
-    <div class="containercomputer">
-        <div class="headerpc">
-            <div class="menupc">
-                <img src="/media/images/menupc.svg" height="100%" alt="">
-            </div>
-            <div id="demoparent" class="sobre"onclick="window.location.href='html/sobre.html';">
-                <span class="demo">Sobre</span>
-            </div>
-            <div  class="info" onclick="window.location.href='html/infoUtil.html';">
-                <span class="demo">Info. útil</span>
-            </div>
-            <div class="pandamia">
-                <div class="pandamia1">PandaMia</div>
-            </div>
-            <div id="demoparent" class="link" onclick="window.location.href='html/link.html';">
-                <span class="demo">Links úteis</span>
-            </div>
-            <div id="demoparent" class="jogos" onclick="window.location.href='#';">
-                <span class="demo">Jogos</span>
-            </div>
-            <div class="search"></div>
+        <div id="mensagem" class="row">
+                <h1 style="font-family: 'Medium';">A pandemia não tem de ser aborrecida!</h1>
+                <br>
+                <br>
+                <br>
+                <h1 style="font-family: 'Medium';">Aprende enquanto jogas!</h1>
         </div>
-        <div class="mainpc">
-            <div class="texto1pc">A pandemia não tem de ser aborrecida.</div>
-            <div class="texto2pc">Aprende enquanto jogas!</div>
+        <div id="botao" class="row">
             <div class="botaopc">
                 <a href="html/explorar.html" style="font-family:'Medium';color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">EXPLORAR</a>
             </div>
         </div>
-        <div class="footerpc">
-            <div class="Polygons1"></div>
-            <div class="yellowTriangle1"></div>
-        </div>
-        <div class="pandapc"></div>
     </div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <img src="media/images/Conjuntopc.svg" style="position:absolute;left: 0;bottom: 0;" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+        
+    </div>
+    
     <div class="opcoesMenu">
-            <svg onclick="hideMenu()" id="closeMenu" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.06 54">
-                <title>Close Button</title>
-                <line x1="1.86" y1="1.67" x2="47.2" y2="52.33" style="fill: none;stroke: #f4f1bb;stroke-miterlimit: 10;stroke-width: 5px"/>
-                <line x1="45.71" y1="1.96" x2="2.75" y2="51.44" style="fill: none;stroke: #f4f1bb;stroke-miterlimit: 10;stroke-width: 5px"/>
-            </svg>
-          
-            <ul class="sidebar-nav">
-                <li><a href="#">Registo / Login</a></li> <!-- Primeira opção do menu -->
-                <!-- Restantes opções -->
-                <li><a href="#">Top 10</a></li>  
-                <li><a href="#">Banco de dados</a></li>
-                <li><a href="#">Notificações</a></li>
-                <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
-            </ul>
-        <div class="menuSair"></div>
+        <svg onclick="hideMenu()" id="closeMenu" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.06 54">
+            <title>Close Button</title>
+            <line x1="1.86" y1="1.67" x2="47.2" y2="52.33" style="fill: none;stroke: #f4f1bb;stroke-miterlimit: 10;stroke-width: 5px"/>
+            <line x1="45.71" y1="1.96" x2="2.75" y2="51.44" style="fill: none;stroke: #f4f1bb;stroke-miterlimit: 10;stroke-width: 5px"/>
+        </svg>
+    
+        <ul class="sidebar-nav">
+            <li><a href="#">Registo / Login</a></li> <!-- Primeira opção do menu -->
+            <!-- Restantes opções -->
+            <li><a href="#">Top 10</a></li>  
+            <li><a href="#">Banco de dados</a></li>
+            <li><a href="#">Notificações</a></li>
+            <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
+        </ul>
+    <div class="menuSair"></div>
+    </div>
     </div>
     <script>
-        let menuHamburguer = document.querySelector(".menupc");
+        let menuHamburguer = document.querySelector(".navbar-toggler");
         menuHamburguer.addEventListener("click", showMenu, false);
-        
+
         let flyoutMenu = document.querySelector(".menuSair");
         flyoutMenu.addEventListener("click", hideMenu, false);
-        
+
 
         function showMenu(e) {
             document.querySelector(".opcoesMenu").classList.add("show"); 
@@ -1107,12 +123,14 @@
         }
 
         function hideMenu(e) {
+            document.querySelector(".menuSair").classList.remove("beep"); 
             document.querySelector(".opcoesMenu").classList.remove("show");
             e.stopPropagation();
-            document.querySelector(".menuSair").classList.remove("beep"); 
+            
         }
 
     </script>
+    
     <!-- REFERÊNCIA AO APP.JS -->
     <script type="module" src="/js/app.js"></script>
 </body>
