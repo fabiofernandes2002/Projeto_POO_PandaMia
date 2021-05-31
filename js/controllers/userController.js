@@ -14,11 +14,9 @@ export default class userController {
         }
     }
 
-    login(username, password) {
-        if (this.users.some(user => user.username === username || user.email === email )&& user.password === password) {
-            sessionStorage.setItem('loggedUser', username)
-            // Apresentação do nome do utilizador autenticado
-            document.querySelector("#loggedUser").innerHTML = `Olá <a href="#">${sessionStorage.getItem("loggedUser")}</a>`
+    login(email, password) {
+        if (this.users.some(user.email === email && user.password === password )) {
+            sessionStorage.setItem('loggedUser', email)
         } else {
             throw Error('Invalid login!');
         }
