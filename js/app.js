@@ -1,26 +1,22 @@
-import NavBarView from './views/NavBarView.js'
-import CatalogView from './views/CatalogView.js'
-import DetailBandView from './views/DetailBandView.js'
-import NewBandView from './views/NewBandView.js'
+import navBarView from './views/navBarView.js'
+import adminView from './views/adminView.js'
+import userView from './views/userView.js'
+import gameView from './views/gameView.js'
 
 class App {
     constructor() {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             '': [
-                NavBarView,
-                CatalogView
+                navBarView
             ],
             'index': [
-                NavBarView,
-                CatalogView
+                navBarView,
+               
             ],
-            'detailBand': [
-                DetailBandView
-            ],
-            'newBand': [
-                NewBandView
-            ]
+            "register": [navBarView],
+            "login": [navBarView]
+            
         };
 
         // importa dados dummy para testes
@@ -47,58 +43,42 @@ class App {
     }
 
     #importDataFixtures() {
-        const bands = [
-            {
-                id: 1,
-                name: 'Muse',
-                genre: 'Pop-Rock',
-                photo: 'http://www.planckmachine.com/wp-content/uploads/2016/09/hysteria-muse-meaning-song.jpg',
-                description: 'The best band ever',
-                video: 'https://www.youtube.com/watch?v=AR6A3dap6MI'
-            },
-            {
-                id: 2,
-                name: 'RadioHead',
-                genre: 'Pop-Rock',
-                photo: 'https://ep01.epimg.net/elpais/imagenes/2017/05/17/icon/1495017818_647155_1495125183_noticia_normal.jpg',
-                description: 'The best band ever',
-                video: 'https://www.youtube.com/watch?v=fHiGbolFFGw'
-            },
-            {
-                id: 3,
-                name: 'James',
-                genre: 'Pop-Rock',
-                photo: 'http://ksassets.timeincuk.net/wp/uploads/sites/55/2013/01/2012JamesBandPress181212-2.jpg',
-                description: 'The best band ever',
-                video: 'https://www.youtube.com/watch?v=BlucfrfxAUc'
-            },
-            {
-                id: 4,
-                name: 'Metallica',
-                genre: 'Metal',
-                photo: 'https://images.impresa.pt/blitz/2016-08-19-metallica.jpg/original/mw-860',
-                description: 'The best band ever',
-                video: 'https://www.youtube.com/watch?v=pZTJBViOoik'
-            }
-        ];
+        
 
         const users = [
             {
                 id: 1,
                 username: 'user1',
-                password: 'pass1'
+                email : "user1@gmail.com",
+                password: 'pass1',
+                type: "user"
             },
             {
                 id: 2,
-                username: 'user2',
-                password: 'pass2'
+                username: 'Tomás',
+                email: "tomas@gmail.com",
+                password: 'pass2',
+                type: "admin"
+            },
+            {
+                id: 3,
+                username: "Fábio",
+                nameSurname: "Fábio Fernandes",
+                email: "fabio@gmail.com",
+                password: "pass3",
+                type: "admin",
+                address: "Rua joão de Deus, Vila Nova de Gaia",
+                postalCode: "4400-182",
+                city: "Porto",
+                birthDate: "12-01-2002"
+
             }
 
         ];
 
         // Load the fixtures in case there is no data in the local storage 
         if (!localStorage.games) {
-            localStorage.setItem('bands', JSON.stringify(games));
+            localStorage.setItem('games', JSON.stringify(games));
         }
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));

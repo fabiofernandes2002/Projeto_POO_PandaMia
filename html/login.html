@@ -41,25 +41,26 @@
   </div>
 <div class="container-fluid">
     <h1 class="display-10">Login</h1>
-    <form class="row g-3 needs-validation" novalidate>
+    <form class="row g-3 needs-validation" id="formLogin">
       <div class="col-md-6">
         <label for="validationCustom01" class="form-label">Email/Nome de utilizador</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+        <input type="email" class="form-control" id="txtEmailUsernameLogin" value="Mark" required>
         <div class="valid-feedback">
           Looks good!
         </div>
       </div>
       <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Palavra-passe</label>
-        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+        <input type="password" class="form-control" id="txtPasswordLogin" value="Otto" required>
         <div class="valid-feedback">
           Looks good!
         </div>
+        <div id="loginMessage" class="mb-3"></div>
       </div>
       <a class="nav-link"  aria-disabled="false" href="esqueciDaPassword.html"><u>Esqueci-me da password!</u></a>
       <div class="row">
         <div class="col text-center">
-          <button class="btn btn-primary" type="submit" id="btnEntrar">Entrar</button>
+          <button class="btn btn-primary" type="submit" id="btnLogin">Entrar</button>
         </div>
       </div>
       <div class="loginFg">
@@ -67,10 +68,9 @@
         <div class="imgFacebook"><a href="www.google.com"><img src="../media/images/facebook.svg" class="media-object  img-responsive img-thumbnail" alt=""></a><div>
         <div class="imgGoogle"><a href="www.google.com"><img src="../media/images/google.svg" class="media-object  img-responsive img-thumbnail" alt=""></a></div>
       </div>
-      
-      
-      
-    </form>
+      </form>
 </div>
+<!-- REFERÊNCIA AO APP.JS -->
+<script type="module" src="../js/app.js"></script>
 </body>
 </html>

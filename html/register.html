@@ -42,55 +42,56 @@
   </div>
 <div class="container-fluid">
         <h1 class="display-10">Registo</h1>
-        <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation" id="formRegister">
           <div class="col-md-6">
             <!-- <label for="validationCustom01" class="form-label">Nome e Apelido</label> -->
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome e Apelido" required>
+            <input type="text" class="form-control" id="txtNameSurnameRegister" placeholder="Nome e Apelido" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
            <!--  <label for="validationCustom02" class="form-label">Nome de utilizador</label> -->
-            <input type="text" class="form-control" id="validationCustom02" placeholder="Nome de utilizador" required>
+            <input type="text" class="form-control" id="txtUsernameRegister" placeholder="Nome de utilizador" required>
           </div>
           <div class="col-md-6">
             <!-- <label for="validationCustomUsername" class="form-label">Morada</label> -->
-              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Morada" required>
+              <input type="text" class="form-control" id="txtAddress" aria-describedby="inputGroupPrepend" placeholder="Morada" required>
             </div>
           <div class="col-md-6">
             <!-- <label for="validationCustom03" class="form-label">Codigo Postal</label> -->
-            <input type="number" class="form-control" id="validationCustom03" placeholder="Código Postal" required>
+            <input type="number" class="form-control" id="txtPostalCode" placeholder="Código Postal" required>
           </div>
           <div class="col-md-6">
             <!-- <label for="validationCustom05" class="form-label">Cidade</label> -->
-            <input type="text" class="form-control" id="validationCustom05" placeholder="Cidade" required>
+            <input type="text" class="form-control" id="txtCity" placeholder="Cidade" required>
           </div>
           <div class="col-md-6">
             <!-- <label for="validationCustom05" class="form-label">Data de Nascimento</label> -->
-            <input type="date" class="form-control" id="validationCustom05" placeholder="Data de Nascimento" required>
+            <input type="date" class="form-control" id="txtBirthDate" placeholder="Data de Nascimento" required>
           </div>
           <label for="stlGenre" class="col-md-2">Género:</label>
           <div class="form-check col-md-2">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>F
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="txtFeminine" value="option1" checked>F
             <!-- <label class="form-check-label" for="inlineRadio1">F</label> -->
           </div>
           <div class="form-check col-md-2">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">M
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="txtMasculine" value="option2">M
             <!-- <label class="form-check-label" for="inlineRadio2">M</label> -->
           </div>
           <div class="col-md-6">
             <!-- <label for="validationCustom05" class="form-label">Email</label> -->
-            <input type="email" class="form-control" id="validationCustom05" placeholder="Email" required>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Email" required>
           </div>
           <div class="col-md-6">
             <!-- <label for="validationCustom05" class="form-label">Palavra-passe</label> -->
-            <input type="password" class="form-control" id="validationCustom05" placeholder="Palavra-passe" required>
+            <input type="password" class="form-control" id="txtPasswordRegister" placeholder="Palavra-passe" required>
           </div>
           <div class="col-md-6">
             <!-- <label for="validationCustom05" class="form-label">Confirmar palavra-passe</label> -->
-            <input type="password" class="form-control" id="validationCustom05" placeholder="Confirmar palavra-passe" required>
+            <input type="password" class="form-control" id="txtConfirmPasswordRegister" placeholder="Confirmar palavra-passe" required>
           </div>
+          <div id="registerMessage" class="mb-3"></div>
           <a class="nav-link"  aria-disabled="false" href="login.html"><u>Já tenho conta!</u></a>
           
           <div class="row">
@@ -100,5 +101,7 @@
           </div>
         </form>
 </div>
+<!-- REFERÊNCIA AO APP.JS -->
+<script type="module" src="../js/app.js"></script>
 </body>
 </html>
