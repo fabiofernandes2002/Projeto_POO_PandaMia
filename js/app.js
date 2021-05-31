@@ -7,10 +7,10 @@ class App {
     constructor() {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
-            '': [
+            "": [
                 navBarView
             ],
-            'index': [
+            "index": [
                 navBarView,
                
             ],
@@ -28,8 +28,8 @@ class App {
 
     #instantiateViews() {
         const path = window.location.pathname
-        const file = path.substr(path.lastIndexOf('/') + 1);
-        const route = file.split('.')[0];
+        const file = path.substr(path.lastIndexOf("/") + 1);
+        const route = file.split(".")[0];
 
         const views = this.#getViews(route);
 
@@ -48,17 +48,27 @@ class App {
         const users = [
             {
                 id: 1,
-                username: 'user1',
+                username: "user1",
+                nameSurname: "user1",
                 email : "user1@gmail.com",
-                password: 'pass1',
-                type: "user"
+                password: "pass1",
+                type: "user",
+                address: "Rua joão de Deus, Vila Nova de Gaia",
+                postalCode: "4400-182",
+                city: "Porto",
+                birthDate: "12-01-2002"
             },
             {
                 id: 2,
-                username: 'Tomás',
+                username: "Tomás",
+                nameSurname: "Tomás Borges",
                 email: "tomas@gmail.com",
-                password: 'pass2',
-                type: "admin"
+                password: "pass2",
+                type: "admin",
+                address: "Rua joão de Deus, Vila Nova de Gaia",
+                postalCode: "4400-182",
+                city: "Porto",
+                birthDate: "12-01-2002"
             },
             {
                 id: 3,
@@ -81,7 +91,7 @@ class App {
             // localStorage.setItem('games', JSON.stringify(games));
         // }
         if (!localStorage.users) {
-            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem("users", JSON.stringify(users));
         }
     }
 }

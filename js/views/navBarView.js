@@ -5,31 +5,31 @@ export default class navBarView {
         this.userController = new userController();
 
         // Gestão do form de login
-        this.formLogin = document.querySelector('#formLogin');
-        this.emailUsernameLogin = document.querySelector('#txtEmailUsernameLogin');
-        this.passwordLogin = document.querySelector('#txtPasswordLogin');
-        this.loginMessage = document.querySelector('#loginMessage')
+        this.formLogin = document.querySelector("#formLogin");
+        this.emailUsernameLogin = document.querySelector("#txtEmailUsernameLogin");
+        this.passwordLogin = document.querySelector("#txtPasswordLogin");
+        this.loginMessage = document.querySelector("#loginMessage")
         this.bindLoginForm()
 
 
         // Gestão do form de registo
-        this.formRegister = document.querySelector('#formRegister');
-        this.nameSurnameRegister = document.querySelector('#txtNameSurnameRegister');
-        this.usernameRegister = document.querySelector('#txtUsernameRegister');
-        this.address = document.querySelector('#txtAddress');
-        this.postalCode = document.querySelector('#txtPostalCode');
-        this.city = document.querySelector('#txtCity');
+        this.formRegister = document.querySelector("#formRegister");
+        this.nameSurnameRegister = document.querySelector("#txtNameSurnameRegister");
+        this.usernameRegister = document.querySelector("#txtUsernameRegister");
+        this.address = document.querySelector("#txtAddress");
+        this.postalCode = document.querySelector("#txtPostalCode");
+        this.city = document.querySelector("#txtCity");
         this.birthDate = document.querySelector("#txtBirthDate");
         this.email = document.querySelector("#txtEmail");
         this.passwordRegister = document.querySelector("#txtPasswordRegister");
         this.confirmPasswordRegister = document.querySelector("#txtConfirmPasswordRegister");
-        this.registerMessage = document.querySelector('#registerMessage')
+        this.registerMessage = document.querySelector("#registerMessage")
         this.bindFormRegister();
 
         // Gestão dos botões da navbar
-        this.loginButton = document.querySelector('#btnLogin');
-        this.registerButton = document.querySelector('#btnRegister');
-        this.logoutButton = document.querySelector('#btnLogout');
+        this.loginButton = document.querySelector("#btnLogin");
+        this.registerButton = document.querySelector("#btnRegister");
+        this.logoutButton = document.querySelector("#btnLogout");
         this.bindLogout();
 
 
@@ -41,19 +41,19 @@ export default class navBarView {
      * Função que define um listener para o botão de registo
      */
     bindFormRegister() {
-        this.formRegister.addEventListener('submit', event => {
+        this.formRegister.addEventListener("submit", event => {
             event.preventDefault();
             try {
                 if (this.passwordRegister.value !== this.confirmPasswordRegister.value) {
-                    throw Error('Password and Confirm Password are not equal');
+                    throw Error("Password and Confirm Password are not equal");
                 }
                 this.userController.register(this.nameSurnameRegister.value, this.usernameRegister.value, this.address.value, this.postalCode.value, this.birthDate.value, this.email.value, this.confirmPasswordRegister , this.city.value ,this.passwordRegister.value);
-                this.displayMessage('register', 'User registered with success!', 'success');
+                this.displayMessage("register", "User registered with success!", "success");
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => {location.href = "../login.html"}, 1000);
             } catch (err) {
-                this.displayMessage('register', err, 'danger');
+                this.displayMessage("register", err, "danger");
             }
         })
     }
@@ -62,16 +62,16 @@ export default class navBarView {
      * Função que define um listener para o botão de login
      */
     bindLoginForm() {
-        this.formLogin.addEventListener('submit', event => {
+        this.formLogin.addEventListener("submit", event => {
             event.preventDefault();
             try {
                 this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
-                this.displayMessage('login', 'User logged in with success!', 'success');
+                this.displayMessage("login", "User logged in with success!", "success");
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => {location.href = "../index.html"}, 1000);
             } catch (err) {
-                this.displayMessage('login', err, 'danger');
+                this.displayMessage("login", err, "danger");
             }
         });
 
@@ -81,7 +81,7 @@ export default class navBarView {
      * Função que define um listener para o botão de logout
      */
     bindLogout() {
-        this.logoutButton.addEventListener('click', () => {
+        this.logoutButton.addEventListener("click", () => {
             this.userController.logout();
             location.reload()
         })
@@ -92,13 +92,13 @@ export default class navBarView {
      */
     updateStatusUI() {
         if (this.userController.isLogged()) {
-            this.loginButton.style.visibility = 'hidden'
-            this.registerButton.style.visibility = 'hidden'
-            this.logoutButton.style.visibility = 'visible'
+            this.loginButton.style.visibility = "hidden"
+            this.registerButton.style.visibility = "hidden"
+            this.logoutButton.style.visibility = "visible"
         } else {
-            this.loginButton.style.visibility = 'visible'
-            this.registerButton.style.visibility = 'visible'
-            this.logoutButton.style.visibility = 'hidden'
+            this.loginButton.style.visibility = "visible"
+            this.registerButton.style.visibility = "visible"
+            this.logoutButton.style.visibility = "hidden"
         }
     }
 
@@ -110,6 +110,6 @@ export default class navBarView {
      */
     displayMessage(event, text, type) {
         const message = `<div class="alert alert-${type}" role="alert">${text}</div>`;
-        event == 'login' ? this.loginMessage.innerHTML = message : this.registerMessage.innerHTML = message
+        event == "login" ? this.loginMessage.innerHTML = message : this.registerMessage.innerHTML = message
     }
 }

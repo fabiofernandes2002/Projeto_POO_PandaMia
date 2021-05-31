@@ -16,22 +16,22 @@ export default class userController {
 
     login(email, password) {
         if (this.users.some(user.email === email && user.password === password )) {
-            sessionStorage.setItem('loggedUser', email)
+            sessionStorage.setItem("loggedUser", email)
         } else {
-            throw Error('Invalid login!');
+            throw Error("Invalid login!");
         }
     }
 
     logout() {
-        sessionStorage.removeItem('loggedUser')
+        sessionStorage.removeItem("loggedUser")
     }
 
     isLogged() {
-        return sessionStorage.getItem('loggedUser') ? true : false
+        return sessionStorage.getItem("loggedUser") ? true : false
     }
 
     isAdmin(){
-        const name = sessionStorage.getItem('loggedUser')
+        const name = sessionStorage.getItem("loggedUser")
         return this.users.some(user => user.username == name && user.type == "admin")
     }
 }
