@@ -1,5 +1,6 @@
 import navBarView from './views/navBarView.js';
 import AdminView from './views/adminView.js';
+import minhaContaView from './views/minhaContaView.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -9,16 +10,12 @@ class App {
     constructor() {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
-            "": [
-                navBarView
-            ],
+            "": [navBarView],
             "bancodedados": [AdminView],
-            "index": [
-                navBarView,
-               
-            ],
+            "index": [navBarView],
             "register": [navBarView],
-            "login": [navBarView]
+            "login": [navBarView],
+            "minhaConta":[minhaContaView]
             
         };
 
@@ -65,8 +62,8 @@ class App {
                 id: 2,
                 username: "user2",
                 nameSurname: "user2",
-                email : "user1@gmail.com",
-                password: "pass1",
+                email : "user2@gmail.com",
+                password: "pass2",
                 type: "user",
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
