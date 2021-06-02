@@ -11,18 +11,4 @@ export default class userModel {
         this.password = password
         this.type = type
     }
-
-    constructor(emailNew, passwordCurrent, passwordNew, repeatPasswordNew, ) {
-        this.emailNew = emailNew
-        this.passwordCurrent = passwordCurrent
-        this.passwordNew = passwordNew
-        this.repeatPasswordNew = repeatPasswordNew
-    }
-
-    constructor(usernameNew, addressNew, cityNew, postalCodeNew) {
-        this.usernameNew = usernameNew
-        this.addressNew = addressNew
-        this.cityNew = cityNew
-        this.postalCodeNew = postalCodeNew
-    }
 }

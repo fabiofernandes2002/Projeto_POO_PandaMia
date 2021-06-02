@@ -95,7 +95,7 @@
       <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Palavra-passe</label>
         <input type="password" class="form-control" id="txtPasswordLogin" value="Otto" required>
-        <input type="checkbox" onclick="myFunction()">ver password
+        <input type="checkbox" onclick="myFunction()">        ver password
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -104,7 +104,7 @@
       <a class="nav-link"  aria-disabled="false" href="esqueciDaPassword.html"><u>Esqueci-me da password!</u></a>
       <div class="row">
         <div class="col text-center">
-          <button class="btn btn-primary" type="submit" id="btnLogin">Entrar</button>
+          <button type="submit" id="btnLogin" style="border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">Entrar</button>
         </div>
       </div>
       <div class="loginFg">
@@ -122,10 +122,11 @@
   </svg>
 
   <ul class="sidebar-nav">
-      <li><a href="#">Registo / Login</a></li> <!-- Primeira opção do menu -->
-      <!-- Restantes opções -->
-      <li><a href="#">Top 10</a></li>  
-      <li><a href="#">Banco de dados</a></li>
+    <li><a href="register.html">Registo /</a> <a href="login.html">Login</a>
+    </li> <!-- Primeira opção do menu -->
+    <!-- Restantes opções -->
+    <li><a href="#">Top 10</a></li>  
+    <li><a href="bancodedados.html">Banco de dados</a></li>
       <li><a href="#">Notificações</a></li>
       <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
   </ul>

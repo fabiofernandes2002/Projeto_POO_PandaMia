@@ -259,7 +259,6 @@ h1 {
   .sidebar-nav li a {
     font-family: "Medium";
     font-size: 30px;
-    display:block;
     text-decoration:none;
     color:white;
   }
