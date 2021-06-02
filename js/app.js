@@ -11,7 +11,7 @@ class App {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             "": [navBarView],
-            "bancodedados": [AdminView],
+            "userAdmin": [AdminView],
             "index": [navBarView],
             "register": [navBarView],
             "login": [navBarView],

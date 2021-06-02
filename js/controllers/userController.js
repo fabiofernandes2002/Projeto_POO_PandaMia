@@ -34,4 +34,7 @@ export default class userController {
         const name = sessionStorage.getItem("loggedUser")
         return this.users.some(user => user.username == name && user.type == "admin")
     }
+    getUsers(){
+        return this.users
+    }
 }

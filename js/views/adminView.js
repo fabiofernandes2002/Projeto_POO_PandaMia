@@ -1,8 +1,12 @@
+import UserController from '../controllers/userController.js'
 export default class AdminView {
     constructor() {
-        this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+        this.userController = new UserController()
+        this.users = this.userController.getUsers()
+        console.log(this.users);
         this.tableChange = document.getElementById("tbody");
-        if(this.tableChange){
+        this.modalChange = document.getElementById("modalsUsers");
+        if(this.tableChange && this.modalChange){
             this.dataBase();
         }
     }
@@ -11,6 +15,7 @@ export default class AdminView {
 
     dataBase() {
         let infoUser = "";
+        let modalUser = "";
         for (const user of this.users){
             if(user.type !== "admin"){
                 infoUser += ` <tr>
@@ -27,7 +32,43 @@ export default class AdminView {
                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                 </svg></button></td>
                 </tr>`;
+
+                modalUser += ` 
+                <div class="modal fade" id="${user.username}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Alteração dos dados</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" value="${user.email}">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label>Senha</label>
+                        <input type="text" class="form-control" value="${user.password}">
+                        </div>
+                        <br>
+                        <label>Email</label>
+                        <input type="text" class="form-control" value="${user.email}">
+                        </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>`
                 this.tableChange.innerHTML = infoUser;
+                this.modalChange.innerHTML = modalUser;
             }   
         }
     }
