@@ -5,26 +5,32 @@ export default class navBarView {
         this.userController = new userController();
 
         // Gestão do form de login
-        this.formLogin = document.querySelector("#formLogin");
-        this.emailUsernameLogin = document.querySelector("#txtEmailUsernameLogin");
-        this.passwordLogin = document.querySelector("#txtPasswordLogin");
-        this.loginMessage = document.querySelector("#loginMessage")
-        this.bindLoginForm()
+        if (document.querySelector("#formLogin")) {
+            this.formLogin = document.querySelector("#formLogin");
+            this.emailUsernameLogin = document.querySelector("#txtEmailUsernameLogin");
+            this.passwordLogin = document.querySelector("#txtPasswordLogin");
+            this.loginMessage = document.querySelector("#loginMessage")
+            this.bindLoginForm()
+        }
+        
 
 
         // Gestão do form de registo
-        this.formRegister = document.querySelector("#formRegister");
-        this.nameSurnameRegister = document.querySelector("#txtNameSurnameRegister");
-        this.usernameRegister = document.querySelector("#txtUsernameRegister");
-        this.address = document.querySelector("#txtAddress");
-        this.postalCode = document.querySelector("#txtPostalCode");
-        this.city = document.querySelector("#txtCity");
-        this.birthDate = document.querySelector("#txtBirthDate");
-        this.email = document.querySelector("#txtEmail");
-        this.passwordRegister = document.querySelector("#txtPasswordRegister");
-        this.confirmPasswordRegister = document.querySelector("#txtConfirmPasswordRegister");
-        this.registerMessage = document.querySelector("#registerMessage")
-        this.bindFormRegister();
+        if (document.querySelector("#formRegister")) {
+            this.formRegister = document.querySelector("#formRegister");
+            this.nameSurnameRegister = document.querySelector("#txtNameSurnameRegister");
+            this.usernameRegister = document.querySelector("#txtUsernameRegister");
+            this.address = document.querySelector("#txtAddress");
+            this.postalCode = document.querySelector("#txtPostalCode");
+            this.city = document.querySelector("#txtCity");
+            this.birthDate = document.querySelector("#txtBirthDate");
+            this.email = document.querySelector("#txtEmail");
+            this.passwordRegister = document.querySelector("#txtPasswordRegister");
+            this.confirmPasswordRegister = document.querySelector("#txtConfirmPasswordRegister");
+            this.registerMessage = document.querySelector("#registerMessage")
+            this.bindFormRegister();
+        }
+        
 
         // Gestão dos botões da navbar
         this.loginButton = document.querySelector("#btnLogin");

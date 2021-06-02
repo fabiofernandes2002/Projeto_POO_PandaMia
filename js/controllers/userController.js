@@ -15,7 +15,7 @@ export default class userController {
     }
 
     login(email, password) {
-        if (this.users.some(user.email === email && user.password === password )) {
+        if (this.users.some(user => user.email === email && user.password === password )) {
             sessionStorage.setItem("loggedUser", email)
         } else {
             throw Error("Invalid login!");
