@@ -95,6 +95,7 @@
       <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Palavra-passe</label>
         <input type="password" class="form-control" id="txtPasswordLogin" value="Otto" required>
+        <input type="checkbox" onclick="myFunction()">ver password
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -149,6 +150,14 @@
       
   }
 
+  function myFunction() {
+  var x = document.getElementById("txtPasswordLogin");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 </script>
 <!-- REFERÊNCIA AO APP.JS -->
 <script type="module" src="../js/app.js"></script>
