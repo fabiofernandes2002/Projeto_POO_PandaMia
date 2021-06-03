@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+  <img src="../media/images/ondapc.svg" class="img-fluid" alt="Responsive image">
+  <div class="container">
+      <div id="navbar" class="row row align-items-center mx-auto ">
+          <div class="col-1">
+              <nav class="navbar navbar-custom navbar-dark">
+                  <button class="navbar-toggler" type="button">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+              </nav>  
+          </div>
+          <div class="col-1 text-center">
+            <a href="sobre.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Sobre</span> </a>
+        </div>
+        <div class="col-2 text-center">
+            <a href="infoUtil.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Info. Útil</span> </a>
+        </div>
+        <div class="col-4 text-center ">
+            <h1 style="font-family: 'Cooper Black';font-size: calc(100% + 2vw); color: #f4f1bb;">PandaMia</h1>
+        </div>
+        <div class="col-2 text-center">
+            <a href="link.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Links Úteis</span> </a>
+        </div>
+        <div class="col-1 text-center">
+            <a href="#"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Jogos</span></a> 
+        </div>
+          <div class="col-1">
+              <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+          </div>
+      </div>
+  </div>
+  <div id="conteudo" class="container-fluid">
+      <div id="botao" class="row align-items-center">
+          <div class="botaopc">
+              <a href="../index.html" style="font-family:'Medium';color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">Página Inicial</a>
+          </div>
+      </div>
+      <div id="tabela" class="row">
+          <table class="table table-striped table-dark">
+              <thead>
+                  <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Senha</th>
+                  <th scope="col">Email</th>
+                  <th scope="col"></th>
+                  </tr>
+              </thead>
+              <tbody id="tbody">
+                  
+              </tbody>
+          </table>
+      </div>
+  </div>
+  <div id="modalsUsers"></div>
+<script>
+    
+        function dataBase() {
+          this.tableChange = document.getElementById("tbody");
+          this.modalChange = document.getElementById("modalsUsers");
+          this.users = JSON.parse(window.localStorage.getItem('lol'));
+          let infoUser = "";
+          let modalUser = "";
+          for (const user of this.users){
+            if(user.type !== "admin"){
+                infoUser += ` <tr>
+                <th scope="row">${user.id}</th>
+                <td>${user.username}</td>
+                <td>${user.password}</td>
+                <td>${user.email}</td>
+                <td>
+                <button class="buttonForEdit" data-toggle="modal" data-target="#${user.username}" id="pencilButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg></button>
+                <button id="trashButton"><svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg></button></td>
+                </tr>`;
+
+                modalUser += ` 
+                <div class="modal fade modalUser" id="${user.username}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <i id="${user.username}"></i>
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Alteração dos dados</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <form class="form">
+                        <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control${user.id - 1}" value="${user.username}">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label>Senha</label>
+                        <input type="text" class="form-control${user.id - 1}" value="${user.password}">
+                        </div>
+                        <br>
+                        <label>Email</label>
+                        <input type="text" class="form-control${user.id - 1}" value="${user.email}">
+                        </div>
+                        <input class="btn btn-primary submitChange" type="button" value="Alterar">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>`
+                this.tableChange.innerHTML = infoUser;
+                this.modalChange.innerHTML = modalUser;
+                
+            }   
+        }
+        /* Adicionar atributos ids para cada botao de submit do form do respetivo user */
+        let submitChange = document.getElementsByClassName('submitChange')
+        for (let ids = 0; ids < submitChange.length; ids++) {
+                  submitChange[ids].setAttribute('id',ids+1)
+        }
+        let form = document.getElementsByClassName('form');
+        /* Não permitir que a página dê refresh depois de clicarmos no botao submit */
+        function makeItHappen(a){
+          let formControl= document.getElementsByClassName(`form-control${a}`);
+            users = JSON.parse(localStorage.getItem("lol"));
+            objIndex = users.findIndex((obj => obj.id == parseInt(document.getElementsByClassName('submitChange')[a].id)));
+            users[objIndex].username = formControl[0].value;
+            users[objIndex].password = formControl[1].value;
+            users[objIndex].email = formControl[2].value;
+            localStorage.setItem('lol', JSON.stringify(users));
+          };
+        
+        for (let a = 0; a < submitChange.length; a++) {
+          submitChange[a].addEventListener('click', function ok(){makeItHappen(a)});
+        }  
+      }
+    dataBase()
+</script>
+</body>
+</html>
