@@ -1,6 +1,9 @@
 body{
+    background-color: #5CA4A9;
     margin:0;
     padding:0;
+    font-family: 'Medium';
+    color: #ed6a5a;
 }
 .botaopc{
     display: flex;
@@ -262,3 +265,40 @@ h1 {
     text-decoration:none;
     color:white;
   }
+
+#navbar{
+    background-color: transparent;
+    height: 200px;
+}
+.img-fluid{
+    z-index: -1;
+    position: absolute;
+}
+
+#conteudo{
+margin-top:50px;
+margin-bottom: 10px;
+}
+#botao{
+height: 100px;
+margin-bottom: 30px;
+}
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+.card:hover{
+    cursor: pointer;
+}
+.row {
+    min-height: 100px;
+    margin-bottom: 30px;
+    color: white;
+}

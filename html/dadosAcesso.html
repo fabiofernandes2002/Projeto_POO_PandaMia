@@ -11,49 +11,15 @@
   <link rel="stylesheet" href="../css/fonts.css">
   <script src="../js/myScript.js"></script>
   <style>
-        .container {
-            font-family: 'Saira Condensed', sans-serif;
-            color: #ED6A5A;
-        }
-        body {
-          font-family: 'Medium';
-          background-color: #5CA4A9;
-        }
-        #navbar{
-            background-color: transparent;
-            height: 200px;
-        }
-    .img-fluid{
-            z-index: -1;
-            position: absolute;
-        }
     @media (max-width:1366px){
             #navbar{
             height: 150px;
         }
     }
-    #conteudo{
-      margin-top:50px;
-      margin-bottom: 10px;
-    }
-    #botao{
-      height: 100px;
-      margin-bottom: 30px;
-    }
-    a:link { text-decoration: none; }
-
-
-    a:visited { text-decoration: none; }
-
-
-    a:hover { text-decoration: none; }
-
-
-    a:active { text-decoration: none; }
   </style>
 </head>
 <body>
-  <img src="../media/images/ondapc.svg" class="img-fluid" alt="Responsive image">
+  <img src="../media/images/ondapc.svg" class="img-fluid" style="z-index: -1;position: absolute;" alt="Responsive image">
     <div class="container">
         <div id="navbar" class="row row align-items-center mx-auto ">
             <div class="col-1">
@@ -140,7 +106,7 @@
       </li> <!-- Primeira opção do menu -->
       <!-- Restantes opções -->
       <li><a href="#">Top 10</a></li>  
-      <li><a href="userAdmin.html">Banco de dados</a></li>
+      <li><a href="userAdmin.html">Gerir entidades</a></li>
       <li><a href="minhaConta.html">A minha conta</a></li>
         <li><a href="#">Notificações</a></li>
         <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
