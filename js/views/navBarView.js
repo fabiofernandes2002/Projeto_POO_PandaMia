@@ -41,6 +41,7 @@ export default class navBarView {
 
         // Atualiza botões tendo em conta se o user está autenticado ou não
         this.updateStatusUI();
+        this.updateAdmin();
     }
 
     /**
@@ -101,12 +102,26 @@ export default class navBarView {
             this.loginButton.style.visibility = "hidden"
             this.registerButton.style.visibility = "hidden"
             this.logoutButton.style.visibility = "visible"
+            this.minhaConta.html.visibility = "visible"
         } else {
             this.loginButton.style.visibility = "visible"
             this.registerButton.style.visibility = "visible"
             this.logoutButton.style.visibility = "hidden"
+            this.minhaConta.html.visibility = "hidden"
         }
     }
+
+    updateAdmin() { 
+        if (this.userController.isAdmin() ) {
+            this.userAdmin.html.style.visibility = "visible" 
+        } else {
+            this.userAdmin.html.style.visibility = "hidden"
+        }
+    } 
+        
+
+    
+    
 
     /**
      * Função que define e exibe uma mensagem de sucesso ou de erro

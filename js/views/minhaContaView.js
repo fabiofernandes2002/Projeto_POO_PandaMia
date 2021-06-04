@@ -22,8 +22,8 @@ export default class minhaContaView {
         this.formDataAccess.addEventListener("submit", event =>{
             event.preventDefault();
             try {
-                if (this.password) {
-                    
+                if (this.email === this.emailNew) {
+                    throw Error("O email antigo não pode ser alterado para o mesmo!")
                 } else {
                     
                 }
