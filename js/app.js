@@ -15,7 +15,8 @@ class App {
             "index": [navBarView],
             "register": [navBarView],
             "login": [navBarView],
-            "minhaConta":[minhaContaView]
+            "minhaConta":[minhaContaView],
+            "dadosAcesso":[minhaContaView]
             
         };
 

@@ -1,11 +1,12 @@
 export default class userModel {
-    constructor(nameSurname, id,username, city, postalCode, address, birthDate, email, password, type ) {
-        this.nameSurname = nameSurname
+    constructor(id, nameSurname,username, address , postalCode, city, birthDate, email, password, type ) {
+        
         this.id = id
+        this.nameSurname = nameSurname
         this.username = username
-        this.city = city
-        this.postalCode = postalCode
         this.address = address
+        this.postalCode = postalCode
+        this.city = city
         this.birthDate = birthDate
         this.email = email
         this.password = password
