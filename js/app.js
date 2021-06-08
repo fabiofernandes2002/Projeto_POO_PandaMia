@@ -73,6 +73,18 @@ class App {
             },
             {
                 id: 3,
+                username: "user3",
+                nameSurname: "user3",
+                email : "user3@gmail.com",
+                password: "pass3",
+                type: "user",
+                address: "Rua joão de Deus, Vila Nova de Gaia",
+                postalCode: "4400-182",
+                city: "Porto",
+                birthDate: "12-01-2002"
+            },
+            {
+                id: 4,
                 username: "Tomás",
                 nameSurname: "Tomás Borges",
                 email: "tomas@gmail.com",
@@ -84,7 +96,7 @@ class App {
                 birthDate: "12-01-2002"
             },
             {
-                id: 4,
+                id: 5,
                 username: "Fábio",
                 nameSurname: "Fábio Fernandes",
                 email: "fabio@gmail.com",
