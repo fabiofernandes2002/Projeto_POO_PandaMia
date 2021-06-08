@@ -34,8 +34,12 @@ export default class navBarView {
 
         // Gestão dos botões da navbar
         this.loginButton = document.querySelector("#btnLogin");
-        this.registerButton = document.querySelector("#btnRegister");
+        this.registerButton = document.querySelector("#btnRegiste");
         this.logoutButton = document.querySelector("#btnLogout");
+        this.manageEntities = document.querySelector("#manageEntities")
+        this.myAcount = document.querySelector("#myAcount")
+        this.notification = document.querySelector("#notification")
+        this.btnExplorar = document.querySelector("#btnExplorar")
         this.bindLogout();
 
 
@@ -58,7 +62,7 @@ export default class navBarView {
                 this.displayMessage("register", "User registered with success!", "success");
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => {location.href = "../login.html"}, 1000);
+                setTimeout(() => {location.href = "/html/login.html"}, 1000);
             } catch (err) {
                 this.displayMessage("register", err, "danger");
             }
@@ -102,20 +106,28 @@ export default class navBarView {
             this.loginButton.style.visibility = "hidden"
             this.registerButton.style.visibility = "hidden"
             this.logoutButton.style.visibility = "visible"
-            this.minhaConta.html.visibility = "visible"
+            this.myAcount.style.visibility = "visible"
+            this.btnExplorar.style.visibility = "hidden"
         } else {
             this.loginButton.style.visibility = "visible"
             this.registerButton.style.visibility = "visible"
             this.logoutButton.style.visibility = "hidden"
-            this.minhaConta.html.visibility = "hidden"
+            this.myAcount.style.visibility = "hidden"
+            
         }
     }
 
     updateAdmin() { 
         if (this.userController.isAdmin() ) {
-            this.userAdmin.html.style.visibility = "visible" 
+            this.manageEntities.style.visibility = "visible"
+            this.notification.style.visibility = "visible"
+            this.btnExplorar.style.visibility = "hidden"
+            this.myAcount.style.visibility = "hidden"
         } else {
-            this.userAdmin.html.style.visibility = "hidden"
+            this.manageEntities.style.visibility = "hidden"
+            this.notification.style.visibility = "hidden"
+            
+    
         }
     } 
         

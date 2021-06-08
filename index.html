@@ -71,7 +71,7 @@
                 <a href="/html/link.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Links Úteis</span> </a>
             </div>
             <div class="col-1 text-center">
-                <a href="#"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Jogos</span></a> 
+                <a href="/html/game.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Jogos</span></a> 
             </div>
             <div class="col-1">
                 <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -88,7 +88,7 @@
         </div>
         <div id="botao" class="row">
             <div class="botaopc">
-                <a href="html/explorar.html" style="font-family:'Medium';color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">EXPLORAR</a>
+                <a href="html/explorar.html" id="btnExplorar" style="visibility: visible;font-family:'Medium';color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">EXPLORAR</a>
             </div>
         </div>
     </div>
@@ -109,13 +109,13 @@
         </svg>
     
         <ul class="sidebar-nav">
-            <li><a href="/html/register.html" style="visibility: visible;" id="btnRegister">Registo /</a> <a href="/html/login.html" style="visibility: visible;" id="btnLogin">Login</a>
+            <li><a href="/html/register.html" style="visibility: visible;" id="btnRegiste">Registo /</a> <a href="/html/login.html" style="visibility: visible;" id="btnLogin">Login</a>
             </li> <!-- Primeira opção do menu -->
             <!-- Restantes opções -->
             <li><a href="#">Top 10</a></li>  
-            <li><a href="/html/userAdmin.html">Gerir entidades</a></li>
-            <li><a href="/html/minhaConta.html">A minha conta</a></li>
-            <li><a href="#">Notificações</a></li>
+            <li><a href="/html/userAdmin.html" id="manageEntities" style="visibility: hidden">Gerir entidades</a></li>
+            <li><a href="/html/minhaConta.html" id= "myAcount" style="visibility: hidden;">A minha conta</a></li>
+            <li><a href="#" id="notification" style="visibility: hidden;">Notificações</a></li>
             <li><button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button></li>
         </ul>
     <div class="menuSair"></div>

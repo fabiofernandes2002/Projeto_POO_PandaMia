@@ -15,21 +15,33 @@ export default class minhaContaView {
         this.btnSave = document.querySelector("#btnSave")
         this.dataAccessMessage = document.querySelector("#dataAccessMessage")
         this.bindFormDataAccess()
+        
 
     }
 
     bindFormDataAccess(){
-        this.formDataAccess.addEventListener("submit", event =>{
-            event.preventDefault();
-            try {
-                if (this.email === this.emailNew) {
-                    throw Error("O email antigo não pode ser alterado para o mesmo!")
-                } else {
-                    
-                }
-            } catch (error) {
-                
+        try {
+            if (this.passwordNew.value !== this.repeatPasswordNew.value) {
+                throw Error("Password and Confirm Password are not equal");
             }
-        })
+            this.userController.change(this.emailNew.value, this.passwordCurrent.value, this.passwordNew.value, this.repeatPasswordNew.value)
+            this.displayMessage("change", "Data access change with success!", "success");
+            // Espera 1 seg. antes de fazer refresh à pagina
+            // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+            setTimeout(() => {location.href = "../index.html"}, 1000);
+        } catch (err) {
+            this.displayMessage(err);
+        }
     }
+
+     /** 
+     * Função que define uma mensagem de erro 
+     */ 
+     displayMessage(text) { 
+        this.dataAccessMessage.innerHTML = text; 
+       } 
+       
+      
+    
 }
+
