@@ -48,7 +48,7 @@ export default class userController {
     getUsers(){
         return this.users
     }
-
+    
     // função que permite alterar dados de acesso
     change(emailNew, passwordCurrent ,passwordNew, repeatPasswordNew){
         if (emailNew == "" || passwordCurrent == "" || passwordNew == "" || repeatPasswordNew == "") {
@@ -69,8 +69,7 @@ export default class userController {
         }
 
     }
-    
-    getIdOfLastUser(){
+     getIdOfLastUser(){
         /* Juntar todos os ids num array */
         let arraySumIndex = []
         for(let i=1; i<Infinity; i++){
@@ -88,6 +87,4 @@ export default class userController {
         }
         return maxValue
         
-    }
-
-}
+    }}

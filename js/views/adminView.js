@@ -3,6 +3,7 @@ export default class AdminView {
     constructor() {
         this.userController = new UserController()
         this.users = this.userController.getUsers()
+        this.getIdOfLastUser = this.userController.getIdOfLastUser()
         console.log(this.users);
         this.tableChange = document.getElementById("tbody");
         this.modalChange = document.getElementById("modalsUsers");
@@ -88,7 +89,18 @@ export default class AdminView {
       };
     
       function makeItRemove(remove){
-        users.splice(users.findIndex((obj => obj.id == remove)),1);
+        let users = JSON.parse(localStorage.getItem("users"));
+        let indexOfIdToRemove = users.findIndex((obj => obj.id == remove));
+        for(let indexToBeChanged = 1; indexToBeChanged < Infinity; indexToBeChanged++ ){
+          try {
+            users[indexToBeChanged + indexOfIdToRemove].id
+          } catch (errorIdUndefined) {
+            break; 
+          }
+          users[indexToBeChanged + indexOfIdToRemove].id -=1
+          localStorage.setItem('users', JSON.stringify(users));
+        }
+        users.splice(indexOfIdToRemove,1);
         localStorage.setItem('users', JSON.stringify(users));
         location.reload();
         return false;
@@ -96,11 +108,12 @@ export default class AdminView {
       for (let a = 0; a < submitChange.length; a++) {
         submitChange[a].addEventListener('click', function submit(){makeItSubmit(a)});
       }  
-
-    for (let remove = 1; remove < this.userController.getIdOfLastUser() + 1 ; remove++) {
+    for (let remove = 1; remove < this.getIdOfLastUser ; remove++) {
       let removeButton = document.getElementById('trashButton' + (remove))
       if(removeButton == null){continue}
-      removeButton.addEventListener('click', function removeUser(){makeItRemove(remove)});
+      else{
+        removeButton.addEventListener('click', function removeUser(){makeItRemove(remove)});
+      }
     }  
   }
 }
