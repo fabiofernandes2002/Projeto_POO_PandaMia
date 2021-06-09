@@ -26,6 +26,11 @@ export default class userController {
         }
     }
 
+    getUserUsername(){
+        const email = sessionStorage.getItem("loggedUser")
+        
+        return this.users.find(user => user.email === email).username
+    }
 
     logout() {
         sessionStorage.removeItem("loggedUser")
@@ -62,10 +67,14 @@ export default class userController {
             alert("password mismatch");
         }
         else{
-            this.users.email = emailNew
-            this.users.password = passwordNew
+            const email = sessionStorage.getItem("loggedUser")
+            const loggedUser = this.users.find(user => user.email === email)
+            loggedUser.email = emailNew
+            loggedUser.password = passwordNew
+            //this.users.email = emailNew
+            //this.users.password = passwordNew
             localStorage.setItem('users', JSON.stringify(this.users)) 
-            sessionStorage.setItem('loggedUser', emailNew) 
+            sessionStorage.setItem('loggedUser', emailNew)
         }
 
     }

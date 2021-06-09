@@ -40,6 +40,7 @@ export default class navBarView {
         this.myAcount = document.querySelector("#myAcount")
         this.notification = document.querySelector("#notification")
         this.btnExplorar = document.querySelector("#btnExplorar")
+        this.userLoggedName = document.querySelector("#userLoggedName")
         this.bindLogout();
 
 
@@ -103,14 +104,16 @@ export default class navBarView {
      */
     updateStatusUI() {
         if (this.userController.isLogged()) {
-            this.loginButton.style.visibility = "hidden"
-            this.registerButton.style.visibility = "hidden"
+            //this.loginButton.style.visibility = "hidden"
+            //this.registerButton.style.visibility = "hidden"
+            this.userLoggedName.innerHTML = `<p id="username" style= "color:#FFFFFF; font-family:Medium; font-size: 30px;">Bem-Vindo ${this.userController.getUserUsername()}</p>`
             this.logoutButton.style.visibility = "visible"
             this.myAcount.style.visibility = "visible"
             this.btnExplorar.style.visibility = "hidden"
         } else {
-            this.loginButton.style.visibility = "visible"
-            this.registerButton.style.visibility = "visible"
+            //this.loginButton.style.visibility = "visible"
+            //this.registerButton.style.visibility = "visible"
+            this.userLoggedName.innerHTML = `<a href="/html/register.html" style="visibility: visible;" id="btnRegiste">Registo /</a> <a href="/html/login.html" style="visibility: visible;" id="btnLogin">Login</a>`
             this.logoutButton.style.visibility = "hidden"
             this.myAcount.style.visibility = "hidden"
             

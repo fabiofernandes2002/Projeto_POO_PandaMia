@@ -78,7 +78,7 @@
           <div class="card-group" style="visibility: hidden;">
             <div class="card mt-5 rounded" style="margin-right: 50px;margin-left: 200px;">
               <div class="card-body">
-                <h2 class="card-text text-center">QUIZ 1</h2>
+                <a href="quizzes.html"><h2 class="card-text text-center">QUIZ 1</h2></a>
                 <hr>
                 <h2 class="card-text text-center">QUIZ 2</h2>
                 <hr>
@@ -115,6 +115,10 @@
                 <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
             </ul>
           <div class="menuSair"></div>
+          <!-- Full screen modal -->
+          <div class="modal-dialog modal-fullscreen-sm-down" id="mdlQuiz1">
+            ...
+          </div>
           <script>
             let menuHamburguer = document.querySelector(".navbar-toggler");
             menuHamburguer.addEventListener("click", showMenu, false);

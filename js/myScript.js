@@ -11,7 +11,7 @@ let cardTwo=document.getElementById("card2")
         /* Apaga todos os nodes childs que estão dentro do elemento e */
     e.innerHTML=""
     e.innerHTML+=`<div class="card-body">
-    <h2 class="card-text text-center">QUIZ 1</h2>
+    <a href="quizzes.html"><h2 class="card-text text-center">QUIZ 1</h2></a>
     <hr>
     <h2 class="card-text text-center">QUIZ 2</h2>
     <hr>
