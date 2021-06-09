@@ -8,7 +8,6 @@ export default class AdminView {
         this.tableChange = document.getElementById("tbody");
         this.modalChange = document.getElementById("modalsUsers");
         this.modalBlockChange = document.getElementById("modalsBlockUsers");
-        this.blockLoginUser = this.userController.isBlocked()
         if(this.tableChange && this.modalChange && this.modalBlockChange){
             this.dataBase();
         }

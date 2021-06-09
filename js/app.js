@@ -176,6 +176,7 @@ class App {
             ]
         }
         ]
+        const blockedUsers = [];
         
         // Load the fixtures in case there is no data in the local storage 
         if (!localStorage.games) {
@@ -184,6 +185,10 @@ class App {
         
         if (!localStorage.users) {
             localStorage.setItem("users", JSON.stringify(users));
+        }
+
+        if (!localStorage.isBlocked) {
+            localStorage.setItem('isBlocked', JSON.stringify(blockedUsers));
         }
         
     }
