@@ -73,18 +73,37 @@ export default class navBarView {
      * Função que define um listener para o botão de login
      */
     bindLoginForm() {
-        this.formLogin.addEventListener("submit", event => {
-            event.preventDefault();
-            try {
-                this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
-                this.displayMessage("login", "User logged in with success!", "success");
-                // Espera 1 seg. antes de fazer refresh à pagina
-                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => {location.href = "../index.html"}, 1000);
-            } catch (err) {
-                this.displayMessage("login", err, "danger");
-            }
-        });
+        
+            this.formLogin.addEventListener("submit", event => {
+                event.preventDefault();
+                try {
+                    function check(){
+                        let arrayIsBlocked = JSON.parse(localStorage.getItem("isBlocked"))
+                        for(let indexBlockedUser = 0; indexBlockedUser < Infinity; indexBlockedUser++ ){
+                            if(arrayIsBlocked[indexBlockedUser] == null ){
+                                return "ok1";
+                            }else if(arrayIsBlocked[indexBlockedUser].email == document.querySelector("#txtEmailUsernameLogin").value && arrayIsBlocked[indexBlockedUser].password == document.querySelector("#txtPasswordLogin").value) {
+                                return "ok";
+                            }else{
+                                continue
+                            }
+                        }
+                    }
+                    if(check()== "ok1"){
+                    this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
+                    this.displayMessage("login", "User logged in with success!", "success");
+                    // Espera 1 seg. antes de fazer refresh à pagina
+                    // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+                    setTimeout(() => {location.href = "../index.html"}, 1000);
+                    }else{
+                        alert("Foste bloqueado!");
+                    }
+                } catch (err) {
+                    this.displayMessage("login", err, "danger");
+                }
+            });
+        
+        
 
     }
 

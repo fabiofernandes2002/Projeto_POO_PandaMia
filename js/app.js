@@ -110,78 +110,15 @@ class App {
             }
 
         ];
+        
 
-        const quizGames = [
-            {
-                id: "1",
-                name: "Quiz 1",
-                description: "Será que consegues acertar? Testa o seu conhecimento sobre a COVID-19!"
-            },
-            questions[
-                {
-                    title: "Qual é o tempo recomendado para lavar as mãos?",
-                    respostaCerta: "20 segundos",
-                    respostaErrada: "10 segundos",
-                    respostaErrada: "15 segundos"
-                },
-                {
-                    title: "De que forma se transmite o COVID-19?",
-                    respostaCerta: "Com superfícies, objetos e pessoas contaminadas",
-                    respostaErrada: "Desinfetando as mãos",
-                    respostaErrada: "Utilizando máscara nova"
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                },
-                {
-                    title: "",
-                    respostsCerta: "",
-                    respostaErrada: "",
-                    respostaErrada: ""
-                }
-            ]
-        ]
+        
 
-        // Load the fixtures in case there is no data in the local storage 
-        if (!localStorage.games) {
-            localStorage.setItem('quizGames', JSON.stringify(quizGames));
-        }
+        
         if (!localStorage.users) {
             localStorage.setItem("users", JSON.stringify(users));
         }
+        
     }
 }
 

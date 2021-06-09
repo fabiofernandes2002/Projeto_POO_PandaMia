@@ -24,6 +24,7 @@ export default class userController {
         } else {
             throw Error("Invalid login!");
         }
+        
     }
 
 
@@ -87,4 +88,5 @@ export default class userController {
         }
         return maxValue
         
-    }}
+    }
+}
