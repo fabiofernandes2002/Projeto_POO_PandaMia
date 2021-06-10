@@ -157,14 +157,14 @@
     </svg>
   
     <ul class="sidebar-nav">
-      <li><a href="register.html">Registo /</a> <a href="login.html">Login</a>
+      <li id="userLoggedName"><a href="/html/register.html" style="visibility: visible;" id="btnRegiste">Registo /</a> <a href="/html/login.html" style="visibility: visible;" id="btnLogin">Login</a>
       </li> <!-- Primeira opção do menu -->
       <!-- Restantes opções -->
       <li><a href="#">Top 10</a></li>  
-      <li><a href="userAdmin.html">Gerir entidades</a></li>
-      <li><a href="minhaConta.html">A minha conta</a></li>
-        <li><a href="#">Notificações</a></li>
-        <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
+      <li><a href="/html/userAdmin.html" id="manageEntities" style="visibility: hidden">Gerir entidades</a></li>
+      <li><a href="/html/minhaConta.html" id= "myAcount" style="visibility: hidden;">A minha conta</a></li>
+      <li><a href="#" id="notification" style="visibility: hidden;">Notificações</a></li>
+      <li><button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button></li>
     </ul>
   <div class="menuSair"></div>
   <script>
@@ -188,6 +188,8 @@
     }
   
   </script>
+  <!-- REFERÊNCIA AO APP.JS -->
+  <script type="module" src="../js/app.js"></script>
 </body>
 </html>
 

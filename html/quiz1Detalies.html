@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 1 Detalies</title>
+  <script src="../js/myScript.js"></script>
+  <link rel="stylesheet" href="../css/myStyles.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <style>
+    @media (max-width:1366px){
+        #navbar{
+        height: 150px;
+    }
+}
+
+  body{background-color: #f4f1bb; font-family: "Medium"; color: #ed6a5a;}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div id="navbar" class="row row align-items-center mx-auto justify-content-center ">
+            <div class="col-4 text-center ">
+                <h1 style="font-family: 'Cooper Black';font-size: calc(100% + 2vw); color: #ffca2a;">PandaMia</h1>
+            </div>
+            
+        </div>
+        <div class="col"></div>
+                <h2 style="font-family:'Medium';font-size:calc(100% + 1.3vw);color:#7cbbb8;text-align:center; position: relative;bottom: 60px;" id="quizName"></h2> 
+        </div>
+        <div class="col text-center" id="score">
+            <span id="userScore">Perguntas 0</span>
+            <span id="totalScore">/10</span><br>
+            <span id="rightAnswers">Respostas certas 0</span>
+        </div>
+        <div class="col text-center" id="questionsArea">
+            <div class="col md-6" id="questionText" style="padding: 15px; border-radius: 32px;margin-right: 300px;margin-left: 300px;margin-top: 10px; background-color: #7cbbb8; color: #F2F7FD;"></div>
+            <div class="options">
+                <div class="col md-3" id="options1" style="padding: 15px; border-radius: 32px;margin-right: 300px;margin-left: 300px;margin-top: 10px; background-color: #F2F7FD;"></div>
+                <div class="col md-3" id="options2" style="padding: 15px; border-radius: 32px;margin-right: 300px;margin-left: 300px;margin-top: 10px; background-color: #F2F7FD;"></div>
+                <div class="col md-3" id="options3" style="padding: 15px; border-radius: 32px;margin-right: 300px;margin-left: 300px;margin-top: 10px; background-color: #F2F7FD;"></div>
+            </div>
+        </div><br>
+        <div class="col text-center">
+            <button class="btn btn-next" id="next" style="padding: 15px; border-radius: 32px; background-color: #ffca2a;">Próximo</button>
+          </div>
+    </div>
+    <!-- REFERÊNCIA AO APP.JS -->
+  <script type="module" src="../js/app.js"></script>  
+</body>
+</html>
