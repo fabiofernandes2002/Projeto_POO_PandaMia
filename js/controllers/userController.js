@@ -59,13 +59,21 @@ export default class userController {
     change(emailNew, passwordCurrent ,passwordNew, repeatPasswordNew){
         if (emailNew == "" || passwordCurrent == "" || passwordNew == "" || repeatPasswordNew == "") {
             
-            alert('Please fill all the details');
+            throw `Please fill all the details`
+        }
+        else if(this.users.some(user => user.email === emailNew)){
+
+            throw `O email "${emailNew}" já existe!`
+        } 
+        else if(this.users.some(user => user.password != passwordCurrent)){
+
+            throw `Password não coincide com a atual`
         }
         else if (passwordCurrent == passwordNew) {
-            alert("Old password and New Password cannot be same");
+            throw `Old password and New Password cannot be same`
         }
         else if (passwordNew != repeatPasswordNew) {
-            alert("password mismatch");
+            throw `password mismatch`
         }
         else{
             const email = sessionStorage.getItem("loggedUser")

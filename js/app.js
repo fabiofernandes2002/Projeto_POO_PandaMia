@@ -1,6 +1,7 @@
 import navBarView from './views/navBarView.js';
 import AdminView from './views/adminView.js';
 import minhaContaView from './views/minhaContaView.js';
+import quizGamesView from './views/quizGamesView.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -11,12 +12,18 @@ class App {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             "": [navBarView],
-            "userAdmin": [AdminView],
+            "userAdmin": [AdminView, navBarView],
             "index": [navBarView],
+            "sobre": [navBarView],
+            "infoUtil": [navBarView],
+            "link":[navBarView],
             "register": [navBarView],
             "login": [navBarView],
-            "minhaConta":[minhaContaView],
-            "dadosAcesso":[minhaContaView]
+            "minhaConta":[minhaContaView,navBarView],
+            "dadosAcesso":[minhaContaView, navBarView],
+            "game": [quizGamesView, navBarView],
+            "quizzes":[quizGamesView],
+            "quiz1Detalies":[quizGamesView]
             
         };
 
@@ -120,57 +127,66 @@ class App {
             questions: [
                 {
                     title: "Qual é o tempo recomendado para lavar as mãos?",
-                    respostaCerta: "20 segundos",
-                    respostaErrada: "10 segundos",
-                    respostaErrada: "15 segundos"
+                    respostas:["20 segundos","15 segundos", "10 segundos"], 
+                    correta: 1
+                    
                 },
                 {
                     title: "De que forma se transmite o COVID-19?",
-                    respostaCerta: "Com superfícies, objetos e pessoas contaminadas",
-                    respostaErrada: "Desinfetando as mãos",
-                    respostaErrada: "Utilizando máscara nova"
+                    respostas:["Utilizando máscara nova","Com superfícies, objetos e pessoas contaminadas","Desinfetando as mãos"],
+                    correta: 2
                 },
                 {
                     title: "Durante quantas horas a utilização da mesma máscara descartável é segura?",
-                    respostaCerta: "4 horas",
-                    respostaErrada: "2 horas",
-                    respostaErrada: "8 horas"
+                    respostas: ["2 horas","8 horas","4 horas"],
+                    correta: 3
                 },
                 {
                     title: "Qual a distância recomendada para se permanecer perto de outras pessoas?",
-                    respostaCerta: "1,5 metros",
-                    respostaErrada: "1 metro",
-                    respostaErrada: "0,5 metro"
+                    respostas: ["1 metro","1,5 metros","0,5 metro"],
+                    correta: 2 
                 },
                 {
                     title: "Qual o período de incubação do vírus?",
-                    respostaCerta: "1 a 14 dias",
-                    respostaErrada: "1 a 20 dias",
-                    respostaErrada: " 1 a 7 dias"
+                    respostas: ["1 a 20 dias"," 1 a 7 dias","1 a 14 dias"],
+                    correta: 3 
                 },
                 {
                     title: "O que podes fazer durante o período de isolamento?",
-                    respostaCerta: "Utilizar a divisão da casa onde estás isolado",
-                    respostaErrada: "Sair de casa, estar a conviver com os amigos, estar junto com as outras pessoas da família",
-                    respostaErrada: "Ter visitas de amigos e familiares"
+                    respostas: [
+                        "Utilizar a divisão da casa onde estás isolado",
+                        "Sair de casa, estar a conviver com os amigos, estar junto com as outras pessoas da família",
+                        "Ter visitas de amigos e familiares"
+                    ],
+                    correta: 1 
                 },
                 {
                     title: "Que medidas devo tomar se tiver sintomas que possam estar associados a COVID-19?",
-                    respostaCerta: "Ligar para o número de telefone SNS 24 para evitar o contacto pessoal e obter informações mais concretas sobre como devo proceder",
-                    respostaErrada: "Ir imediatamente ao hospital, pois pode ser grave",
-                    respostaErrada: "Permanecer em casa sem qualquer avaliação médica"
+                    respostas: [
+                        "Ir imediatamente ao hospital, pois pode ser grave",
+                        "Ligar para o número de telefone SNS 24 para evitar o contacto pessoal e obter informações mais concretas sobre como devo proceder",
+                        "Permanecer em casa sem qualquer avaliação médica"
+                    ],
+                    correta: 2
                 },
                 {
                     title: "Qual a sequência correta de desinfeção das mãos?",
-                    respostaCerta: "Molhar as mãos; Aplicar sabão que cobre toda a superfície das mãos; Esfregar as palmas das mãos e entrelaçar os dedos; Esfregar os polegares, as costas das mãos e os pulsos;",
-                    respostaErrada: "Enxaguar as mãos com água; Secar com um toalhete descartável",
-                    respostaErrada: "Lavar as mãos só com água"
+                    respostas: [
+                        "Molhar as mãos; Aplicar sabão que cobre toda a superfície das mãos; Esfregar as palmas das mãos e entrelaçar os dedos; Esfregar os polegares, as costas das mãos e os pulsos;",
+                        "Enxaguar as mãos com água; Secar com um toalhete descartável",
+                        "Lavar as mãos só com água"
+                    ],
+                    correta: 1 
                 },
                 {
                     title: "Como se deve colocar a máscara?",
-                    respostaCerta: "Lavar as mãos com água e sabão ou desinfetar com álcool gel; Colocar a máscara na posição correta; Segurar a máscara pelos elásticos e adaptar à orelha; Ajustar justo ao nariz e queixo sem tocar na face da máscara",
-                    respostaErrada: "Lavar as mãos e depois colocar a máscara",
-                    respostaErrada: "Desinfetar as mãos com álcool gel; Segurar na face da máscara e depois pôr na posição correta"
+                    respostaCerta: [
+                        "Lavar as mãos e depois colocar a máscara",
+                        "Desinfetar as mãos com álcool gel; Segurar na face da máscara e depois pôr na posição correta",
+                        "Lavar as mãos com água e sabão ou desinfetar com álcool gel; Colocar a máscara na posição correta; Segurar a máscara pelos elásticos e adaptar à orelha; Ajustar justo ao nariz e queixo sem tocar na face da máscara"
+                    ],
+                    correta: 3 
+                     
                 }
             
             ]
@@ -179,7 +195,7 @@ class App {
         const blockedUsers = [];
         
         // Load the fixtures in case there is no data in the local storage 
-        if (!localStorage.games) {
+        if (!localStorage.quizGames) {
             localStorage.setItem('quizGames', JSON.stringify(quizGames));
         }
         
