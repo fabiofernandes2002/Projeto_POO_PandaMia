@@ -82,15 +82,15 @@ export default class navBarView {
                         let arrayIsBlocked = JSON.parse(localStorage.getItem("isBlocked"))
                         for(let indexBlockedUser = 0; indexBlockedUser < Infinity; indexBlockedUser++ ){
                             if(arrayIsBlocked[indexBlockedUser] == null ){
-                                return "ok1";
+                                return true;
                             }else if(arrayIsBlocked[indexBlockedUser].email == document.querySelector("#txtEmailUsernameLogin").value && arrayIsBlocked[indexBlockedUser].password == document.querySelector("#txtPasswordLogin").value) {
-                                return "ok";
+                                return false;
                             }else{
                                 continue
                             }
                         }
                     }
-                    if(check()== "ok1"){
+                    if(check()== true){
                     this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
                     this.displayMessage("login", "User logged in with success!", "success");
                     // Espera 1 seg. antes de fazer refresh à pagina
