@@ -2,8 +2,12 @@ import quizGamesModel from '../models/quizGamesModel.js'
 
 export default class quizGamesController{
     constructor() {
+<<<<<<< HEAD
         //this.quizGamesModel = new quizGamesModel
         // quizGames cont~em as questões!! 
+=======
+        this.quizGamesModel = new quizGamesModel()
+>>>>>>> 71c7a5014f13abe8a2398655871e711bb8b40515
         this.quizGames = localStorage.quizGames ? JSON.parse(localStorage.quizGames) : [];
         // isto não existe na sessionStorage!  É suposto que guardes algures na SessionStorage o quizGame? 
         // isso não acontece em lago algum, no código. 

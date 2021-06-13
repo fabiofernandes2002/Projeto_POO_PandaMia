@@ -74,35 +74,40 @@ export default class navBarView {
      * Função que define um listener para o botão de login
      */
     bindLoginForm() {
-        
-            this.formLogin.addEventListener("submit", event => {
-                event.preventDefault();
-                try {
-                    function check(){
-                        let arrayIsBlocked = JSON.parse(localStorage.getItem("isBlocked"))
-                        for(let indexBlockedUser = 0; indexBlockedUser < Infinity; indexBlockedUser++ ){
-                            if(arrayIsBlocked[indexBlockedUser] == null ){
-                                return "ok1";
-                            }else if(arrayIsBlocked[indexBlockedUser].email == document.querySelector("#txtEmailUsernameLogin").value && arrayIsBlocked[indexBlockedUser].password == document.querySelector("#txtPasswordLogin").value) {
-                                return "ok";
-                            }else{
-                                continue
-                            }
-                        }
-                    }
-                    if(check()== "ok1"){
-                    this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
-                    this.displayMessage("login", "User logged in with success!", "success");
-                    // Espera 1 seg. antes de fazer refresh à pagina
-                    // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                    setTimeout(() => {location.href = "../index.html"}, 1000);
+        function check(){
+                let arrayIsBlocked = JSON.parse(localStorage.getItem("blockedUsers"))
+
+                for(let indexBlockedUser = 0; indexBlockedUser < Infinity; indexBlockedUser++ ){
+                    if(arrayIsBlocked[indexBlockedUser] == null ){
+                        return true;
+                    }else if(arrayIsBlocked[indexBlockedUser].email == document.querySelector("#txtEmailUsernameLogin").value && arrayIsBlocked[indexBlockedUser].password == document.querySelector("#txtPasswordLogin").value) {
+                        return indexBlockedUser;
                     }else{
-                        alert("Foste bloqueado!");
+                        continue
                     }
-                } catch (err) {
-                    this.displayMessage("login", err, "danger");
                 }
-            });
+            }
+        this.formLogin.addEventListener("submit", event => {
+                event.preventDefault();
+                if(check()== true){
+                    try {
+                        this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
+                        this.displayMessage("login", "User logged in with success!", "success");
+                        // Espera 1 seg. antes de fazer refresh à pagina
+                        // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+                        setTimeout(() => {location.href = "../index.html"}, 1000);
+                    } catch (err) {
+                        this.displayMessage("login", err, "danger");
+                    }
+                
+                }else{
+                    let arrayIsBlocked = JSON.parse(localStorage.getItem("blockedUsers"))
+                    const motivoMessage = arrayIsBlocked[check()].motivo
+                    alert(`Foste bloqueado! Motivo: ${motivoMessage}`);
+                }
+                
+                
+        });
         
         
 
@@ -128,7 +133,12 @@ export default class navBarView {
             this.userLoggedName.innerHTML = `<p id="username" style= "color:#FFFFFF; font-family:Medium; font-size: 30px;">Bem-Vindo ${this.userController.getUserUsername()}</p>`
             this.logoutButton.style.visibility = "visible"
             this.myAcount.style.visibility = "visible"
+<<<<<<< HEAD
             //this.btnExplorar.style.visibility = "hidden"
+=======
+
+            /* this.btnExplorar.style.visibility = "hidden" */
+>>>>>>> 71c7a5014f13abe8a2398655871e711bb8b40515
         } else {
             //this.loginButton.style.visibility = "visible"
             //this.registerButton.style.visibility = "visible"
@@ -143,7 +153,11 @@ export default class navBarView {
         if (this.userController.isAdmin() ) {
             this.manageEntities.style.visibility = "visible"
             this.notification.style.visibility = "visible"
+<<<<<<< HEAD
             //this.btnExplorar.style.visibility = "hidden"
+=======
+           /*  this.btnExplorar.style.visibility = "hidden" */
+>>>>>>> 71c7a5014f13abe8a2398655871e711bb8b40515
             this.myAcount.style.visibility = "hidden"
         } else {
             this.manageEntities.style.visibility = "hidden"
