@@ -133,12 +133,8 @@ export default class navBarView {
             this.userLoggedName.innerHTML = `<p id="username" style= "color:#FFFFFF; font-family:Medium; font-size: 30px;">Bem-Vindo ${this.userController.getUserUsername()}</p>`
             this.logoutButton.style.visibility = "visible"
             this.myAcount.style.visibility = "visible"
-<<<<<<< HEAD
-            //this.btnExplorar.style.visibility = "hidden"
-=======
 
             /* this.btnExplorar.style.visibility = "hidden" */
->>>>>>> 71c7a5014f13abe8a2398655871e711bb8b40515
         } else {
             //this.loginButton.style.visibility = "visible"
             //this.registerButton.style.visibility = "visible"
@@ -153,11 +149,7 @@ export default class navBarView {
         if (this.userController.isAdmin() ) {
             this.manageEntities.style.visibility = "visible"
             this.notification.style.visibility = "visible"
-<<<<<<< HEAD
-            //this.btnExplorar.style.visibility = "hidden"
-=======
            /*  this.btnExplorar.style.visibility = "hidden" */
->>>>>>> 71c7a5014f13abe8a2398655871e711bb8b40515
             this.myAcount.style.visibility = "hidden"
         } else {
             this.manageEntities.style.visibility = "hidden"
