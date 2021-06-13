@@ -196,10 +196,25 @@ class App {
         const blockedUsers = [];
         const likeBlocker = [];
         const cardsLikeCount = [
-            {"1":0},
-            {"2":0},
-            {"3":0}
+            {1:0},
+            {2:0},
+            {3:0}
         ];
+        const modalsAndItsComments = [
+            {
+                modal:1,
+                1:"teste",
+                user1:"user1",
+                2:"teste",
+                user2:"user2"
+
+            },
+            {
+                modal:2,
+                1:"teste",
+                user1:"user1"},
+            {modal:3}
+        ]
         
         // Load the fixtures in case there is no data in the local storage 
         if (!localStorage.quizGames) {
@@ -220,6 +235,10 @@ class App {
 
         if (!localStorage.cardsLikeCount) {
             localStorage.setItem('cardsLikeCount', JSON.stringify(cardsLikeCount));
+        }
+
+        if (!localStorage.modalsAndItsComments) {
+            localStorage.setItem('modalsAndItsComments', JSON.stringify(modalsAndItsComments));
         }
 
         

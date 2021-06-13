@@ -6,6 +6,7 @@ export default class infoUtilView {
         this.getIdOfLastUser = this.userController.getIdOfLastUser();
         this.infoUtilThings = document.querySelector("#infoUtilThings")
         this.likesCount();
+        this.commentUser();
     }
     
     likesCount(){
@@ -24,7 +25,7 @@ export default class infoUtilView {
                         let arrayOfLikeBlocker = []
                         let objectOfLikeBlocker = {}
                         objectOfLikeBlocker.email = sessionStorage.getItem('loggedUser');
-                        // Na altura que escrevi este código só tinha colocado três cards com os botoes de dar like, neste momento estou a acrescentar opções de o adminstrador poder adicionar mais cards dentro do site e tenciono mostrar esse código ainda hoje
+                        // Neste momento só há 3 cards
                         objectOfLikeBlocker[1]="notLiked"
                         objectOfLikeBlocker[2]="notLiked"
                         objectOfLikeBlocker[3]="notLiked"
@@ -37,28 +38,48 @@ export default class infoUtilView {
                 
                 }else{
                     for(let i=0; i<7; i++){  
-                        // Se o likeBlocker já tiver objetos (ou seja, se, pelo menos, algum utilizador já meteu like em algum dos cards) então o for loop vai verificar se o email utilizador que acabou de meter like am algum dos cards já está armazenado no likeBlocker 
-                        if (likeBlocker[i].email == sessionStorage.getItem('loggedUser')) {
-                             //Se esse utilizador já deu like no card e voltou a clicar novamente no mesmo botao do like, então o programa irá assumir que ele quer remover o seu like
-                            if (likeBlocker[i][buttonsLike] == "liked") {
-                                likeBlocker[i][buttonsLike] ="notLiked"
-                                localStorage.setItem('likeBlocker', JSON.stringify(likeBlocker))
+                        //Se o index do array do likeBlocker não der undefined, ou seja, se encontrar um objeto dentro da array do likeBlocker
+                        if(likeBlocker[i] != null){
+                            //e a propriedade email desse objeto for igual ao email do utilizador que estiver logado
+                            if (likeBlocker[i].email == sessionStorage.getItem('loggedUser')) {
+                                //Se esse utilizador já deu like no card e voltou a clicar novamente no mesmo botao do like, então o programa irá assumir que ele quer remover o seu like
+                               if (likeBlocker[i][buttonsLike] == "liked") {
+                                   likeBlocker[i][buttonsLike] ="notLiked"
+                                   localStorage.setItem('likeBlocker', JSON.stringify(likeBlocker))
+   
+                                   cardsLikeCount[buttonsLike-1][buttonsLike] -= 1
+                                   localStorage.setItem("cardsLikeCount", JSON.stringify(cardsLikeCount))
+   
+                                   
+                               } else {
+                                   //Se o utilizador nunca deu like e está a clicar pela primeira vez, então o programa irá acrescenter o seu like 
+                                   likeBlocker[i][buttonsLike]="liked"
+                                   localStorage.setItem('likeBlocker', JSON.stringify(likeBlocker))
+   
+                                   cardsLikeCount[buttonsLike-1][buttonsLike] += 1
+                                   localStorage.setItem("cardsLikeCount", JSON.stringify(cardsLikeCount))
+                               }
+                               break
 
-                                cardsLikeCount[buttonsLike-1][buttonsLike] -= 1
-                                localStorage.setItem("cardsLikeCount", JSON.stringify(cardsLikeCount))
+                           }
+                           continue
+                        //Se o loop ultrapassar o limite de objetos do array do likeBlocker, ou seja, se o utilizador que estiver a dar like não tiver ainda o seu e-mail registado no likeBlocker (por outras palavras, se o utilizador estiver pela primeira vez a dar like num card)
+                        } else if (likeBlocker[i] == null ) {
+                            // vai acrescentar na array (do likeBlocker) um novo objeto com o email desse utilizador, mostrar qual foi o card que ele meteu like e finalmente atualizar o número de likes
+                            let objectOfLikeBlocker = {}
+                            objectOfLikeBlocker.email = sessionStorage.getItem('loggedUser');
+                            // Mais uma vez, neste momento só há 3 cards
+                            objectOfLikeBlocker[1]="notLiked"
+                            objectOfLikeBlocker[2]="notLiked"
+                            objectOfLikeBlocker[3]="notLiked"
+                            objectOfLikeBlocker[buttonsLike]="liked"
+                            likeBlocker.push(objectOfLikeBlocker)
+                            localStorage.setItem('likeBlocker', JSON.stringify(likeBlocker))
 
-                                
-                            } else {
-                                //Se o utilizador nunca deu like e está a clicar pela primeira vez, então o programa irá acrescenter o seu like 
-                                likeBlocker[i][buttonsLike]="liked"
-                                localStorage.setItem('likeBlocker', JSON.stringify(likeBlocker))
+                            cardsLikeCount[buttonsLike-1][buttonsLike] += 1
+                            localStorage.setItem("cardsLikeCount", JSON.stringify(cardsLikeCount))
+                            break // Resolvido: para não criar mais do que um objeto
 
-                                cardsLikeCount[buttonsLike-1][buttonsLike] += 1
-                                localStorage.setItem("cardsLikeCount", JSON.stringify(cardsLikeCount))
-                            }
-                            break
-                        } else {
-                            continue
                         }
                     }
                 }
@@ -89,6 +110,97 @@ export default class infoUtilView {
         }
 
         
+    }
+
+    commentUser(){
+        const modalsAndItsComments = JSON.parse(localStorage.getItem('modalsAndItsComments'));
+        const isLogged = sessionStorage.getItem('loggedUser')
+        let users = JSON.parse(localStorage.getItem("users"))
+
+        function makeItComment(enviarButton){ // 0      user3@gmail.com lolo
+            const textAreaValue = document.getElementById(`textArea${enviarButton + 1}`).value
+            for(let i=0 ; i<Infinity; i++){
+                if(users[i] == null){  //se o loop chegar ao fim da array da key users
+                    break
+                }else{
+                    if (users[i].email == isLogged){ // se se o email do utilizador que está logado for igual ao email da localstorage
+                        let authorOfComment = users[i].username 
+                        for(let k=1; k<Infinity; k++){
+                            if(modalsAndItsComments[enviarButton][k] != null){
+                                continue
+                            }else{
+                                const enviarTag = document.getElementById(`Enviar${enviarButton+1}`)
+                                const TEXT = modalsAndItsComments[enviarButton][k] = textAreaValue
+                                const AUTHOR = modalsAndItsComments[enviarButton]['user' + k] = authorOfComment
+                                localStorage.setItem('modalsAndItsComments', JSON.stringify(modalsAndItsComments))
+                                // O código a seguir serve para mostrar o comentário sem precisarmos de fazer reload à página (NOTA:o código do comentário adicionado desaparecerá se dermos reload, mas o utilizador não irá se aperceber disso, porque o ciclo for da linha 175 irá colocar novamente o comentário, buscando os dados dele na localstorage que eu pedi ao programa para armazenar nas três linhas de código anteriores )
+                                let divChild = document.createElement("DIV")
+                                const brTag = document.createElement("br")
+                                let headingFour = document.createElement("H4")
+                                let headingSix = document.createElement("H6")
+                                headingFour.style.color="#000000"
+                                headingSix.style.color="#000000"
+                                headingFour.innerText=TEXT
+                                headingSix.innerText=`- ${AUTHOR}`
+                                divChild.appendChild(brTag)
+                                divChild.appendChild(brTag.cloneNode()) // Não podemos dizes brTag duas vezes, um é o original e o outro tem que ser o clone
+                                divChild.appendChild(headingFour)
+                                divChild.appendChild(headingSix)
+                                enviarTag.after(divChild)
+                                break
+                            }
+                        }
+                    }else{
+                        continue
+                    } 
+                }
+                
+
+            }
+                
+        } 
+
+        // Este loop serve para adicionar Event Listeners a todos os botoes de Enviar o comentário
+        for(let enviarButton=0; enviarButton<Infinity; enviarButton++){
+            let divParent = document.getElementsByClassName('col-12')[enviarButton]
+            if(divParent == null){
+                break
+            }
+            let BUTTON = divParent.children[0]
+            BUTTON.addEventListener('click', function CommentUser(){makeItComment(enviarButton)})
+        }
+
+        // Para a página de informação util estar sempre atualizada com os comentários que são guardados na key modalsAndItsComments da localstorage 
+        for(let i=0; i <Infinity ; i++){
+            const enviarTag = document.getElementById(`Enviar${i+1}`)
+            if(modalsAndItsComments[i] == null ){
+                break
+            }
+            for(let index=1; index<Infinity; index++){
+                if(modalsAndItsComments[i][index] == null){
+                    break
+                }
+                let divChild = document.createElement("DIV")
+                const TEXT = modalsAndItsComments[i][index]
+                const AUTHOR = modalsAndItsComments[i]['user' + (index)]
+                const brTag = document.createElement("br")
+                let headingFour = document.createElement("H4")
+                let headingSix = document.createElement("H6")
+                headingFour.style.color="#000000"
+                headingSix.style.color="#000000"
+                headingFour.innerText=TEXT
+                headingSix.innerText=`- ${AUTHOR}`
+                divChild.appendChild(brTag)
+                divChild.appendChild(brTag.cloneNode()) // Não podemos dizes brTag duas vezes, um é o original e o outro tem que ser o clone
+                divChild.appendChild(headingFour)
+                divChild.appendChild(headingSix)
+                enviarTag.after(divChild) // Para que os comentários mais recentes estejam sempre em primeiro
+
+            }
+            
+
+
+        }
     }
 
 
