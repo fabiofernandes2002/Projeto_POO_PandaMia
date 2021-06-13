@@ -2,6 +2,7 @@ import navBarView from './views/navBarView.js';
 import AdminView from './views/adminView.js';
 import minhaContaView from './views/minhaContaView.js';
 import quizGamesView from './views/quizGamesView.js';
+import infoUtilView from './views/infoUtilView.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -15,7 +16,7 @@ class App {
             "userAdmin": [AdminView, navBarView],
             "index": [navBarView],
             "sobre": [navBarView],
-            "infoUtil": [navBarView],
+            "infoUtil": [navBarView, infoUtilView],
             "link":[navBarView],
             "register": [navBarView],
             "login": [navBarView],
@@ -193,6 +194,12 @@ class App {
         }
         ]
         const blockedUsers = [];
+        const likeBlocker = [];
+        const cardsLikeCount = [
+            {"1":0},
+            {"2":0},
+            {"3":0}
+        ];
         
         // Load the fixtures in case there is no data in the local storage 
         if (!localStorage.quizGames) {
@@ -203,9 +210,18 @@ class App {
             localStorage.setItem("users", JSON.stringify(users));
         }
 
-        if (!localStorage.isBlocked) {
-            localStorage.setItem('isBlocked', JSON.stringify(blockedUsers));
+        if (!localStorage.blockedUsers) {
+            localStorage.setItem('blockedUsers', JSON.stringify(blockedUsers));
         }
+
+        if (!localStorage.likeBlocker) {
+            localStorage.setItem('likeBlocker', JSON.stringify(likeBlocker));
+        }
+
+        if (!localStorage.cardsLikeCount) {
+            localStorage.setItem('cardsLikeCount', JSON.stringify(cardsLikeCount));
+        }
+
         
     }
 }

@@ -11,6 +11,8 @@ export default class quizGamesView {
         this.options1 = document.querySelector("#options1")
         this.options2 = document.querySelector("#options2")
         this.options3 = document.querySelector("#options3")
+        this.quizName = document.querySelector("#quizName")
+
 
         this.updatesQuiz();
         this.bindNextButton();

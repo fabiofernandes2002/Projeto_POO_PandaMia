@@ -1,13 +1,12 @@
 import UserController from '../controllers/userController.js'
-export default class AdminView {
+export default class adminView {
     constructor() {
         this.userController = new UserController()
         this.users = this.userController.getUsers()
-        this.getIdOfLastUser = this.userController.getIdOfLastUser()
-        console.log(this.users);
-        this.tableChange = document.getElementById("tbody");
-        this.modalChange = document.getElementById("modalsUsers");
-        this.modalBlockChange = document.getElementById("modalsBlockUsers");
+        this.getIdOfLastUser = this.userController.getIdOfLastUser();
+        this.tableChange = document.querySelector("#tbody");
+        this.modalChange = document.querySelector("#modalsUsers");
+        this.modalBlockChange = document.querySelector("#modalsBlockUsers");
         if(this.tableChange && this.modalChange && this.modalBlockChange){
             this.dataBase();
         }
@@ -84,10 +83,10 @@ export default class AdminView {
               </div>
               <div class="modal-body">
               Motivo: 
-              <input type="text">
+              <input type="text" id="motivo${user.id - 1}">
               <br>
               <br>
-              <input class="btn btn-primary clickToBlock" type="button" value="Bloquear">
+              <input class="btn btn-primary clickToBlock" id="inputBlock${user.id - 1}" type="button" value="Bloquear">
               </div>
             </div>
           </div>
@@ -101,8 +100,8 @@ export default class AdminView {
         }   
     }
     /* Adicionar atributos ids para cada botao de submit do form do respetivo user */
-    let submitChange = document.getElementsByClassName('submitChange')
-    let clickToBlock = document.getElementsByClassName('clickToBlock')
+    const submitChange = document.getElementsByClassName('submitChange')
+    const clickToBlock = document.getElementsByClassName('clickToBlock')
     let users = JSON.parse(localStorage.getItem("users"));
     for (let ids = 0; ids < submitChange.length; ids++) {
               submitChange[ids].setAttribute('id',ids+1)
@@ -138,7 +137,8 @@ export default class AdminView {
 
       function makeItBlock(block){
         let formControl= document.getElementsByClassName(`form-control${block}`);
-        let arrayOfIsBlocked = JSON.parse(localStorage.getItem("isBlocked"))
+        let arrayOfIsBlocked = JSON.parse(localStorage.getItem("blockedUsers"))
+        const motivoValue = document.getElementById(`motivo${block}`).value
         if(arrayOfIsBlocked == null) {
           arrayOfIsBlocked = []
         }
@@ -146,8 +146,11 @@ export default class AdminView {
         objectOfUserBlocked.username = formControl[0].value;
         objectOfUserBlocked.password = formControl[1].value;
         objectOfUserBlocked.email = formControl[2].value;
+        objectOfUserBlocked.motivo = motivoValue
         arrayOfIsBlocked.push(objectOfUserBlocked)
-        localStorage.setItem('isBlocked', JSON.stringify(arrayOfIsBlocked))
+        localStorage.setItem('blockedUsers', JSON.stringify(arrayOfIsBlocked))
+        
+        
       }
       for (let a = 0; a < submitChange.length; a++) {
         submitChange[a].addEventListener('click', function changeUser(){makeItSubmit(a)});
