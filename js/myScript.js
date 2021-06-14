@@ -6,6 +6,10 @@ window.onresize = function(){ location.reload(); }
 /* Event Listeners para o catálogo de jogos */
 let cardOne=document.getElementById("card1")
 let cardTwo=document.getElementById("card2")
+if(cardOne && cardTwo){
+    cardOne.addEventListener('click', function(){hideCard(cardOne)})
+}
+
 
     function hideCard(e){
         /* Apaga todos os nodes childs que estão dentro do elemento e */
@@ -24,7 +28,8 @@ let cardTwo=document.getElementById("card2")
     }, 1)
     
     }
-    
-  
 
-    cardOne.addEventListener('click', function(){hideCard(cardOne)})
+    
+        
+
+    

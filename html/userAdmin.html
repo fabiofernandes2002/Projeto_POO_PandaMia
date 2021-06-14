@@ -75,6 +75,58 @@
     </div>
     <div id="modalsUsers"></div>
     <div id="modalsBlockUsers"></div>
+    <div style="background-color: green;height: 50px;width: 100%;position: relative;" class="d-flex justify-content-center align-items-center align-content-center">
+    <button type="button" style="background: none; border: none;" data-toggle="modal" data-target="#addUserModal">
+        <h3 style="color: white;position: absolute;top: 10px;">Adicionar utilizador</h3> 
+    </button>
+    </div>
+
+    <!-- Modal Vertically Scrollable para adicionar utilizador -->
+    <div class="modal fade" id="addUserModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addUserModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar entidade</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="addUser">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Username</label>
+                        <input type="username" class="form-control" id="exampleInputUsername1">
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="user">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                user
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="admin" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                               admin
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     <div class="opcoesMenu">
         <svg onclick="hideMenu()" id="closeMenu" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.06 54">
             <title>Close Button</title>

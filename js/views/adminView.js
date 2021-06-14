@@ -116,7 +116,7 @@ export default class adminView {
         location.reload();
         return false;
       };
-    
+
       function makeItRemove(remove){
         let users = JSON.parse(localStorage.getItem("users"));
         let indexOfIdToRemove = users.findIndex((obj => obj.id == remove));
@@ -165,7 +165,122 @@ export default class adminView {
     for (let block = 0; block < clickToBlock.length; block++ )  {
       clickToBlock[block].addEventListener('click', function blockUser(){makeItBlock(block)})
     }
-  }
-}
 
+    
+    document.getElementById("addUser").addEventListener('submit', (event) => {
+      event.preventDefault()
+      let users = JSON.parse(localStorage.getItem("users"));
+      const usernameNewUser = document.querySelector("#exampleInputUsername1").value
+      const passwordNewUser = document.querySelector("#exampleInputPassword1").value
+      const emailNewUser = document.querySelector("#exampleInputEmail1").value
+      let typeNewUser = document.querySelector('input[name="flexRadioDefault"]:checked').value
+      let newObj = {}
+
+
+      //Se não existir objetos na array users da localstorage
+      if(users[0]== null){
+        newObj.username = usernameNewUser
+        newObj.email = emailNewUser
+        newObj.password = passwordNewUser
+        newObj.type = typeNewUser
+        newObj.id=1
+        users.push(newObj)
+        localStorage.setItem('users', JSON.stringify(users))
+        location.reload()
+        return false
+      }else{
+              let arrayUsernames = []
+              // Caso contrário, irá juntar todos os usernames já existentes num array
+              for(let i=0; i<Infinity; i++){
+                if(users[i] == null){
+                  break
+                }else{
+                  arrayUsernames.push(users[i].username)
+                }
+               
+              }
+                //Verificar se algum username existente é igual ao username da entidade que vai ser adicionada, ou seja, verificar se já existe um username igual
+              for(let i=0; i<arrayUsernames.length + 1; i++){
+                //Se já existir, então vai mandar um alerta
+                if(arrayUsernames[i] == usernameNewUser){
+                  alert("O username já existe")
+                  break
+                //Se conseguiu chegar até ao final sem ter encontrado uma correspondência, então vai criar o username  
+                }else if(arrayUsernames[i] == null){
+                  newObj.username = usernameNewUser
+                  break
+                }else{
+                  continue
+                }
+              }
+              let arraySumIndex = []
+              
+              // irá juntar todos os emails já existentes num array
+              for(let i=0; i<Infinity; i++){
+                if(users[i] == null){
+                  break
+                }else{
+                  arraySumIndex.push(users[i].email)
+                }
+              }
+                //Verificar se algum  existente é igual ao email escolhido, ou seja, verificar se já existe um email igual
+              for(let i=0; i<arraySumIndex.length + 1; i++){
+                //Se já existir, então vai mandar um alerta
+                if(arraySumIndex[i] == emailNewUser){
+                  alert("O email já existe")
+                  break
+                //Se conseguiu chegar até ao final sem ter encontrado uma correspondência, então vai criar o email  
+                }else if(arraySumIndex[i] == null){
+                  newObj.email = emailNewUser
+                  break
+                }else{
+                  continue
+                }
+              }
+              newObj.password = passwordNewUser
+              newObj.type = typeNewUser
+
+              // ----id----------------
+
+            for(let index=0; index<Infinity; index++){
+              if(users[index] == null){
+                newObj.id=this.getIdOfLastUser+1
+              }else{
+                continue
+              }
+              break
+            }
+            let newObjOne = {}
+            //Verificar se o newObj contêm todas as propriedades necessárias: .username, .email, .type e .password
+          if(newObj.username != null && newObj.password != null && newObj.email != null && newObj.type == "user"){
+            for(let i = 0; i<Infinity; i++){
+              if (users[i] == null){
+                break
+              }else if(users[i].type == "admin"){
+                newObjOne.email = users[i].email
+                newObjOne.password = users[i].password
+                newObjOne.username = users[i].username
+                newObjOne.type = users[i].type
+                users[i].email = newObj.email
+                users[i].password = newObj.password
+                users[i].username = newObj.username
+                users[i].type = newObj.type
+                localStorage.setItem('users', JSON.stringify(users))
+                users.push(newObjOne)
+                localStorage.setItem('users', JSON.stringify(users))
+                location.reload()
+                return false
+              }else{continue}
+            }
             
+          } else if (newObj.username != null && newObj.password != null && newObj.email != null && newObj.type == "admin"){
+            users.push(newObj)
+            localStorage.setItem('users', JSON.stringify(users))
+            location.reload()
+            return false
+          }else{
+            alert("Tente novamente")
+          }
+          console.log(newObj)
+            }})}}
+
