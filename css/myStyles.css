@@ -325,3 +325,13 @@ a:active {
     margin-bottom: 30px;
     color: white;
 }
+
+#hide {
+    display: none;
+} 
+#hide1 {
+  display: none;
+} 
+#hide2{
+  display: none;
+}
