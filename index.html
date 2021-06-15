@@ -26,29 +26,17 @@
         #botao{
             margin-top: 50px;
         }
-        .img-fluid{
-            z-index: -1;
-            position: absolute;
-        }
         @media (max-width:1366px){
             #navbar{
             height: 150px;
+            }
         }
-        }
-        a:link { text-decoration: none; }
-
-
-    a:visited { text-decoration: none; }
-
-
-    a:hover { text-decoration: none; }
-
-
-    a:active { text-decoration: none; }
     </style>
 </head>
 <body>
-    <img src="media/images/ondapc.svg" class="img-fluid" alt="Responsive image">
+    <div class="hidden-xs">  
+        <img id="waveImagePc" src="media/images/ondapc.svg" class="img-fluid" alt="Responsive image">
+    </div>
     <div class="container">
         <div id="navbar" class="row row align-items-center mx-auto ">
             <div class="col-1">

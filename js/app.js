@@ -23,8 +23,7 @@ class App {
             "login": [navBarView],
             "minhaConta":[minhaContaView,navBarView],
             "dadosAcesso":[minhaContaView, navBarView],
-            "game": [quizGamesView, navBarView],
-            "quizzes":[quizGamesView],
+            "game": [navBarView],
             "quiz1Detalies":[quizGamesView]
             
         };
@@ -120,80 +119,89 @@ class App {
 
         ];
         
-        const quizGames = [
+        const questions = [
             {
-                id: "1",
-                name: "Quiz 1",
-                description: "Será que consegues acertar? Testa o seu conhecimento sobre a COVID-19!"
-            ,
-            questions: [
-                {
-                    title: "Qual é o tempo recomendado para lavar as mãos?",
-                    answers:["20 segundos","15 segundos", "10 segundos"], 
-                    correctAnswer: 1
-                    
-                },
-                {
-                    title: "De que forma se transmite o COVID-19?",
-                    answers:["Utilizando máscara nova","Com superfícies, objetos e pessoas contaminadas","Desinfetando as mãos"],
-                    correctAnswer: 2
-                },
-                {
-                    title: "Durante quantas horas a utilização da mesma máscara descartável é segura?",
-                    answers: ["2 horas","8 horas","4 horas"],
-                    correctAnswer: 3
-                },
-                {
-                    title: "Qual a distância recomendada para se permanecer perto de outras pessoas?",
-                    answers: ["1 metro","1,5 metros","0,5 metro"],
-                    correctAnswer: 2 
-                },
-                {
-                    title: "Qual o período de incubação do vírus?",
-                    answers: ["1 a 20 dias"," 1 a 7 dias","1 a 14 dias"],
-                    correctAnswer: 3 
-                },
-                {
-                    title: "O que podes fazer durante o período de isolamento?",
-                    answers: [
-                        "Utilizar a divisão da casa onde estás isolado",
-                        "Sair de casa, estar a conviver com os amigos, estar junto com as outras pessoas da família",
-                        "Ter visitas de amigos e familiares"
-                    ],
-                    correctAnswer: 1 
-                },
-                {
-                    title: "Que medidas devo tomar se tiver sintomas que possam estar associados a COVID-19?",
-                    answers: [
-                        "Ir imediatamente ao hospital, pois pode ser grave",
-                        "Ligar para o número de telefone SNS 24 para evitar o contacto pessoal e obter informações mais concretas sobre como devo proceder",
-                        "Permanecer em casa sem qualquer avaliação médica"
-                    ],
-                    correctAnswer: 2
-                },
-                {
-                    title: "Qual a sequência correta de desinfeção das mãos?",
-                    answers: [
-                        "Molhar as mãos; Aplicar sabão que cobre toda a superfície das mãos; Esfregar as palmas das mãos e entrelaçar os dedos; Esfregar os polegares, as costas das mãos e os pulsos;",
-                        "Enxaguar as mãos com água; Secar com um toalhete descartável",
-                        "Lavar as mãos só com água"
-                    ],
-                    correctAnswer: 1 
-                },
-                {
-                    title: "Como se deve colocar a máscara?",
-                    answers: [
-                        "Lavar as mãos e depois colocar a máscara",
-                        "Desinfetar as mãos com álcool gel; Segurar na face da máscara e depois pôr na posição correta",
-                        "Lavar as mãos com água e sabão ou desinfetar com álcool gel; Colocar a máscara na posição correta; Segurar a máscara pelos elásticos e adaptar à orelha; Ajustar justo ao nariz e queixo sem tocar na face da máscara"
-                    ],
-                    correctAnswer: 3 
-                     
-                }
-            
-            ]
-        }
-        ]
+              question: "Qual é o tempo recomendado para lavar as mãos?",
+              answers: [
+                { text: "20 segundos", correct: true },
+                { text: "15 segundos", correct: false },
+                { text: "10 segundos", correct: false }
+              ]
+            },
+            {
+              question: 'De que forma se transmite a COVID-19?',
+              answers: [
+                { text: 'Utilizando máscara nova', correct: false },
+                { text: 'Com superfícies, objetos e pessoas contaminadas', correct: true },
+                { text: 'Desinfetando as mãos', correct: false }
+              ]
+            },
+            {
+              question: 'Durante quantas horas a utilização da mesma máscara descartável é segura?',
+              answers: [
+                { text: '2 horas', correct: false },
+                { text: '8 horas', correct: false },
+                { text: '4 horas', correct: true }
+              ]
+            },
+            {
+              question: 'Qual a distância recomendada para se permanecer perto de outras pessoas?',
+              answers: [
+                { text: '1 metro', correct: false },
+                { text: '1,5 metros', correct: true },
+                { text: '0,5 metros', correct: false }
+              ]
+            },
+            {
+              question: 'Qual o período de incubação do vírus?',
+              answers: [
+                { text: '1 a 20 dias', correct: false },
+                { text: '1 a 7 dias', correct: false },
+                { text: '1 a 14 dias', correct: true },
+              ]
+            },
+            {
+              question: 'O que podes fazer durante o período de isolamento?',
+              answers: [
+                { text: 'Utilizar a divisão da casa onde estás isolado', correct: true },
+                { text: 'Sair de casa, estar a conviver com os amigos, estar junto com as outras pessoas da família', correct: false },
+                { text: 'Ter visitas de amigos e familiares', correct: false },
+              ]
+            },
+            {
+              question: 'Que medidas devo tomar se tiver sintomas que possam estar associados a COVID-19?',
+              answers: [
+                { text: 'Ir imediatamente ao hospital, pois pode ser grave', correct: false },
+                { text: 'Ligar para o número de telefone SNS 24 para evitar o contacto pessoal e obter informações mais concretas sobre como devo proceder', correct: true },
+                { text: 'Permanecer em casa sem qualquer avaliação médica', correct: false },
+              ]
+            },
+            {
+              question: 'Qual a sequência correta de desinfeção das mãos?',
+              answers: [
+                { text: 'Molhar as mãos; Aplicar sabão que cobre toda a superfície das mãos; Esfregar as palmas das mãos e entrelaçar os dedos; Esfregar os polegares, as costas das mãos e os pulsos;', correct: true },
+                { text: 'Enxaguar as mãos com água; Secar com um toalhete descartável', correct: false },
+                { text: 'Lavar as mãos só com água', correct: false },
+              ]
+            },
+            {
+              question: 'Como se deve colocar a máscara?',
+              answers: [
+                { text: 'Lavar as mãos e depois colocar a máscara', correct: false },
+                { text: 'Desinfetar as mãos com álcool gel; Segurar na face da máscara e depois pôr na posição correta', correct: false },
+                { text: 'Lavar as mãos com água e sabão ou desinfetar com álcool gel; Colocar a máscara na posição correta; Segurar a máscara pelos elásticos e adaptar à orelha; Ajustar justo ao nariz e queixo sem tocar na face da máscara', correct: true },
+              ]
+            },
+            {
+              question: 'O que podes fazer durante o período de isolamento?',
+              answers: [
+                { text: 'Utilizar a divisão da casa onde estás isolado', correct: true },
+                { text: 'Sair de casa, estar a conviver com os amigos, estar junto com as outras pessoas da família', correct: false },
+                { text: 'Ter visitas de amigos e familiares', correct: false },
+              ]
+            },
+          ];
+
         const blockedUsers = [];
         const likeBlocker = [];
         const cardsLikeCount = [
@@ -207,11 +215,14 @@ class App {
             {modal:3}
         ];
         const opinions = []
+        const userPointsQuiz = [
+            {email:"user1@gmail.com",
+            points:100
+            }
+
+        ]
         
         // Load the fixtures in case there is no data in the local storage 
-        if (!localStorage.quizGames) {
-            localStorage.setItem('quizGames', JSON.stringify(quizGames));
-        }
         
         if (!localStorage.users) {
             localStorage.setItem("users", JSON.stringify(users));
@@ -237,7 +248,13 @@ class App {
             localStorage.setItem('opinions', JSON.stringify(opinions));
         }
 
-        
+        if (!localStorage.questions) {
+            localStorage.setItem('quizQuestionsAndAnswers', JSON.stringify(questions));
+        }
+
+        if (!localStorage.userPointsQuiz) {
+            localStorage.setItem('userPointsQuiz', JSON.stringify(userPointsQuiz));
+        }
     }
 }
 
