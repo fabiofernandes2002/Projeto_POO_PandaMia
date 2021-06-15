@@ -4,7 +4,7 @@ import minhaContaView from './views/minhaContaView.js';
 import quizGamesView from './views/quizGamesView.js';
 import infoUtilView from './views/infoUtilView.js';
 import sobreView from './views/sobreView.js';
-import top10View from'./views/top10View.js';
+import top10View from './views/top10View.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
