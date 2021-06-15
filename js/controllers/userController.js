@@ -54,7 +54,6 @@ export default class userController {
 
     getUserUsername(){
         const email = sessionStorage.getItem("loggedUser")
-        
         return this.users.find(user => user.email === email).username
     }
 

@@ -19,7 +19,7 @@ export default class infoUtilView {
 
         function makeItLike(buttonsLike){
             if(isLogged == null){ // Bloquear os likes para as pessoas que não estão logadas  
-                alert("Log-in first")
+                alert("Faz Login primeiro")
             }else{
                 // Se não existir objetos na key LikeBlocker, então é criado o primeiro objeto que contêm o email do primeiro utilizador a meter like numa card
                 if(likeBlocker[0] == null){
