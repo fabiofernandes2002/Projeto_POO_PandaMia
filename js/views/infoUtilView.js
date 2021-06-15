@@ -5,6 +5,7 @@ export default class infoUtilView {
         this.users = this.userController.getUsers()
         this.getIdOfLastUser = this.userController.getIdOfLastUser();
         this.infoUtilThings = document.querySelector("#infoUtilThings")
+        this.isAdmin = this.userController.isAdmin()
         this.likesCount();
         this.commentUser();
     }
@@ -80,11 +81,8 @@ export default class infoUtilView {
                             localStorage.setItem("cardsLikeCount", JSON.stringify(cardsLikeCount))
                             break // Resolvido: para não criar mais do que um objeto
 
-                        }
-                    }
-                }
-                
-            } 
+                        }}}}
+
             // vai dar refresh á pagina sempre que dermos like ou removermos o like
             location.reload()
             return false
@@ -107,17 +105,15 @@ export default class infoUtilView {
                 break
             }
             buttonLike.addEventListener('click', function LikeUser(){makeItLike(buttonsLike)})
-        }
 
-        
-    }
+        }}
 
     commentUser(){
         const modalsAndItsComments = JSON.parse(localStorage.getItem('modalsAndItsComments'));
         const isLogged = sessionStorage.getItem('loggedUser')
         let users = JSON.parse(localStorage.getItem("users"))
 
-        function makeItComment(enviarButton){ // 0      user3@gmail.com lolo
+        function makeItComment(enviarButton){ 
             const textAreaValue = document.getElementById(`textArea${enviarButton + 1}`).value
             for(let i=0 ; i<Infinity; i++){
                 if(users[i] == null){  //se o loop chegar ao fim da array da key users
@@ -134,10 +130,14 @@ export default class infoUtilView {
                                 const AUTHOR = modalsAndItsComments[enviarButton]['user' + k] = authorOfComment
                                 localStorage.setItem('modalsAndItsComments', JSON.stringify(modalsAndItsComments))
                                 // O código a seguir serve para mostrar o comentário sem precisarmos de fazer reload à página (NOTA:o código do comentário adicionado desaparecerá se dermos reload, mas o utilizador não irá se aperceber disso, porque o ciclo for da linha 175 irá colocar novamente o comentário, buscando os dados dele na localstorage que eu pedi ao programa para armazenar nas três linhas de código anteriores )
-                                let divChild = document.createElement("DIV")
+                                let divChild = document.createElement("div")
                                 const brTag = document.createElement("br")
-                                let headingFour = document.createElement("H4")
-                                let headingSix = document.createElement("H6")
+                                let headingFour = document.createElement("h4")
+                                let headingSix = document.createElement("h6")
+                                let minusDiv = document.createElement("div")
+                                minusDiv.innerHTML= `<svg style="height: 10px;" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 20 4"><path d="M8,20V16H28v4Z" transform="translate(-8 -16)" style="fill: red"/>
+                                </svg>`
                                 headingFour.style.color="#000000"
                                 headingSix.style.color="#000000"
                                 headingFour.innerText=TEXT
@@ -146,19 +146,20 @@ export default class infoUtilView {
                                 divChild.appendChild(brTag.cloneNode()) // Não podemos dizes brTag duas vezes, um é o original e o outro tem que ser o clone
                                 divChild.appendChild(headingFour)
                                 divChild.appendChild(headingSix)
+                                if(sessionStorage.getItem('typeUser') == "admin"){
+                                    divChild.appendChild(minusDiv)
+                                    enviarTag.after(divChild)
+                                    location.reload()
+                                    return false
+                                    }
                                 enviarTag.after(divChild)
                                 break
                             }
                         }
                     }else{
                         continue
-                    } 
-                }
-                
 
-            }
-                
-        } 
+                    }}}} 
 
         // Este loop serve para adicionar Event Listeners a todos os botoes de Enviar o comentário
         for(let enviarButton=0; enviarButton<Infinity; enviarButton++){
@@ -171,21 +172,25 @@ export default class infoUtilView {
         }
 
         // Para a página de informação util estar sempre atualizada com os comentários que são guardados na key modalsAndItsComments da localstorage 
-        for(let i=0; i <Infinity ; i++){
+        for(let i=0; i <Infinity ; i++){ //iterar os objetos das arrays
             const enviarTag = document.getElementById(`Enviar${i+1}`)
             if(modalsAndItsComments[i] == null ){
                 break
             }
-            for(let index=1; index<Infinity; index++){
+            for(let index=1; index<Infinity; index++){ //iterar as propriedades correspondentes aos comentários e aos seus relativos autores que estão dentro do objeto iterado
                 if(modalsAndItsComments[i][index] == null){
                     break
                 }
-                let divChild = document.createElement("DIV")
+                let divChild = document.createElement("div")
                 const TEXT = modalsAndItsComments[i][index]
                 const AUTHOR = modalsAndItsComments[i]['user' + (index)]
                 const brTag = document.createElement("br")
-                let headingFour = document.createElement("H4")
-                let headingSix = document.createElement("H6")
+                let headingFour = document.createElement("h4")
+                let headingSix = document.createElement("h6")
+                let minusDiv = document.createElement("div")
+                minusDiv.innerHTML= `<svg style="height: 10px;" id="remove${i+index}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 20 4"><path d="M8,20V16H28v4Z" transform="translate(-8 -16)" style="fill: red"/>
+              </svg>`
                 headingFour.style.color="#000000"
                 headingSix.style.color="#000000"
                 headingFour.innerText=TEXT
@@ -194,14 +199,17 @@ export default class infoUtilView {
                 divChild.appendChild(brTag.cloneNode()) // Não podemos dizes brTag duas vezes, um é o original e o outro tem que ser o clone
                 divChild.appendChild(headingFour)
                 divChild.appendChild(headingSix)
+                //Se o utilizador logado for administrador, então vai aparecer um simbolo menos em baixo de cada comentário para ele ter a possibilidade de remover o comentário
+                if(this.isAdmin){
+                    divChild.appendChild(minusDiv)
+                    enviarTag.after(divChild)
+                    document.getElementById(`remove${i+index}`).addEventListener('click', () => {
+                        delete modalsAndItsComments[i][index];
+                        delete modalsAndItsComments[i]['user' + (index)]; 
+                        localStorage.setItem('modalsAndItsComments', JSON.stringify(modalsAndItsComments))
+                        location.reload()
+                        return false
+                    })
+                }
                 enviarTag.after(divChild) // Para que os comentários mais recentes estejam sempre em primeiro
-
-            }
-            
-
-
-        }
-    }
-
-
-}
+            }}}}

@@ -3,7 +3,7 @@ import AdminView from './views/adminView.js';
 import minhaContaView from './views/minhaContaView.js';
 import quizGamesView from './views/quizGamesView.js';
 import infoUtilView from './views/infoUtilView.js';
-import top10View from './views/top10View.js';
+import sobreView from './views/sobreView.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -16,7 +16,7 @@ class App {
             "": [navBarView],
             "userAdmin": [AdminView, navBarView],
             "index": [navBarView],
-            "sobre": [navBarView],
+            "sobre": [navBarView, sobreView],
             "infoUtil": [navBarView, infoUtilView],
             "link":[navBarView],
             "register": [navBarView],
@@ -256,20 +256,11 @@ class App {
             {3:0}
         ];
         const modalsAndItsComments = [
-            {
-                modal:1,
-                1:"teste",
-                user1:"user1",
-                2:"teste",
-                user2:"user2"
-
-            },
-            {
-                modal:2,
-                1:"teste",
-                user1:"user1"},
+            {modal:1},
+            {modal:2},
             {modal:3}
-        ]
+        ];
+        const opinions = []
         
         // Load the fixtures in case there is no data in the local storage 
         if (!localStorage.quizGames) {
@@ -300,6 +291,10 @@ class App {
             localStorage.setItem('avatars', JSON.stringify(avatars));
         }
 
+
+        if (!localStorage.opinions) {
+            localStorage.setItem('opinions', JSON.stringify(opinions));
+        }
 
         
     }
