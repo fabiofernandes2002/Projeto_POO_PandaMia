@@ -47,6 +47,11 @@ export default class navBarView {
         // Atualiza botões tendo em conta se o user está autenticado ou não
         this.updateStatusUI();
         this.updateAdmin();
+
+        // Bloqueia a parte dos jogos para os novos utilizadores
+        this.gameNavBar = document.getElementById("navbar").children[5]
+        if(this.gameNavBar)
+        this.blockGame();
     }
 
     /**
@@ -159,8 +164,16 @@ export default class navBarView {
         }
     } 
         
+    blockGame(){
+        if(!this.userController.isAdmin() && !this.userController.isLogged()){
+            this.gameNavBar.children[0].addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.gameNavBar.children[0].removeAttribute("href")
+                alert("Faz login primeiro")
+            })
+    }
 
-    
+    }
     
 
     /**
