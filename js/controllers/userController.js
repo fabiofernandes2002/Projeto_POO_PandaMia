@@ -3,6 +3,7 @@ import userModel from '../models/userModel.js'
 export default class userController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+        this.typeUserUsers = JSON.parse(localStorage.users).filter( (u) => u.type == "user" );
     }
 
     register(nameSurname,username, address , postalCode, city, birthDate, email, password, type) {
@@ -106,4 +107,17 @@ export default class userController {
         return maxValue
         
     }
+
+    usersArray() { 
+        return this.users 
+    }
+
+    sortTable() {
+        return this.typeUserUsers.sort((a, b) => { 
+            const aPoints = a.points ? a.points : 0; 
+            const bPoints = b.points ? b.points : 0; 
+            return aPoints - bPoints; 
+        }).reverse(); 
+    } 
+        
 }

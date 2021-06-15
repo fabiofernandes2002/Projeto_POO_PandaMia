@@ -20,14 +20,7 @@ export default class quizGamesController{
         return quiz
     }
 
-    getQuestionsQuiz() { 
-         const questions = this.quizGames.questions.sort( 
-           (a, b) => 0.10 - Math.random() 
-         ); 
-         
-         
-         return questions.slice(0, 10); 
-   } 
+    
         
 
     

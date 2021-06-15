@@ -3,6 +3,7 @@ import AdminView from './views/adminView.js';
 import minhaContaView from './views/minhaContaView.js';
 import quizGamesView from './views/quizGamesView.js';
 import infoUtilView from './views/infoUtilView.js';
+import top10View from './views/top10View.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -19,6 +20,7 @@ class App {
             "infoUtil": [navBarView, infoUtilView],
             "link":[navBarView],
             "register": [navBarView],
+            "top10": [top10View],
             "login": [navBarView],
             "minhaConta":[minhaContaView,navBarView],
             "dadosAcesso":[minhaContaView, navBarView],
@@ -65,7 +67,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 500,
+                photo: ""
             },
             {
                 id: 2,
@@ -77,7 +81,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 150,
+                photo: ""
             },
             {
                 id: 3,
@@ -89,7 +95,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 1000,
+                photo: ""
             },
             {
                 id: 4,
@@ -101,7 +109,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 350,
+                photo: ""
             },
             {
                 id: 5,
@@ -113,7 +123,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 200,
+                photo: ""
 
             }
 
@@ -193,6 +205,49 @@ class App {
             ]
         }
         ]
+
+        const avatars = [
+            {
+                id: 1,
+                photo:"../media/images/petrick.jpg",
+                points: 0
+            },
+            {
+                id: 2,
+                photo:"../media/images/dog.png",
+                points: 125
+            },
+            {
+                id: 3,
+                photo:"../media/images/panda.png",
+                points: 250
+            },
+            {
+                id: 4,
+                photo:"../media/images/pinguim.jpg",
+                points: 375
+            },
+            {
+                id: 5,
+                photo:"../media/images/tom.png",
+                points: 500
+            },
+            {
+                id: 6,
+                photo:"../media/images/menina.png",
+                points: 625
+            },
+            {
+                id: 7,
+                photo:"../media/images/jerry.jpg",
+                points: 750
+            },
+            {
+                id: 8,
+                photo:"../media/images/bobEsponja.png",
+                points: 875
+            }
+        ]
         const blockedUsers = [];
         const likeBlocker = [];
         const cardsLikeCount = [
@@ -240,6 +295,11 @@ class App {
         if (!localStorage.modalsAndItsComments) {
             localStorage.setItem('modalsAndItsComments', JSON.stringify(modalsAndItsComments));
         }
+
+        if (!localStorage.avatars) {
+            localStorage.setItem('avatars', JSON.stringify(avatars));
+        }
+
 
         
     }

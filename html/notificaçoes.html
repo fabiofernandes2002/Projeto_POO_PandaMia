@@ -1,54 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
     <script src="/js/myScript.js"></script>
+    <link rel="stylesheet" href="/css/myStyles.css" >
     <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="/css/myStyles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <title>Links úteis</title>
     <style>
         body{
             background-color: #5ca4a9;
         }
-        #navbar{
-            background-color: transparent;
-            height: 200px;
-        }
-        
-        #mensagem{
-            margin-top: 100px;
-        }
-        #botao{
-            margin-top: 50px;
-        }
-        .img-fluid{
-            z-index: -1;
-            position: absolute;
-        }
-        @media (max-width:1366px){
+  @media (max-width:1366px){
             #navbar{
             height: 150px;
         }
-        }
-        a:link { text-decoration: none; }
-
-
-    a:visited { text-decoration: none; }
-
-
-    a:hover { text-decoration: none; }
-
-
-    a:active { text-decoration: none; }
+    }
+    table{font-family: "Medium";}
     </style>
 </head>
 <body>
-    <img src="media/images/ondapc.svg" class="img-fluid" alt="Responsive image">
+    <img src="../media/images/ondapc.svg" class="img-fluid" style="z-index: -1;position: absolute;" alt="Responsive image">
     <div class="container">
         <div id="navbar" class="row row align-items-center mx-auto ">
             <div class="col-1">
@@ -59,91 +35,79 @@
                 </nav>  
             </div>
             <div class="col-1 text-center">
-                <a href="/html/sobre.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Sobre</span> </a>
-            </div>
-            <div class="col-2 text-center">
-                <a href="/html/infoUtil.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Info. Útil</span> </a>
-            </div>
-            <div class="col-4 text-center ">
-                <h1 style="font-family: 'Cooper Black';font-size: calc(100% + 2vw); color: #f4f1bb;">PandaMia</h1>
-            </div>
-            <div class="col-2 text-center">
-                <a href="/html/link.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Links Úteis</span> </a>
-            </div>
-            <div class="col-1 text-center">
-                <a href="/html/game.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Jogos</span></a> 
-            </div>
+              <a href="sobre.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Sobre</span> </a>
+          </div>
+          <div class="col-2 text-center">
+              <a href="infoUtil.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Info. Útil</span> </a>
+          </div>
+          <div class="col-4 text-center ">
+              <h1 style="font-family: 'Cooper Black';font-size: calc(100% + 2vw); color: #f4f1bb;">PandaMia</h1>
+          </div>
+          <div class="col-2 text-center">
+              <a href="link.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Links Úteis</span> </a>
+          </div>
+          <div class="col-1 text-center">
+              <a href="game.html"><span style="font-family: 'Medium';font-size: calc(20% + 1vw); color: white;">Jogos</span></a> 
+          </div>
             <div class="col-1">
                 <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                   </svg>
             </div>
         </div>
-        <div id="mensagem" class="row">
-                <h1 style="font-family: 'Medium';">A pandemia não tem de ser aborrecida!</h1>
-                <br>
-                <br>
-                <br>
-                <h1 style="font-family: 'Medium';">Aprende enquanto jogas!</h1>
+    </div>
+    <div id="conteudo" class="container">
+      <div id="botao" class="row align-items-center">
+        <div class="botaopc">
+          <a href="../index.html" style="font-family:'Medium';color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">Página Inicial</a>
         </div>
-        <div id="botao" class="row">
-            <div class="botaopc">
-                <a href="html/explorar.html" id="btnExplorar" style="visibility: visible;font-family:'Medium';color: red; border-radius: 32px;" class="btn btn-light btn-rounded btn-lg " role="button" aria-pressed="true">EXPLORAR</a>
+      </div>
+            <div class="row">
+                <h1 class="display-10" style="font-family:'Medium'">Notificações</h1>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <img src="media/images/Conjuntopc.svg" style="position:absolute;left: 0;bottom: 0;" class="img-fluid" alt="Responsive image">
-            </div>
         </div>
-        
-    </div>
-    
+    </div>    
     <div class="opcoesMenu">
         <svg onclick="hideMenu()" id="closeMenu" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.06 54">
             <title>Close Button</title>
             <line x1="1.86" y1="1.67" x2="47.2" y2="52.33" style="fill: none;stroke: #f4f1bb;stroke-miterlimit: 10;stroke-width: 5px"/>
             <line x1="45.71" y1="1.96" x2="2.75" y2="51.44" style="fill: none;stroke: #f4f1bb;stroke-miterlimit: 10;stroke-width: 5px"/>
         </svg>
-    
+      
         <ul class="sidebar-nav">
             <li id="userLoggedName"><a href="/html/register.html" style="visibility: visible;" id="btnRegiste">Registo /</a> <a href="/html/login.html" style="visibility: visible;" id="btnLogin">Login</a>
             </li> <!-- Primeira opção do menu -->
             <!-- Restantes opções -->
-            <li><a href="/html/top10.html">Top 10</a></li>  
+            <li><a href="#">Top 10</a></li>  
             <li><a href="/html/userAdmin.html" id="manageEntities" style="visibility: hidden">Gerir entidades</a></li>
             <li><a href="/html/minhaConta.html" id= "myAcount" style="visibility: hidden;">A minha conta</a></li>
-            <li><a href="/html/notificaçoes.html" id="notification" style="visibility: hidden;">Notificações</a></li>
-            <li><button id="btnLogout" class="btn btn-danger" style="visibility: hidden;font-family: Medium;">LOGOUT</button></li>
+            <li><a href="#" id="notification" style="visibility: hidden;">Notificações</a></li>
+            <li><button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button></li>
         </ul>
-    <div class="menuSair"></div>
-    </div>
-    </div>
-    <script>
+      <div class="menuSair"></div>
+      <script>
         let menuHamburguer = document.querySelector(".navbar-toggler");
         menuHamburguer.addEventListener("click", showMenu, false);
-
+      
         let flyoutMenu = document.querySelector(".menuSair");
         flyoutMenu.addEventListener("click", hideMenu, false);
-
-
+      
+      
         function showMenu(e) {
             document.querySelector(".opcoesMenu").classList.add("show"); 
             document.querySelector(".menuSair").classList.add("beep"); 
         }
-
+      
         function hideMenu(e) {
             document.querySelector(".menuSair").classList.remove("beep"); 
             document.querySelector(".opcoesMenu").classList.remove("show");
             e.stopPropagation();
             
         }
-
-    </script>
-    
-    <!-- REFERÊNCIA AO APP.JS -->
-    <script type="module" src="/js/app.js"></script>
+      
+      </script>
+      <!-- REFERÊNCIA AO APP.JS -->
+      <script type="module" src="../js/app.js"></script>
 </body>
 </html>

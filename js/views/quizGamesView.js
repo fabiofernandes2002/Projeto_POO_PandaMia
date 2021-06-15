@@ -12,19 +12,17 @@ export default class quizGamesView {
         this.options1 = document.querySelector("#options1")
         this.options2 = document.querySelector("#options2")
         this.options3 = document.querySelector("#options3")
-        this.quizName = document.querySelector("#quizName")
+        this.btnNext = document.querySelector("#btnNext")
+
+        let shuffledQuestions, currentQuestionIndex
 
 
         this.updatesQuiz();
         this.buildQuiz();
-        //this.bindNextButton();
+        //this.bindBntNext();
+        this.setNextQuestion();
     }
 
-    /* bindBackButton() {
-        this.btnBack.addEventListener('click', () => {
-            history.back();
-        })
-    } */
 
     updatesQuiz(){
         // ATENÇÃO!!!
@@ -42,20 +40,23 @@ export default class quizGamesView {
     }
 
     buildQuiz(){
-        this.questions = this.gameController.getQuestionsQuiz(); 
+        //this.questions = this.gameController.getQuestionsQuiz(); 
         this.questionsCounter = 0; 
         this.correctAnswerCounter = 0; 
-        this.listItems(this.questions[this.questionsCounter]); 
+        this.shuffledQuestions = questions.sort(() => Math.random() - .5)
+        this.currentQuestionsIndex = 0;
+        this.btnNext.addEventListener("click", () => {
+            this.currentQuestionsIndex++
+            setNextQuestion();
+        })
 
     }
 
-     listItems(questionItem){
-        if (this.questionsCounter <= 10) {
+    setNextQuestion(){
+        getCurrentQuiz(this.shuffledQuestions[currentQuestionsIndex])
+    }
 
-            this.userScore.innerHTML = this.questionsCounter + 1;
-            this.questionText.innerHTML = questionItem.title
-            this.rightAnswers.innerHTML = questionItem.correctAnswer
-            
-        }
-     }
+
+     
+    
 }
