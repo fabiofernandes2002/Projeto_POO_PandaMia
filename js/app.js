@@ -4,6 +4,7 @@ import minhaContaView from './views/minhaContaView.js';
 import quizGamesView from './views/quizGamesView.js';
 import infoUtilView from './views/infoUtilView.js';
 import sobreView from './views/sobreView.js';
+import top10View from'./views/top10View.js';
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -129,6 +130,49 @@ class App {
             }
 
         ];
+
+        const avatars = [
+            {
+                id: 1,
+                photo:"../media/images/petrick.jpg",
+                points: 0
+            },
+            {
+                id: 2,
+                photo:"../media/images/dog.png",
+                points: 125
+            },
+            {
+                id: 3,
+                photo:"../media/images/panda.png",
+                points: 250
+            },
+            {
+                id: 4,
+                photo:"../media/images/pinguim.jpg",
+                points: 375
+            },
+            {
+                id: 5,
+                photo:"../media/images/tom.png",
+                points: 500
+            },
+            {
+                id: 6,
+                photo:"../media/images/menina.png",
+                points: 625
+            },
+            {
+                id: 7,
+                photo:"../media/images/jerry.jpg",
+                points: 750
+            },
+            {
+                id: 8,
+                photo:"../media/images/bobEsponja.png",
+                points: 875
+            }
+        ]
         
         const questions = [
             {
