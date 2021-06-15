@@ -6,12 +6,36 @@ export default class userController {
         this.typeUserUsers = JSON.parse(localStorage.users).filter( (u) => u.type == "user" );
     }
 
-    register(nameSurname,username, address , postalCode, city, birthDate, email, password, type) {
+    register(nameSurname,username, address , postalCode, city, birthDate, email, password) {
         if (!this.users.some(user => user.email === email)) {
             const id = this.users.length + 1
             const type = "user"
-            this.users.push(new userModel(id, nameSurname,username, address , postalCode, city, birthDate, email, password, type));
-            localStorage.setItem('users', JSON.stringify(this.users))
+            for(let i = 0; i<Infinity; i++){
+                if (this.users[i] == null){
+                  break
+                }else if(this.users[i].type == "admin"){
+                  let newObjOne = {}
+                  newObjOne.email = this.users[i].email
+                  newObjOne.password = this.users[i].password
+                  newObjOne.username = this.users[i].username
+                  newObjOne.type = this.users[i].type
+                  newObjOne.id = id
+                  this.users[i].email = email
+                  this.users[i].password = password
+                  this.users[i].username = username
+                  this.users[i].type = type
+                  this.users[i].nameSurname = nameSurname
+                  this.users[i].address = address
+                  this.users[i].postalCode = postalCode
+                  this.users[i].city = city
+                  this.users[i].birthDate = birthDate
+                  localStorage.setItem('users', JSON.stringify(this.users))
+                  this.users.push(newObjOne)
+                  localStorage.setItem('users', JSON.stringify(this.users))
+                  location.reload()
+                  return false
+                }else{continue}
+              }
         } else {
             throw Error(`User with email "${email}" already exists!`);
         }

@@ -86,7 +86,6 @@ function showQuestion(question) {
 
 function resetState() {
   nextButton.setAttribute("id",'hide2')
-  //? penso que seja para apagar as respostas, se existirem
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }

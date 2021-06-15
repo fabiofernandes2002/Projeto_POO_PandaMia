@@ -59,7 +59,7 @@ export default class navBarView {
                 if (this.passwordRegister.value !== this.confirmPasswordRegister.value) {
                     throw Error("Password and Confirm Password are not equal");
                 }
-                this.userController.register(this.nameSurnameRegister.value, this.usernameRegister.value, this.address.value, this.postalCode.value, this.birthDate.value, this.email.value, this.confirmPasswordRegister , this.city.value ,this.passwordRegister.value);
+                this.userController.register(this.nameSurnameRegister.value, this.usernameRegister.value, this.address.value, this.postalCode.value, this.city.value, this.birthDate.value , this.email.value, this.passwordRegister.value);
                 this.displayMessage("register", "User registered with success!", "success");
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar

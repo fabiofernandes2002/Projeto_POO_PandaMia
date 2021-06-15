@@ -244,11 +244,11 @@ export default class adminView {
 
             for(let index=0; index<Infinity; index++){
               if(users[index] == null){
-                newObj.id=this.getIdOfLastUser+1
+                 newObj.id = index+1      // o id mais recente
+                 break
               }else{
                 continue
               }
-              break
             }
             let newObjOne = {}
             //Verificar se o newObj contêm todas as propriedades necessárias: .username, .email, .type e .password
@@ -261,6 +261,7 @@ export default class adminView {
                 newObjOne.password = users[i].password
                 newObjOne.username = users[i].username
                 newObjOne.type = users[i].type
+                newObjOne.id = newObj.id
                 users[i].email = newObj.email
                 users[i].password = newObj.password
                 users[i].username = newObj.username

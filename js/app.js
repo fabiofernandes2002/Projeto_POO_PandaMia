@@ -59,48 +59,6 @@ class App {
         const users = [
             {
                 id: 1,
-                username: "user1",
-                nameSurname: "user1",
-                email : "user1@gmail.com",
-                password: "pass1",
-                type: "user",
-                address: "Rua joão de Deus, Vila Nova de Gaia",
-                postalCode: "4400-182",
-                city: "Porto",
-                birthDate: "12-01-2002",
-                points: 500,
-                photo: ""
-            },
-            {
-                id: 2,
-                username: "user2",
-                nameSurname: "user2",
-                email : "user2@gmail.com",
-                password: "pass2",
-                type: "user",
-                address: "Rua joão de Deus, Vila Nova de Gaia",
-                postalCode: "4400-182",
-                city: "Porto",
-                birthDate: "12-01-2002",
-                points: 150,
-                photo: ""
-            },
-            {
-                id: 3,
-                username: "user3",
-                nameSurname: "user3",
-                email : "user3@gmail.com",
-                password: "pass3",
-                type: "user",
-                address: "Rua joão de Deus, Vila Nova de Gaia",
-                postalCode: "4400-182",
-                city: "Porto",
-                birthDate: "12-01-2002",
-                points: 1000,
-                photo: ""
-            },
-            {
-                id: 4,
                 username: "Tomás",
                 nameSurname: "Tomás Borges",
                 email: "tomas@gmail.com",
@@ -114,7 +72,7 @@ class App {
                 photo: ""
             },
             {
-                id: 5,
+                id: 2,
                 username: "Fábio",
                 nameSurname: "Fábio Fernandes",
                 email: "fabio@gmail.com",
