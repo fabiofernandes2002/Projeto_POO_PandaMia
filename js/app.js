@@ -20,6 +20,7 @@ class App {
             "infoUtil": [navBarView, infoUtilView],
             "link":[navBarView],
             "register": [navBarView],
+            "top10": [top10View],
             "login": [navBarView],
             "minhaConta":[minhaContaView,navBarView],
             "dadosAcesso":[minhaContaView, navBarView],
@@ -65,7 +66,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 500,
+                photo: ""
             },
             {
                 id: 2,
@@ -77,7 +80,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 150,
+                photo: ""
             },
             {
                 id: 3,
@@ -89,7 +94,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 1000,
+                photo: ""
             },
             {
                 id: 4,
@@ -101,7 +108,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 350,
+                photo: ""
             },
             {
                 id: 5,
@@ -113,7 +122,9 @@ class App {
                 address: "Rua joão de Deus, Vila Nova de Gaia",
                 postalCode: "4400-182",
                 city: "Porto",
-                birthDate: "12-01-2002"
+                birthDate: "12-01-2002",
+                points: 200,
+                photo: ""
 
             }
 
@@ -243,6 +254,11 @@ class App {
         if (!localStorage.modalsAndItsComments) {
             localStorage.setItem('modalsAndItsComments', JSON.stringify(modalsAndItsComments));
         }
+
+        if (!localStorage.avatars) {
+            localStorage.setItem('avatars', JSON.stringify(avatars));
+        }
+
 
         if (!localStorage.opinions) {
             localStorage.setItem('opinions', JSON.stringify(opinions));
