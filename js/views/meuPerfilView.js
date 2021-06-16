@@ -21,7 +21,7 @@ export default class meuPerfilView {
                     localStorage.setItem("users", JSON.stringify(this.users))
                     const avatars = JSON.parse(localStorage.getItem("avatars")) 
                     for(let i = 0; i<8; i++){
-                        if(users.points > avatars[i].points && users.points < avatars[i+1].points ){
+                        if(users.points >= avatars[i].points && users.points < avatars[i+1].points ){
                             const div = document.createElement("div")
                             const div1 = document.createElement("div")
                             const br = document.createElement("br")
