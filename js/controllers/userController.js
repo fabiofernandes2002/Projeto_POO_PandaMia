@@ -3,6 +3,7 @@ import userModel from '../models/userModel.js'
 export default class userController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+        this.userPointsQuiz = localStorage.userPointsQuiz ? JSON.parse(localStorage.userPointsQuiz) : [];
         this.typeUserUsers = JSON.parse(localStorage.users).filter( (u) => u.type == "user" );
     }
 
@@ -78,6 +79,11 @@ export default class userController {
     getUsers(){
         return this.users
     }
+
+    getuserPointsQuiz(){
+        return this.userPointsQuiz
+    }
+
     
     // função que permite alterar dados de acesso
     change(emailNew, passwordCurrent ,passwordNew, repeatPasswordNew){
