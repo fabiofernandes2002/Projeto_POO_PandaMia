@@ -24,10 +24,10 @@ export default class minhaContaView {
             event.preventDefault();
             try {
             if (this.passwordNew.value !== this.repeatPasswordNew.value) {
-                throw Error("Password and Confirm Password are not equal");
+                throw Error("Palavra-passe e Confirmar palavra-passe não são iguais");
             }
             this.userController.change(this.emailNew.value, this.passwordCurrent.value, this.passwordNew.value, this.repeatPasswordNew.value)
-            this.displayMessage("Data access change with success!", "success");
+            this.displayMessage("Dados de acesso alterados com sucesso!", "success");
             // Espera 1 seg. antes de fazer refresh à pagina
             // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
             setTimeout(() => {location.href = "../index.html"}, 1000);

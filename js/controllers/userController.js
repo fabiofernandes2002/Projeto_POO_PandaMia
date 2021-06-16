@@ -83,7 +83,7 @@ export default class userController {
     change(emailNew, passwordCurrent ,passwordNew, repeatPasswordNew){
         if (emailNew == "" || passwordCurrent == "" || passwordNew == "" || repeatPasswordNew == "") {
             
-            throw `Please fill all the details`
+            throw `Por favor, preencha todos os detalhes!`
         }
         else if(this.users.some(user => user.email === emailNew)){
 
@@ -91,13 +91,13 @@ export default class userController {
         } 
         else if(this.users.some(user => user.password != passwordCurrent)){
 
-            throw `Password não coincide com a atual`
+            throw `Password não coincide com a atual!`
         }
         else if (passwordCurrent == passwordNew) {
-            throw `Old password and New Password cannot be same`
+            throw `A password atual e a nova password não podem ser iguais!`
         }
         else if (passwordNew != repeatPasswordNew) {
-            throw `password mismatch`
+            throw `Palavra-passe incorreta!`
         }
         else{
             const email = sessionStorage.getItem("loggedUser")

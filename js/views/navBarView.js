@@ -62,10 +62,10 @@ export default class navBarView {
             event.preventDefault();
             try {
                 if (this.passwordRegister.value !== this.confirmPasswordRegister.value) {
-                    throw Error("Password and Confirm Password are not equal");
+                    throw Error("Palavra-passe e Confirmar palavra-passe não são iguais");
                 }
                 this.userController.register(this.nameSurnameRegister.value, this.usernameRegister.value, this.address.value, this.postalCode.value, this.city.value, this.birthDate.value , this.email.value, this.passwordRegister.value);
-                this.displayMessage("register", "User registered with success!", "success");
+                this.displayMessage("register", "Utilizador registado com sucesso!", "success");
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                 setTimeout(() => {location.href = "/html/login.html"}, 1000);
@@ -97,7 +97,7 @@ export default class navBarView {
                 if(check()== true){
                     try {
                         this.userController.login(this.emailUsernameLogin.value, this.passwordLogin.value, "user");
-                        this.displayMessage("login", "User logged in with success!", "success");
+                        this.displayMessage("login", "Utilizador conectado com sucesso!", "success");
                         // Espera 1 seg. antes de fazer refresh à pagina
                         // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
                         setTimeout(() => {location.href = "../index.html"}, 1000);
