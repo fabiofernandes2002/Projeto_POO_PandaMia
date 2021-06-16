@@ -5,6 +5,8 @@ import quizGamesView from './views/quizGamesView.js';
 import infoUtilView from './views/infoUtilView.js';
 import sobreView from './views/sobreView.js';
 import top10View from './views/top10View.js';
+import meuPerfilView from './views/meuPerfilView.js';
+
 
 // import adminView from './views/adminView.js'
 // import userView from './views/userView.js'
@@ -26,7 +28,8 @@ class App {
             "minhaConta":[minhaContaView,navBarView],
             "dadosAcesso":[minhaContaView, navBarView],
             "game": [navBarView],
-            "quiz1Detalies":[quizGamesView]
+            "quiz1Detalies":[quizGamesView],
+            "meuPerfil":[meuPerfilView]
             
         };
 
@@ -98,37 +101,37 @@ class App {
             {
                 id: 2,
                 photo:"../media/images/dog.png",
-                points: 125
+                points: 10
             },
             {
                 id: 3,
                 photo:"../media/images/panda.png",
-                points: 250
+                points: 30
             },
             {
                 id: 4,
                 photo:"../media/images/pinguim.jpg",
-                points: 375
+                points: 60
             },
             {
                 id: 5,
                 photo:"../media/images/tom.png",
-                points: 500
+                points: 70
             },
             {
                 id: 6,
                 photo:"../media/images/menina.png",
-                points: 625
+                points: 80
             },
             {
                 id: 7,
                 photo:"../media/images/jerry.jpg",
-                points: 750
+                points: 100
             },
             {
                 id: 8,
                 photo:"../media/images/bobEsponja.png",
-                points: 875
+                points: 150
             }
         ]
         
